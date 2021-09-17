@@ -17,7 +17,7 @@ namespace SuperTank.Objects
             this.moveSpeed = 10;
             this.tankBulletSpeed = 20;
             this.energy = 100;
-            int i = 21, j = 39;
+            int i = 21, j = 36;
             this.RectX = i * Common.STEP;
             this.RectY = j * Common.STEP;
             this.DirectionTank = Direction.eUp;

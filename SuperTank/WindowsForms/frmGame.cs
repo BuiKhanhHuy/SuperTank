@@ -61,7 +61,7 @@ namespace SuperTank
         private void GameStart()
         {
             // load map
-            Array.Copy(Common.ReadMap(String.Format("{0}{1:00}.txt", Common.path + @"\Maps\Map", 1),
+            Array.Copy(Common.ReadMap(String.Format("{0}{1:00}.txt", Common.path + @"\Maps\Map", 2),
                 Common.NUMBER_OBJECT_HEIGHT, Common.NUMBER_OBJECT_WIDTH),
             this.map, Common.NUMBER_OBJECT_HEIGHT * Common.NUMBER_OBJECT_WIDTH);
             // tạo danh sách tường
@@ -69,7 +69,7 @@ namespace SuperTank
             // khởi tạo danh sách địch
             enemyTankManager = null;
             enemyTankManager = new EnemyTankManagement(String.Format("{0}{1:00}.txt",
-                Common.path + @"\EnemyTankParameters\EnemyParameter", 1));
+                Common.path + @"\EnemyTankParameters\EnemyParameter", 2));
         }
 
         #region Vòng lặp game
@@ -79,7 +79,7 @@ namespace SuperTank
             Common.PaintClear(this.background);
             // hiển thị castle
             Common.PaintObject(this.background, new Bitmap(Common.path + @"\Images\castle.png"),
-                500, 780, 0, 0, 80, 80);
+                500, 680, 0, 0, 80, 80);
 
             // vẽ và di chuyển đạn player
             playerTank.ShowBulletAndMove(this.background);
@@ -185,7 +185,7 @@ namespace SuperTank
                         explosionManager.CreateExplosion(ExplosionSize.eBigExplosion, enemyTankManager.EnemyTanks[i].Bullets[j].Rect);
                         // cập nhật lại thông tin vị trí cho xe tăng player
                         playerTank.RectX = 21 * Common.STEP;
-                        playerTank.RectY = 39 * Common.STEP;
+                        playerTank.RectY = 36 * Common.STEP;
                         playerTank.IsActivate = false;
                         // viên đạn này của địch bị hủy
                         enemyTankManager.EnemyTanks[i].RemoveOneBullet(j);
@@ -218,7 +218,7 @@ namespace SuperTank
                     if (Common.IsCollision(enemyTankManager.EnemyTanks[i].Rect, playerTank.Bullets[k].Rect) &&
                         enemyTankManager.EnemyTanks[i].IsActivate)
                     {
-                        //Console.WriteLine("Địch bị trúng đạn");
+                        Console.WriteLine("Địch bị trúng đạn");
                         // thêm vụ nổ vào danh sách
                         explosionManager.CreateExplosion(ExplosionSize.eBigExplosion, playerTank.Bullets[k].Rect);
                         // cập nhật lại thông tin cho địch vừa bị bắn

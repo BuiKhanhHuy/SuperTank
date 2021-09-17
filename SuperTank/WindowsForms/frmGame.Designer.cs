@@ -120,7 +120,7 @@
             // tmrGameLoop
             // 
             this.tmrGameLoop.Enabled = true;
-            this.tmrGameLoop.Interval = 10;
+            this.tmrGameLoop.Interval = 20;
             this.tmrGameLoop.Tick += new System.EventHandler(this.tmrGameLoop_Tick);
             // 
             // label9
@@ -220,9 +220,9 @@
             this.panel1.Controls.Add(this.lblHpTankPlayer);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(1103, 0);
+            this.panel1.Location = new System.Drawing.Point(903, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(147, 900);
+            this.panel1.Size = new System.Drawing.Size(147, 800);
             this.panel1.TabIndex = 4;
             // 
             // pictureBox1
@@ -604,18 +604,17 @@
             // 
             // pnMainGame
             // 
-            this.pnMainGame.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnMainGame.BackColor = System.Drawing.Color.Black;
             this.pnMainGame.Controls.Add(this.lblCastleBlood);
             this.pnMainGame.Location = new System.Drawing.Point(3, 3);
             this.pnMainGame.Name = "pnMainGame";
-            this.pnMainGame.Size = new System.Drawing.Size(1100, 900);
+            this.pnMainGame.Size = new System.Drawing.Size(900, 800);
             this.pnMainGame.TabIndex = 5;
             // 
             // lblCastleBlood
             // 
             this.lblCastleBlood.BackColor = System.Drawing.Color.Red;
-            this.lblCastleBlood.Location = new System.Drawing.Point(500, 855);
+            this.lblCastleBlood.Location = new System.Drawing.Point(500, 755);
             this.lblCastleBlood.Name = "lblCastleBlood";
             this.lblCastleBlood.Size = new System.Drawing.Size(80, 5);
             this.lblCastleBlood.TabIndex = 0;
@@ -627,7 +626,7 @@
             this.panel2.Controls.Add(this.pnMainGame);
             this.panel2.Location = new System.Drawing.Point(-3, -3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1256, 906);
+            this.panel2.Size = new System.Drawing.Size(1056, 806);
             this.panel2.TabIndex = 0;
             // 
             // tmrShowItem
@@ -641,7 +640,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1250, 900);
+            this.ClientSize = new System.Drawing.Size(1050, 800);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.DoubleBuffered = true;

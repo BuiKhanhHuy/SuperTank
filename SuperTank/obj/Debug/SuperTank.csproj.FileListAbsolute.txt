@@ -12,7 +12,8 @@ E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.exe
 E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.pdb
 E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\bin\Debug\SuperTank.exe
 E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\bin\Debug\SuperTank.pdb
-E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.csprojResolveAssemblyReference.cache
 E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.frmGame.resources
 E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.Properties.Resources.resources
 E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.csproj.GenerateResource.Cache
+E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.csproj.AssemblyReference.cache
+E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.csproj.CoreCompileInputs.cache

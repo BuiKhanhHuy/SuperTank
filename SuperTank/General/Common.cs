@@ -15,8 +15,8 @@ namespace SuperTank.General
         #region Hằng số các thông số cố định
         public const int SCREEN_WIDTH = 1100;
         public const int SCREEN_HEIGHT = 900;
-        public const int NUMBER_OBJECT_WIDTH = 55;
-        public const int NUMBER_OBJECT_HEIGHT = 45;
+        public const int NUMBER_OBJECT_WIDTH = 45;
+        public const int NUMBER_OBJECT_HEIGHT = 40;
         public const int STEP = 20;
         public const int tankSize = 40;
         #endregion
