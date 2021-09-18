@@ -15,6 +15,7 @@ namespace SuperTank.Objects
     {
         private List<EnemyTank> enemyTanks;
         private List<EnemyTankParameter> enemyTankParameters;
+        private int numberEnemyTankDestroy;
 
         public EnemyTankManagement(string path)
         {
@@ -44,6 +45,7 @@ namespace SuperTank.Objects
                     enemyTankParameter.TankBulletSpeed = int.Parse(token[3]);
                     enemyTankParameter.XEnemyTank = int.Parse(token[4]);
                     enemyTankParameter.YEnemyTank = int.Parse(token[5]);
+                    enemyTankParameter.maxNumberEnemyTank = int.Parse(token[6]);
                     this.EnemyTankParameters.Add(enemyTankParameter);
                 }
                 enemyTankParameter = null;
@@ -56,12 +58,16 @@ namespace SuperTank.Objects
         {
             foreach (EnemyTankParameter enemyTankParameter in EnemyTankParameters)
             {
+                // thêm từng xe tăng địch vào danh sách
                 this.EnemyTanks.Add(this.CreateOneEnemyTank(enemyTankParameter));
+                // đếm số lượng địch cần tiêu diệt
+                numberEnemyTankDestroy += enemyTankParameter.maxNumberEnemyTank;
             }
+            //Console.WriteLine("Số lượng địch cần tiêu diệt: " + numberEnemyTankDestroy);
             //Console.WriteLine("Đã tạo " + this.NumberEnemyTank() + " xe tăng địch");
         }
         // skin xe tăng địch thay đổi theo năng lượng địch
-        private Skin SkinEnemyTank(EnemyTank enemyTank)
+        public Skin SkinEnemyTank(EnemyTank enemyTank)
         {
             switch (enemyTank.Energy)
             {
@@ -161,6 +167,12 @@ namespace SuperTank.Objects
             }
         }
 
+        // số lượng xe tăng địch
+        public int NumberEnemyTank()
+        {
+            return this.numberEnemyTankDestroy;
+        }
+
         #region properties
         public List<EnemyTank> EnemyTanks
         {
@@ -186,11 +198,7 @@ namespace SuperTank.Objects
                 enemyTankParameters = value;
             }
         }
-        // số lượng xe tăng địch
-        public int NumberEnemyTank()
-        {
-            return this.EnemyTankParameters.Count();
-        }
+        public int NumberEnemyTankDestroy { get => numberEnemyTankDestroy; set => numberEnemyTankDestroy = value; }
         #endregion properties
     }
 }

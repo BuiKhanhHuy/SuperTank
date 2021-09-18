@@ -16,37 +16,15 @@ namespace SuperTank.Objects
         #endregion  hằng số vị trí mặc đinh
 
         private bool isOn;
-        //private Timer timer;
         private ItemType itemType;
-        //private int time;
-        //private int time_copy;
 
-        public Item(int time)
+        public Item()
         {
-            // bộ đếm thời gian item
-            //timer = new Timer();
-            //timer.Tick += Timer_Tick;
-            //timer.Interval = 1000;
-            //this.time = time;
-            //this.time_copy = time;
             this.RectX = x_default;
             this.RectY = y_default;
             this.RectWidth = this.RectHeight = Common.tankSize;
             isOn = false;
         }
-
-        //// bộ đếm thời gian hiển thị vật phẩm
-        //private void Timer_Tick(object sender, EventArgs e)
-        //{
-        //    time_copy--;
-        //    if (time_copy < 0)
-        //    {
-        //        this.RectX = x_default;
-        //        this.RectY = y_default;
-        //        this.time_copy = this.time;
-        //        timer.Stop();
-        //    }
-        //}
 
         // hiển thị vật phẩm ra giao diện chơi
         public void CreateItem()
@@ -56,7 +34,7 @@ namespace SuperTank.Objects
             this.RectX = 200;
             this.RectY = 200;
             Random rand = new Random();
-            switch (rand.Next(0, 4))
+            switch (rand.Next(0, 1))
             {
                 case 0:
                     this.ItemType = ItemType.eItemHeart;

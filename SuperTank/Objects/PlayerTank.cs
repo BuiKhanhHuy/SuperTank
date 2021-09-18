@@ -35,5 +35,8 @@ namespace SuperTank.Objects
             }
             return false;
         }
+
+        // hiển thị vòng tròn bảo vệ
+
     }
 }

@@ -45,7 +45,7 @@ namespace SuperTank
             bool isWallCollision;
             // kiểm tra xe tăng địch có va chạm xe tăng player
             bool isPlayerTankCollision;
-            // kiểm tra xe tăng địch có va chạm với xe tắng địch đồng minh
+            // kiểm tra xe tăng địch có va chạm với xe tăng địch đồng minh
             bool isAlliedTanksCollision;
 
             isWallCollision = this.IsWallCollision(walls, this.directionTank);

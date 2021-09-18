@@ -14,5 +14,6 @@ namespace SuperTank.Objects
         public int TankBulletSpeed { set; get; }
         public int XEnemyTank { set; get; }
         public int YEnemyTank { set; get; }
+        public int maxNumberEnemyTank { set; get; }
     }
 }
