@@ -17,4 +17,3 @@ E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.Properties.Resources
 E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.csproj.GenerateResource.Cache
 E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.csproj.AssemblyReference.cache
 E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.csproj.CoreCompileInputs.cache
-E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.WindowsForms.frmGameOver.resources

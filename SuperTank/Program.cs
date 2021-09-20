@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SuperTank.WindowsForms;
 
 namespace SuperTank
 {
@@ -22,7 +21,7 @@ namespace SuperTank
                 SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGameOver());
+            Application.Run(new frmGame());
         }
     }
 }
