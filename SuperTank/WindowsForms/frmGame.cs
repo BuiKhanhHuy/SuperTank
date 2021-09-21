@@ -148,7 +148,7 @@ namespace SuperTank
                             if (lblCastleBlood.Width == 0)
                             {
                                 // game over
-                                this.GameNext();
+                                this.GameOver();
                             }
                         }
                     }

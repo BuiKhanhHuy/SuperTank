@@ -898,17 +898,17 @@
             // 
             // tmrGameOver
             // 
-            this.tmrGameOver.Interval = 10;
+            this.tmrGameOver.Interval = 5;
             this.tmrGameOver.Tick += new System.EventHandler(this.tmrGameOver_Tick);
             // 
             // tmrNextLevel
             // 
-            this.tmrNextLevel.Interval = 10;
+            this.tmrNextLevel.Interval = 5;
             this.tmrNextLevel.Tick += new System.EventHandler(this.tmrNextLevel_Tick);
             // 
             // tmrGameWin
             // 
-            this.tmrGameWin.Interval = 10;
+            this.tmrGameWin.Interval = 5;
             this.tmrGameWin.Tick += new System.EventHandler(this.tmrGameWin_Tick);
             // 
             // frmGame
