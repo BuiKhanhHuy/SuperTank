@@ -146,7 +146,10 @@ namespace SuperTank
                             //Console.WriteLine("player bắn trúng boss player!");
                             lblCastleBlood.Width -= 8;
                             if (lblCastleBlood.Width == 0)
-                                tmrGameLoop.Stop();
+                            {
+                                // game over
+                                this.GameNext();
+                            }
                         }
                     }
                 }
@@ -181,7 +184,10 @@ namespace SuperTank
                                 //Console.WriteLine("địch bắn trúng boss player!");
                                 lblCastleBlood.Width -= 8;
                                 if (lblCastleBlood.Width == 0)
-                                    tmrGameLoop.Stop();
+                                {
+                                    // game over
+                                    this.GameOver();
+                                }
                             }
                         }
                     }
@@ -445,6 +451,33 @@ namespace SuperTank
         {
 
         }
+
+        // game over
+        private void GameOver()
+        {
+            tmrGameLoop.Stop();
+            tmrShowItem.Stop();
+            tmrGameOver.Start();
+            pnGameOver.Enabled = true;
+        }
+
+        // game next
+        private void GameNext()
+        {
+            tmrGameLoop.Stop();
+            tmrShowItem.Stop();
+            tmrNextLevel.Start();
+            pnNextLevel.Enabled = true;
+        }
+
+        // game win
+        private void GameWin()
+        {
+            tmrGameLoop.Stop();
+            tmrShowItem.Stop();
+            tmrGameWin.Start();
+            pnGameWin.Enabled = true;
+        }
         #endregion các hàm xử lí chính
 
         #region các hàm hiển thị thông tin
@@ -457,6 +490,38 @@ namespace SuperTank
             }
         }
 
+        // hiển thị gameover
+        private void tmrGameOver_Tick(object sender, EventArgs e)
+        {
+            pnGameOver.Top += 10;
+            if (pnGameOver.Top >= 0)
+            {
+                tmrGameOver.Stop();
+                pnGameOver.Top += 3;
+            }
+        }
+
+        // hiển thị nextlevel
+        private void tmrNextLevel_Tick(object sender, EventArgs e)
+        {
+            pnNextLevel.Top += 10;
+            if (pnNextLevel.Top >= 0)
+            {
+                tmrNextLevel.Stop();
+                pnNextLevel.Top += 3;
+            }   
+        }
+
+        // hiển thị gamewin
+        private void tmrGameWin_Tick(object sender, EventArgs e)
+        {
+            pnGameWin.Top += 10;
+            if (pnGameWin.Top >= 0)
+            {
+                tmrGameWin.Stop();
+                pnGameWin.Top += 3;
+            }
+        }
 
         #endregion các hàm hiển thị thông tin
     }
