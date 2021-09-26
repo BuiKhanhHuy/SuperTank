@@ -14,7 +14,7 @@ namespace SuperTank.Objects
     {
         #region số frame lớn nhất
         private const int MAX_NUMBER_FRAME_TANK = 7;
-        private const int MAX_NUMBER_FRAME_EFFECT = 7;
+        private const int MAX_NUMBER_FRAME_EFFECT = 6;
         #endregion
         #region Số làm việc với frame (tank: có 8 frame 0-7; effect: )
         private int frx_tank = 7;

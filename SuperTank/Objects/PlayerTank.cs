@@ -17,12 +17,18 @@ namespace SuperTank.Objects
             this.moveSpeed = 10;
             this.tankBulletSpeed = 20;
             this.energy = 100;
-            int i = 21, j = 36;
-            this.RectX = i * Common.STEP;
-            this.RectY = j * Common.STEP;
+            this.SetLocation();
             this.DirectionTank = Direction.eUp;
             this.SkinTank = Skin.eYellow;
             bmpEffect = new Bitmap(Common.path + @"\Images\effect1.png");
+        }
+
+        // cập nhật vị trí xe tăng player
+        public void SetLocation()
+        {
+            int i = 16, j = 36;
+            this.RectX = i * Common.STEP;
+            this.RectY = j * Common.STEP;
         }
 
         // kiểm tra xe tăng player va chạm với xe tăng địch

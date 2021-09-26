@@ -56,6 +56,12 @@ namespace SuperTank.Objects
             this.walls.RemoveAt(index);
         }
 
+        // giải phóng danh sách tường
+        public void WallsClear()
+        {
+            this.walls.Clear();
+        }
+
         // hiển thị toàn bộ danh sách tường lên bit map nền
         public void ShowAllWall(Bitmap background)
         {

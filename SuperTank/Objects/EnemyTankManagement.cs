@@ -17,14 +17,27 @@ namespace SuperTank.Objects
         private List<EnemyTankParameter> enemyTankParameters;
         private int numberEnemyTankDestroy;
 
-        public EnemyTankManagement(string path)
+        public EnemyTankManagement()
         {
             EnemyTanks = new List<EnemyTank>();
             EnemyTankParameters = new List<EnemyTankParameter>();
+        }
+
+        // load danh sách địch
+        public void Init_EnemyTankManagement(string path)
+        {
+            this.numberEnemyTankDestroy = 0;
             // đọc thông số tất cả xe tăng địch
             this.ReadEnemyTankParameters(path);
             // tạo xe tăng địch
             this.CreateListEnemyTank();
+        }
+
+        // giải phóng danh sách địch
+        public void EnemyTanksClear()
+        {
+            this.enemyTankParameters.Clear();
+            this.enemyTanks.Clear();
         }
 
         #region Các hàm khởi tạo xe tăng địch nội bộ

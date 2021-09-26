@@ -36,7 +36,7 @@
             this.picItem = new System.Windows.Forms.PictureBox();
             this.picHeart = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblLevel = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -63,6 +63,17 @@
             this.pnMainGame = new System.Windows.Forms.Panel();
             this.lblCastleBlood = new System.Windows.Forms.Label();
             this.pnRedBackground = new System.Windows.Forms.Panel();
+            this.pnGameWin = new System.Windows.Forms.Panel();
+            this.picGameWinRank = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
             this.pnGameOver = new System.Windows.Forms.Panel();
             this.picGameOverRank = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,7 +86,7 @@
             this.btnGameOverMenu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pnNextLevel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picNextLevelRank = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblNextLevelTotal = new System.Windows.Forms.Label();
             this.lblNextLevelScores = new System.Windows.Forms.Label();
@@ -85,17 +96,6 @@
             this.btnNextLevelNext = new System.Windows.Forms.Button();
             this.btnNextLevelMenu = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.pnGameWin = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
             this.tmrShowItem = new System.Windows.Forms.Timer(this.components);
             this.tmrGameOver = new System.Windows.Forms.Timer(this.components);
             this.tmrNextLevel = new System.Windows.Forms.Timer(this.components);
@@ -125,12 +125,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTank00)).BeginInit();
             this.pnMainGame.SuspendLayout();
             this.pnRedBackground.SuspendLayout();
+            this.pnGameWin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGameWinRank)).BeginInit();
             this.pnGameOver.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGameOverRank)).BeginInit();
             this.pnNextLevel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnGameWin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNextLevelRank)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrGameLoop
@@ -193,7 +193,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblLevel);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -227,16 +227,16 @@
             this.panel1.Size = new System.Drawing.Size(147, 800);
             this.panel1.TabIndex = 4;
             // 
-            // label3
+            // lblLevel
             // 
-            this.label3.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Aqua;
-            this.label3.Location = new System.Drawing.Point(8, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 23);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "LEVEL 1";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLevel.Font = new System.Drawing.Font("Cooper Black", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevel.ForeColor = System.Drawing.Color.Aqua;
+            this.lblLevel.Location = new System.Drawing.Point(8, 8);
+            this.lblLevel.Name = "lblLevel";
+            this.lblLevel.Size = new System.Drawing.Size(132, 23);
+            this.lblLevel.TabIndex = 48;
+            this.lblLevel.Text = "LEVEL 1";
+            this.lblLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -475,7 +475,7 @@
             // lblCastleBlood
             // 
             this.lblCastleBlood.BackColor = System.Drawing.Color.Red;
-            this.lblCastleBlood.Location = new System.Drawing.Point(500, 755);
+            this.lblCastleBlood.Location = new System.Drawing.Point(400, 755);
             this.lblCastleBlood.Name = "lblCastleBlood";
             this.lblCastleBlood.Size = new System.Drawing.Size(80, 5);
             this.lblCastleBlood.TabIndex = 0;
@@ -489,279 +489,15 @@
             this.pnRedBackground.Controls.Add(this.pnNextLevel);
             this.pnRedBackground.Controls.Add(this.pnMainGame);
             this.pnRedBackground.Controls.Add(this.panel1);
-            this.pnRedBackground.Location = new System.Drawing.Point(102, 73);
+            this.pnRedBackground.Location = new System.Drawing.Point(-9, -3);
             this.pnRedBackground.Name = "pnRedBackground";
             this.pnRedBackground.Size = new System.Drawing.Size(1056, 806);
             this.pnRedBackground.TabIndex = 0;
             // 
-            // pnGameOver
-            // 
-            this.pnGameOver.BackColor = System.Drawing.Color.Black;
-            this.pnGameOver.Controls.Add(this.picGameOverRank);
-            this.pnGameOver.Controls.Add(this.label10);
-            this.pnGameOver.Controls.Add(this.lblGameOverTotal);
-            this.pnGameOver.Controls.Add(this.lblGameOverScores);
-            this.pnGameOver.Controls.Add(this.label5);
-            this.pnGameOver.Controls.Add(this.label4);
-            this.pnGameOver.Controls.Add(this.lblGameOverLevel);
-            this.pnGameOver.Controls.Add(this.btnGameOverRetry);
-            this.pnGameOver.Controls.Add(this.btnGameOverMenu);
-            this.pnGameOver.Controls.Add(this.label1);
-            this.pnGameOver.Enabled = false;
-            this.pnGameOver.Location = new System.Drawing.Point(3, -800);
-            this.pnGameOver.Name = "pnGameOver";
-            this.pnGameOver.Size = new System.Drawing.Size(1050, 800);
-            this.pnGameOver.TabIndex = 1;
-            // 
-            // picGameOverRank
-            // 
-            this.picGameOverRank.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picGameOverRank.Location = new System.Drawing.Point(445, 243);
-            this.picGameOverRank.Name = "picGameOverRank";
-            this.picGameOverRank.Size = new System.Drawing.Size(150, 150);
-            this.picGameOverRank.TabIndex = 9;
-            this.picGameOverRank.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(151, 184);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(742, 5);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "label10";
-            // 
-            // lblGameOverTotal
-            // 
-            this.lblGameOverTotal.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameOverTotal.ForeColor = System.Drawing.Color.White;
-            this.lblGameOverTotal.Location = new System.Drawing.Point(557, 594);
-            this.lblGameOverTotal.Name = "lblGameOverTotal";
-            this.lblGameOverTotal.Size = new System.Drawing.Size(213, 37);
-            this.lblGameOverTotal.TabIndex = 7;
-            this.lblGameOverTotal.Text = "0";
-            this.lblGameOverTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblGameOverScores
-            // 
-            this.lblGameOverScores.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameOverScores.ForeColor = System.Drawing.Color.White;
-            this.lblGameOverScores.Location = new System.Drawing.Point(557, 516);
-            this.lblGameOverScores.Name = "lblGameOverScores";
-            this.lblGameOverScores.Size = new System.Drawing.Size(213, 37);
-            this.lblGameOverScores.TabIndex = 6;
-            this.lblGameOverScores.Text = "0";
-            this.lblGameOverScores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(346, 594);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(198, 39);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Total Enemy:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(346, 516);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 39);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Scores:";
-            // 
-            // lblGameOverLevel
-            // 
-            this.lblGameOverLevel.AutoSize = true;
-            this.lblGameOverLevel.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameOverLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblGameOverLevel.Location = new System.Drawing.Point(469, 424);
-            this.lblGameOverLevel.Name = "lblGameOverLevel";
-            this.lblGameOverLevel.Size = new System.Drawing.Size(105, 39);
-            this.lblGameOverLevel.TabIndex = 3;
-            this.lblGameOverLevel.Text = "level 5";
-            // 
-            // btnGameOverRetry
-            // 
-            this.btnGameOverRetry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGameOverRetry.FlatAppearance.BorderSize = 0;
-            this.btnGameOverRetry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGameOverRetry.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGameOverRetry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnGameOverRetry.Location = new System.Drawing.Point(613, 705);
-            this.btnGameOverRetry.Name = "btnGameOverRetry";
-            this.btnGameOverRetry.Size = new System.Drawing.Size(134, 55);
-            this.btnGameOverRetry.TabIndex = 2;
-            this.btnGameOverRetry.Text = "Retry";
-            this.btnGameOverRetry.UseVisualStyleBackColor = false;
-            // 
-            // btnGameOverMenu
-            // 
-            this.btnGameOverMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGameOverMenu.FlatAppearance.BorderSize = 0;
-            this.btnGameOverMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGameOverMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGameOverMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnGameOverMenu.Location = new System.Drawing.Point(308, 705);
-            this.btnGameOverMenu.Name = "btnGameOverMenu";
-            this.btnGameOverMenu.Size = new System.Drawing.Size(134, 55);
-            this.btnGameOverMenu.TabIndex = 1;
-            this.btnGameOverMenu.Text = "Menu";
-            this.btnGameOverMenu.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Algerian", 79.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(8, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1035, 162);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "GAME OVER";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnNextLevel
-            // 
-            this.pnNextLevel.BackColor = System.Drawing.Color.Black;
-            this.pnNextLevel.Controls.Add(this.pictureBox1);
-            this.pnNextLevel.Controls.Add(this.label2);
-            this.pnNextLevel.Controls.Add(this.lblNextLevelTotal);
-            this.pnNextLevel.Controls.Add(this.lblNextLevelScores);
-            this.pnNextLevel.Controls.Add(this.label11);
-            this.pnNextLevel.Controls.Add(this.label12);
-            this.pnNextLevel.Controls.Add(this.lblNextLevelLevel);
-            this.pnNextLevel.Controls.Add(this.btnNextLevelNext);
-            this.pnNextLevel.Controls.Add(this.btnNextLevelMenu);
-            this.pnNextLevel.Controls.Add(this.label14);
-            this.pnNextLevel.Enabled = false;
-            this.pnNextLevel.Location = new System.Drawing.Point(3, -800);
-            this.pnNextLevel.Name = "pnNextLevel";
-            this.pnNextLevel.Size = new System.Drawing.Size(1050, 800);
-            this.pnNextLevel.TabIndex = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(445, 243);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(151, 184);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(742, 5);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "label2";
-            // 
-            // lblNextLevelTotal
-            // 
-            this.lblNextLevelTotal.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNextLevelTotal.ForeColor = System.Drawing.Color.White;
-            this.lblNextLevelTotal.Location = new System.Drawing.Point(557, 594);
-            this.lblNextLevelTotal.Name = "lblNextLevelTotal";
-            this.lblNextLevelTotal.Size = new System.Drawing.Size(213, 37);
-            this.lblNextLevelTotal.TabIndex = 7;
-            this.lblNextLevelTotal.Text = "0";
-            this.lblNextLevelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblNextLevelScores
-            // 
-            this.lblNextLevelScores.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNextLevelScores.ForeColor = System.Drawing.Color.White;
-            this.lblNextLevelScores.Location = new System.Drawing.Point(557, 516);
-            this.lblNextLevelScores.Name = "lblNextLevelScores";
-            this.lblNextLevelScores.Size = new System.Drawing.Size(213, 37);
-            this.lblNextLevelScores.TabIndex = 6;
-            this.lblNextLevelScores.Text = "0";
-            this.lblNextLevelScores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(346, 594);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(198, 39);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Total Enemy:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(346, 516);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(116, 39);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "Scores:";
-            // 
-            // lblNextLevelLevel
-            // 
-            this.lblNextLevelLevel.AutoSize = true;
-            this.lblNextLevelLevel.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNextLevelLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblNextLevelLevel.Location = new System.Drawing.Point(469, 424);
-            this.lblNextLevelLevel.Name = "lblNextLevelLevel";
-            this.lblNextLevelLevel.Size = new System.Drawing.Size(105, 39);
-            this.lblNextLevelLevel.TabIndex = 3;
-            this.lblNextLevelLevel.Text = "level 5";
-            // 
-            // btnNextLevelNext
-            // 
-            this.btnNextLevelNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNextLevelNext.FlatAppearance.BorderSize = 0;
-            this.btnNextLevelNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextLevelNext.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextLevelNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnNextLevelNext.Location = new System.Drawing.Point(613, 705);
-            this.btnNextLevelNext.Name = "btnNextLevelNext";
-            this.btnNextLevelNext.Size = new System.Drawing.Size(134, 55);
-            this.btnNextLevelNext.TabIndex = 2;
-            this.btnNextLevelNext.Text = "Next";
-            this.btnNextLevelNext.UseVisualStyleBackColor = false;
-            // 
-            // btnNextLevelMenu
-            // 
-            this.btnNextLevelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNextLevelMenu.FlatAppearance.BorderSize = 0;
-            this.btnNextLevelMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextLevelMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextLevelMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnNextLevelMenu.Location = new System.Drawing.Point(308, 705);
-            this.btnNextLevelMenu.Name = "btnNextLevelMenu";
-            this.btnNextLevelMenu.Size = new System.Drawing.Size(134, 55);
-            this.btnNextLevelMenu.TabIndex = 1;
-            this.btnNextLevelMenu.Text = "Menu";
-            this.btnNextLevelMenu.UseVisualStyleBackColor = false;
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Algerian", 79.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(8, 42);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(1035, 162);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "COMPLETE";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pnGameWin
             // 
             this.pnGameWin.BackColor = System.Drawing.Color.Black;
-            this.pnGameWin.Controls.Add(this.pictureBox2);
+            this.pnGameWin.Controls.Add(this.picGameWinRank);
             this.pnGameWin.Controls.Add(this.label7);
             this.pnGameWin.Controls.Add(this.label8);
             this.pnGameWin.Controls.Add(this.label13);
@@ -772,19 +508,18 @@
             this.pnGameWin.Controls.Add(this.button2);
             this.pnGameWin.Controls.Add(this.label18);
             this.pnGameWin.Enabled = false;
-            this.pnGameWin.Location = new System.Drawing.Point(3, -800);
+            this.pnGameWin.Location = new System.Drawing.Point(3, -900);
             this.pnGameWin.Name = "pnGameWin";
             this.pnGameWin.Size = new System.Drawing.Size(1050, 800);
             this.pnGameWin.TabIndex = 10;
             // 
-            // pictureBox2
+            // picGameWinRank
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(445, 243);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
+            this.picGameWinRank.Location = new System.Drawing.Point(445, 243);
+            this.picGameWinRank.Name = "picGameWinRank";
+            this.picGameWinRank.Size = new System.Drawing.Size(150, 150);
+            this.picGameWinRank.TabIndex = 9;
+            this.picGameWinRank.TabStop = false;
             // 
             // label7
             // 
@@ -891,6 +626,283 @@
             this.label18.Text = "VICTORY";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnGameOver
+            // 
+            this.pnGameOver.BackColor = System.Drawing.Color.Black;
+            this.pnGameOver.Controls.Add(this.picGameOverRank);
+            this.pnGameOver.Controls.Add(this.label10);
+            this.pnGameOver.Controls.Add(this.lblGameOverTotal);
+            this.pnGameOver.Controls.Add(this.lblGameOverScores);
+            this.pnGameOver.Controls.Add(this.label5);
+            this.pnGameOver.Controls.Add(this.label4);
+            this.pnGameOver.Controls.Add(this.lblGameOverLevel);
+            this.pnGameOver.Controls.Add(this.btnGameOverRetry);
+            this.pnGameOver.Controls.Add(this.btnGameOverMenu);
+            this.pnGameOver.Controls.Add(this.label1);
+            this.pnGameOver.Enabled = false;
+            this.pnGameOver.Location = new System.Drawing.Point(3, -900);
+            this.pnGameOver.Name = "pnGameOver";
+            this.pnGameOver.Size = new System.Drawing.Size(1050, 800);
+            this.pnGameOver.TabIndex = 1;
+            // 
+            // picGameOverRank
+            // 
+            this.picGameOverRank.BackColor = System.Drawing.Color.Transparent;
+            this.picGameOverRank.Location = new System.Drawing.Point(445, 243);
+            this.picGameOverRank.Name = "picGameOverRank";
+            this.picGameOverRank.Size = new System.Drawing.Size(150, 150);
+            this.picGameOverRank.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGameOverRank.TabIndex = 9;
+            this.picGameOverRank.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(151, 184);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(742, 5);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "label10";
+            // 
+            // lblGameOverTotal
+            // 
+            this.lblGameOverTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblGameOverTotal.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameOverTotal.ForeColor = System.Drawing.Color.White;
+            this.lblGameOverTotal.Location = new System.Drawing.Point(557, 594);
+            this.lblGameOverTotal.Name = "lblGameOverTotal";
+            this.lblGameOverTotal.Size = new System.Drawing.Size(213, 37);
+            this.lblGameOverTotal.TabIndex = 7;
+            this.lblGameOverTotal.Text = "0";
+            this.lblGameOverTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblGameOverScores
+            // 
+            this.lblGameOverScores.BackColor = System.Drawing.Color.Transparent;
+            this.lblGameOverScores.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameOverScores.ForeColor = System.Drawing.Color.White;
+            this.lblGameOverScores.Location = new System.Drawing.Point(557, 516);
+            this.lblGameOverScores.Name = "lblGameOverScores";
+            this.lblGameOverScores.Size = new System.Drawing.Size(213, 37);
+            this.lblGameOverScores.TabIndex = 6;
+            this.lblGameOverScores.Text = "0";
+            this.lblGameOverScores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(346, 594);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(198, 39);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Total Enemy:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(346, 516);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 39);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Scores:";
+            // 
+            // lblGameOverLevel
+            // 
+            this.lblGameOverLevel.AutoSize = true;
+            this.lblGameOverLevel.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameOverLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblGameOverLevel.Location = new System.Drawing.Point(469, 424);
+            this.lblGameOverLevel.Name = "lblGameOverLevel";
+            this.lblGameOverLevel.Size = new System.Drawing.Size(105, 39);
+            this.lblGameOverLevel.TabIndex = 3;
+            this.lblGameOverLevel.Text = "level 5";
+            // 
+            // btnGameOverRetry
+            // 
+            this.btnGameOverRetry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGameOverRetry.FlatAppearance.BorderSize = 0;
+            this.btnGameOverRetry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGameOverRetry.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGameOverRetry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnGameOverRetry.Location = new System.Drawing.Point(613, 705);
+            this.btnGameOverRetry.Name = "btnGameOverRetry";
+            this.btnGameOverRetry.Size = new System.Drawing.Size(134, 55);
+            this.btnGameOverRetry.TabIndex = 2;
+            this.btnGameOverRetry.Tag = "tag_gamestart";
+            this.btnGameOverRetry.Text = "Retry";
+            this.btnGameOverRetry.UseVisualStyleBackColor = false;
+            this.btnGameOverRetry.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // btnGameOverMenu
+            // 
+            this.btnGameOverMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGameOverMenu.FlatAppearance.BorderSize = 0;
+            this.btnGameOverMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGameOverMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGameOverMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnGameOverMenu.Location = new System.Drawing.Point(308, 705);
+            this.btnGameOverMenu.Name = "btnGameOverMenu";
+            this.btnGameOverMenu.Size = new System.Drawing.Size(134, 55);
+            this.btnGameOverMenu.TabIndex = 1;
+            this.btnGameOverMenu.Tag = "tag_menu";
+            this.btnGameOverMenu.Text = "Menu";
+            this.btnGameOverMenu.UseVisualStyleBackColor = false;
+            this.btnGameOverMenu.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Algerian", 79.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(8, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1035, 162);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "GAME OVER";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnNextLevel
+            // 
+            this.pnNextLevel.BackColor = System.Drawing.Color.Black;
+            this.pnNextLevel.Controls.Add(this.picNextLevelRank);
+            this.pnNextLevel.Controls.Add(this.label2);
+            this.pnNextLevel.Controls.Add(this.lblNextLevelTotal);
+            this.pnNextLevel.Controls.Add(this.lblNextLevelScores);
+            this.pnNextLevel.Controls.Add(this.label11);
+            this.pnNextLevel.Controls.Add(this.label12);
+            this.pnNextLevel.Controls.Add(this.lblNextLevelLevel);
+            this.pnNextLevel.Controls.Add(this.btnNextLevelNext);
+            this.pnNextLevel.Controls.Add(this.btnNextLevelMenu);
+            this.pnNextLevel.Controls.Add(this.label14);
+            this.pnNextLevel.Enabled = false;
+            this.pnNextLevel.Location = new System.Drawing.Point(3, -900);
+            this.pnNextLevel.Name = "pnNextLevel";
+            this.pnNextLevel.Size = new System.Drawing.Size(1050, 800);
+            this.pnNextLevel.TabIndex = 10;
+            // 
+            // picNextLevelRank
+            // 
+            this.picNextLevelRank.Location = new System.Drawing.Point(445, 243);
+            this.picNextLevelRank.Name = "picNextLevelRank";
+            this.picNextLevelRank.Size = new System.Drawing.Size(150, 150);
+            this.picNextLevelRank.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picNextLevelRank.TabIndex = 9;
+            this.picNextLevelRank.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(151, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(742, 5);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "label2";
+            // 
+            // lblNextLevelTotal
+            // 
+            this.lblNextLevelTotal.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNextLevelTotal.ForeColor = System.Drawing.Color.White;
+            this.lblNextLevelTotal.Location = new System.Drawing.Point(557, 594);
+            this.lblNextLevelTotal.Name = "lblNextLevelTotal";
+            this.lblNextLevelTotal.Size = new System.Drawing.Size(213, 37);
+            this.lblNextLevelTotal.TabIndex = 7;
+            this.lblNextLevelTotal.Text = "0";
+            this.lblNextLevelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblNextLevelScores
+            // 
+            this.lblNextLevelScores.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNextLevelScores.ForeColor = System.Drawing.Color.White;
+            this.lblNextLevelScores.Location = new System.Drawing.Point(557, 516);
+            this.lblNextLevelScores.Name = "lblNextLevelScores";
+            this.lblNextLevelScores.Size = new System.Drawing.Size(213, 37);
+            this.lblNextLevelScores.TabIndex = 6;
+            this.lblNextLevelScores.Text = "0";
+            this.lblNextLevelScores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(346, 594);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(198, 39);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Total Enemy:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(346, 516);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(116, 39);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Scores:";
+            // 
+            // lblNextLevelLevel
+            // 
+            this.lblNextLevelLevel.AutoSize = true;
+            this.lblNextLevelLevel.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNextLevelLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblNextLevelLevel.Location = new System.Drawing.Point(469, 424);
+            this.lblNextLevelLevel.Name = "lblNextLevelLevel";
+            this.lblNextLevelLevel.Size = new System.Drawing.Size(105, 39);
+            this.lblNextLevelLevel.TabIndex = 3;
+            this.lblNextLevelLevel.Text = "level 5";
+            // 
+            // btnNextLevelNext
+            // 
+            this.btnNextLevelNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNextLevelNext.FlatAppearance.BorderSize = 0;
+            this.btnNextLevelNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextLevelNext.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextLevelNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnNextLevelNext.Location = new System.Drawing.Point(613, 705);
+            this.btnNextLevelNext.Name = "btnNextLevelNext";
+            this.btnNextLevelNext.Size = new System.Drawing.Size(134, 55);
+            this.btnNextLevelNext.TabIndex = 2;
+            this.btnNextLevelNext.Tag = "tag_gamestart";
+            this.btnNextLevelNext.Text = "Next";
+            this.btnNextLevelNext.UseVisualStyleBackColor = false;
+            this.btnNextLevelNext.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // btnNextLevelMenu
+            // 
+            this.btnNextLevelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNextLevelMenu.FlatAppearance.BorderSize = 0;
+            this.btnNextLevelMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextLevelMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextLevelMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnNextLevelMenu.Location = new System.Drawing.Point(308, 705);
+            this.btnNextLevelMenu.Name = "btnNextLevelMenu";
+            this.btnNextLevelMenu.Size = new System.Drawing.Size(134, 55);
+            this.btnNextLevelMenu.TabIndex = 1;
+            this.btnNextLevelMenu.Tag = "tag_menu";
+            this.btnNextLevelMenu.Text = "Menu";
+            this.btnNextLevelMenu.UseVisualStyleBackColor = false;
+            this.btnNextLevelMenu.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Algerian", 79.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label14.Location = new System.Drawing.Point(8, 42);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(1035, 162);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "COMPLETE";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tmrShowItem
             // 
             this.tmrShowItem.Interval = 1000;
@@ -913,11 +925,14 @@
             // 
             // frmGame
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1261, 953);
+            this.ClientSize = new System.Drawing.Size(1038, 800);
             this.Controls.Add(this.pnRedBackground);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Name = "frmGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SUPER TANK";
@@ -951,15 +966,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTank00)).EndInit();
             this.pnMainGame.ResumeLayout(false);
             this.pnRedBackground.ResumeLayout(false);
+            this.pnGameWin.ResumeLayout(false);
+            this.pnGameWin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGameWinRank)).EndInit();
             this.pnGameOver.ResumeLayout(false);
             this.pnGameOver.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGameOverRank)).EndInit();
             this.pnNextLevel.ResumeLayout(false);
             this.pnNextLevel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnGameWin.ResumeLayout(false);
-            this.pnGameWin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNextLevelRank)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -995,7 +1010,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblLevel;
         private System.Windows.Forms.Panel pnMainGame;
         private System.Windows.Forms.Panel pnRedBackground;
         private System.Windows.Forms.Label lblCastleBlood;
@@ -1004,7 +1019,7 @@
         private System.Windows.Forms.Timer tmrNextLevel;
         private System.Windows.Forms.Timer tmrGameWin;
         private System.Windows.Forms.Panel pnNextLevel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picNextLevelRank;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblNextLevelTotal;
         private System.Windows.Forms.Label lblNextLevelScores;
@@ -1026,7 +1041,7 @@
         private System.Windows.Forms.PictureBox picGameOverRank;
         private System.Windows.Forms.Panel pnGameOver;
         private System.Windows.Forms.Panel pnGameWin;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picGameWinRank;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label13;

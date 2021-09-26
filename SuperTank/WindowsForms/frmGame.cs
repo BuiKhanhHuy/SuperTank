@@ -31,6 +31,7 @@ namespace SuperTank
         #endregion Đối tượng
         #region thuộc tính thông tin
         private PictureBox[] picNumberEnemyTanks;
+        private int level = 1;
         #endregion thuộc tính thông tin
         public frmGame()
         {
@@ -59,27 +60,65 @@ namespace SuperTank
             // tạo đối tượng xe tăng player
             playerTank = new PlayerTank();
             playerTank.LoadImage(Common.path + @"\Images\tank.png");
+            // khởi tạo danh sách địch
+            enemyTankManager = new EnemyTankManagement();
             // khởi tạo quà
             item = new Item();
-            // khởi tạo game
-            GameStart();
-        }
 
+            #region khởi tạo game
+            //// load map
+            //Array.Copy(Common.ReadMap(String.Format("{0}{1:00}.txt", Common.path + @"\Maps\Map", 1),
+            //    Common.NUMBER_OBJECT_HEIGHT, Common.NUMBER_OBJECT_WIDTH),
+            //this.map, Common.NUMBER_OBJECT_HEIGHT * Common.NUMBER_OBJECT_WIDTH);
+            //// tạo danh sách tường
+            //wallManager.CreatWall(this.map);
+            //// khởi tạo tất cả địch
+            //enemyTankManager.Init_EnemyTankManagement(String.Format("{0}{1:00}.txt",
+            //    Common.path + @"\EnemyTankParameters\EnemyParameter", 1));
+            ////// hiển thị số lượng xe tăng địch cần tiêu diệt bên bảng thông tin
+            //ShowNumberEnemyTankDestroy(enemyTankManager.NumberEnemyTank());
+            //Console.WriteLine("SO LUONG PHAI TIEU DIET: " + enemyTankManager.NumberEnemyTank());
+            //// cập nhật vị trí xe tăng player
+            //playerTank.SetLocation();
+            //// cập nhật năng lượng xe tăng player 
+            //playerTank.Energy = 100;
+            //// cập nhật thông tin máu hiển thị của xe tăng player
+            //this.lblHpTankPlayer.Width = playerTank.Energy;
+            //// cập nhật thông tin máu hiển thị của thành
+            //this.lblCastleBlood.Width = 80;
+            //// set thời gian item và chạy item
+            //timeItem = 50;
+            //tmrShowItem.Start();
+            //tmrGameLoop.Start();
+
+            #endregion khởi tạo game
+            this.GameStart();
+        }
         // hàm khởi tạo game mới
         private void GameStart()
         {
             // load map
-            Array.Copy(Common.ReadMap(String.Format("{0}{1:00}.txt", Common.path + @"\Maps\Map", 2),
+            Array.Copy(Common.ReadMap(String.Format("{0}{1:00}.txt", Common.path + @"\Maps\Map", this.level),
                 Common.NUMBER_OBJECT_HEIGHT, Common.NUMBER_OBJECT_WIDTH),
             this.map, Common.NUMBER_OBJECT_HEIGHT * Common.NUMBER_OBJECT_WIDTH);
+            // giải phóng danh sách tường cũ
+            wallManager.WallsClear();
+            // giải phóng danh sách địch
+            enemyTankManager.EnemyTanksClear();
+            // giải phóng tất cả vụ nổ
+            explosionManager.Explosions.Clear();
+            GC.Collect();
             // tạo danh sách tường
             wallManager.CreatWall(this.map);
             // khởi tạo danh sách địch
-            enemyTankManager = null;
-            enemyTankManager = new EnemyTankManagement(String.Format("{0}{1:00}.txt",
-                Common.path + @"\EnemyTankParameters\EnemyParameter", 2));
+            enemyTankManager.Init_EnemyTankManagement(String.Format("{0}{1:00}.txt",
+                Common.path + @"\EnemyTankParameters\EnemyParameter", this.level));
+            // hiển thị thông tin level hiện tại
+            lblLevel.Text = String.Format("LEVEL {0}", this.level);
             // hiển thị số lượng xe tăng địch cần tiêu diệt bên bảng thông tin
             ShowNumberEnemyTankDestroy(enemyTankManager.NumberEnemyTank());
+            // cập nhật vị trí xe tăng player
+            playerTank.SetLocation();
             // cập nhật năng lượng xe tăng player 
             playerTank.Energy = 100;
             // cập nhật thông tin máu hiển thị của xe tăng player
@@ -89,8 +128,8 @@ namespace SuperTank
             // set thời gian item và chạy item
             timeItem = 50;
             tmrShowItem.Start();
+            tmrGameLoop.Start();
         }
-
 
         #region Vòng lặp game
         private void tmrGameLoop_Tick(object sender, EventArgs e)
@@ -99,20 +138,20 @@ namespace SuperTank
             Common.PaintClear(this.background);
             // hiển thị castle
             Common.PaintObject(this.background, new Bitmap(Common.path + @"\Images\castle.png"),
-                500, 680, 0, 0, 80, 80);
+                400, 680, 0, 0, 80, 80);
 
             // vẽ và di chuyển đạn player
             playerTank.ShowBulletAndMove(this.background);
-            // tạo và di chuyển đạn của địch
+            //tạo và di chuyển đạn của địch
             foreach (EnemyTank enemyTank in enemyTankManager.EnemyTanks)
             {
                 enemyTank.CreatBullet(Common.path + @"\Images\bullet2.png");
                 enemyTank.ShowBulletAndMove(this.background);
             }
 
-            // di chuyển toàn bộ xe tăng địch
+            //di chuyển toàn bộ xe tăng địch
             enemyTankManager.MoveAllEnemyTank(wallManager.Walls, playerTank);
-            // hiển thị toàn bộ xe tăng địch
+            //hiển thị toàn bộ xe tăng địch
             enemyTankManager.ShowAllEnemyTank(this.background);
 
             #region đạn player và đạn địch trúng tường
@@ -210,8 +249,7 @@ namespace SuperTank
                         // thêm vụ nổ vào danh sách
                         explosionManager.CreateExplosion(ExplosionSize.eBigExplosion, enemyTankManager.EnemyTanks[i].Bullets[j].Rect);
                         // cập nhật lại thông tin vị trí cho xe tăng player
-                        playerTank.RectX = 21 * Common.STEP;
-                        playerTank.RectY = 36 * Common.STEP;
+                        playerTank.SetLocation();
                         playerTank.IsActivate = false;
                         // viên đạn này của địch bị hủy
                         enemyTankManager.EnemyTanks[i].RemoveOneBullet(j);
@@ -274,6 +312,12 @@ namespace SuperTank
                             enemyTankManager.NumberEnemyTankDestroy--;
                             // cập nhật lại thông tin số địch còn lại lên pic
                             picNumberEnemyTanks[enemyTankManager.NumberEnemyTankDestroy].Image = null;
+                            // đã tiêu diệt toàn bộ kẻ địch
+                            if (enemyTankManager.NumberEnemyTankDestroy == 0)
+                            {
+                                // Gamenext
+                                this.GameNext();
+                            }  
                         }
                         #endregion kiểm tra cập nhật vị trí xe tăng địch
 
@@ -335,8 +379,9 @@ namespace SuperTank
             wallManager.ShowAllWall(this.background);
             //hiển thị vụ nổ
             explosionManager.ShowAllExplosion(this.background);
-            // vẽ lại Bitmap background lên form
+            //vẽ lại Bitmap background lên form
             graphics.DrawImageUnscaled(this.background, 0, 0);
+
         }
         #endregion Vòng lặp game
 
@@ -386,6 +431,7 @@ namespace SuperTank
         private void frmGame_KeyUp(object sender, KeyEventArgs e)
         {
             bool isMove_local = true;
+
             switch (e.KeyCode)
             {
                 case Keys.Left:
@@ -415,14 +461,53 @@ namespace SuperTank
                 isMove_local = true;
             }
             // bắn đạn
-            if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Space)
             {
-                //Console.WriteLine("Bắn");
                 //playerTank.IsFire = true;
+                //Console.WriteLine("Bắn");
                 playerTank.CreatBullet(Common.path + @"\Images\bullet1.png");
             }
         }
         #endregion sự kiện phím
+
+        #region các hàm xử lí chính
+        private void PlayerBulletHitsWall()
+        {
+
+        }
+
+        // game over
+        private void GameOver()
+        {
+            tmrGameLoop.Stop();
+            tmrShowItem.Stop();
+            tmrGameOver.Start();
+            pnGameOver.Enabled = true;
+            picGameOverRank.Image = Image.FromFile(String.Format("{0}{1:00}.png", 
+                Common.path + @"\Images\rank", 1));
+        }
+
+        // game next
+        private void GameNext()
+        {
+            this.level++;
+            tmrGameLoop.Stop();
+            tmrShowItem.Stop();
+            tmrNextLevel.Start();
+            pnNextLevel.Enabled = true;
+            picNextLevelRank.Image = Image.FromFile(String.Format("{0}{1:00}.png",
+              Common.path + @"\Images\rank", 1));
+        }
+
+        // game win
+        private void GameWin()
+        {
+            tmrGameLoop.Stop();
+            tmrShowItem.Stop();
+            tmrGameWin.Start();
+            pnGameWin.Enabled = true;
+        }
+        #endregion các hàm xử lí chính
 
         #region xử lí thời gian hiển thị lại vật phẩm
         private int timeItem = 50;
@@ -446,40 +531,6 @@ namespace SuperTank
         }
         #endregion xử lí thời gian hiển thị lại vật phẩm
 
-        #region các hàm xử lí chính
-        private void PlayerBulletHitsWall()
-        {
-
-        }
-
-        // game over
-        private void GameOver()
-        {
-            tmrGameLoop.Stop();
-            tmrShowItem.Stop();
-            tmrGameOver.Start();
-            pnGameOver.Enabled = true;
-        }
-
-        // game next
-        private void GameNext()
-        {
-            tmrGameLoop.Stop();
-            tmrShowItem.Stop();
-            tmrNextLevel.Start();
-            pnNextLevel.Enabled = true;
-        }
-
-        // game win
-        private void GameWin()
-        {
-            tmrGameLoop.Stop();
-            tmrShowItem.Stop();
-            tmrGameWin.Start();
-            pnGameWin.Enabled = true;
-        }
-        #endregion các hàm xử lí chính
-
         #region các hàm hiển thị thông tin
         // hiển thị số lượng địch phải tiêu diệt bên bản thông tin
         private void ShowNumberEnemyTankDestroy(int n)
@@ -493,7 +544,7 @@ namespace SuperTank
         // hiển thị gameover
         private void tmrGameOver_Tick(object sender, EventArgs e)
         {
-            pnGameOver.Top += 10;
+            pnGameOver.Top += 5;
             if (pnGameOver.Top >= 0)
             {
                 tmrGameOver.Stop();
@@ -504,18 +555,18 @@ namespace SuperTank
         // hiển thị nextlevel
         private void tmrNextLevel_Tick(object sender, EventArgs e)
         {
-            pnNextLevel.Top += 10;
+            pnNextLevel.Top += 5;
             if (pnNextLevel.Top >= 0)
             {
                 tmrNextLevel.Stop();
                 pnNextLevel.Top += 3;
-            }   
+            }
         }
 
         // hiển thị gamewin
         private void tmrGameWin_Tick(object sender, EventArgs e)
         {
-            pnGameWin.Top += 10;
+            pnGameWin.Top += 5;
             if (pnGameWin.Top >= 0)
             {
                 tmrGameWin.Stop();
@@ -524,5 +575,31 @@ namespace SuperTank
         }
 
         #endregion các hàm hiển thị thông tin
+
+        #region các hàm sự kiện click_button
+        // sự kiện click button trên giao thông tin game
+        private void btn_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            switch (button.Tag)
+            {
+                case "tag_menu":
+                    // hiển thị form menu
+                    break;
+                case "tag_gamestart":
+                    // khởi động lại vòng lặp game
+                    this.GameStart();
+                    pnGameOver.Location = new Point(3, -900);
+                    pnNextLevel.Location = new Point(3, -900);
+                    pnGameWin.Location = new Point(3, -900);
+                    pnGameOver.Enabled = false;
+                    pnNextLevel.Enabled = false;
+                    pnGameWin.Enabled = false;
+                    break;
+            }
+        }
+        #endregion các hàm sự kiện click_button
+
+       
     }
 }
