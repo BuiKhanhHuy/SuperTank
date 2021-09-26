@@ -599,5 +599,11 @@ namespace SuperTank
             }
         }
         #endregion các hàm sự kiện click_button
+
+        // trước khi đóng form
+        private void frmGame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
