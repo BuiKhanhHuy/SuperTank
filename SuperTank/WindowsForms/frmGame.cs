@@ -32,12 +32,12 @@ namespace SuperTank
         #region thuộc tính thông tin
         private PictureBox[] picNumberEnemyTanks;
         private int level = 1;
+        private InforStyle inforStyle;
         #endregion thuộc tính thông tin
         public frmGame()
         {
             Common.path = Application.StartupPath + @"\Content";
             InitializeComponent();
-
         }
         private void frmGame_Load(object sender, EventArgs e)
         {
@@ -187,7 +187,9 @@ namespace SuperTank
                             if (lblCastleBlood.Width == 0)
                             {
                                 // game over
-                                this.GameOver();
+                                inforStyle = InforStyle.eGameOver;
+                                // thời gian delay
+                                tmrDelay.Start();
                             }
                         }
                     }
@@ -225,7 +227,9 @@ namespace SuperTank
                                 if (lblCastleBlood.Width == 0)
                                 {
                                     // game over
-                                    this.GameOver();
+                                    inforStyle = InforStyle.eGameOver;
+                                    // thời gian delay
+                                    tmrDelay.Start();
                                 }
                             }
                         }
@@ -316,8 +320,10 @@ namespace SuperTank
                             if (enemyTankManager.NumberEnemyTankDestroy == 0)
                             {
                                 // Gamenext
-                                this.GameNext();
-                            }  
+                                inforStyle = InforStyle.eGameNext;
+                                // thời gian delay
+                                tmrDelay.Start();
+                            }
                         }
                         #endregion kiểm tra cập nhật vị trí xe tăng địch
 
@@ -382,6 +388,31 @@ namespace SuperTank
             //vẽ lại Bitmap background lên form
             graphics.DrawImageUnscaled(this.background, 0, 0);
 
+        }
+
+        // hàm delay vòng lặp game sau khi game kết thúc
+        private int time_delay = 0;
+        private void tmrDelay_Tick(object sender, EventArgs e)
+        {
+            time_delay += 1;
+            if (time_delay > 1)
+            {
+                time_delay = 0;
+                tmrDelay.Stop();
+                // hiển thị theo loại thông báo
+                switch (inforStyle)
+                {
+                    case InforStyle.eGameOver:
+                        this.GameOver();
+                        break;
+                    case InforStyle.eGameNext:
+                        this.GameNext();
+                        break;
+                    case InforStyle.eGameWin:
+                        this.GameWin();
+                        break;
+                }
+            }
         }
         #endregion Vòng lặp game
 
@@ -481,9 +512,10 @@ namespace SuperTank
         {
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
-            tmrGameOver.Start();
+            pnGameOver.Top = 3;
+            pnGameOver.Left = 3;
             pnGameOver.Enabled = true;
-            picGameOverRank.Image = Image.FromFile(String.Format("{0}{1:00}.png", 
+            picGameOverRank.Image = Image.FromFile(String.Format("{0}{1:00}.png",
                 Common.path + @"\Images\rank", 1));
         }
 
@@ -493,7 +525,8 @@ namespace SuperTank
             this.level++;
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
-            tmrNextLevel.Start();
+            pnNextLevel.Top = 3;
+            pnNextLevel.Left = 3;
             pnNextLevel.Enabled = true;
             picNextLevelRank.Image = Image.FromFile(String.Format("{0}{1:00}.png",
               Common.path + @"\Images\rank", 1));
@@ -504,7 +537,8 @@ namespace SuperTank
         {
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
-            tmrGameWin.Start();
+            pnGameWin.Top = 3;
+            pnGameWin.Left = 3;
             pnGameWin.Enabled = true;
         }
         #endregion các hàm xử lí chính
@@ -540,40 +574,6 @@ namespace SuperTank
                 picNumberEnemyTanks[i].Image = Image.FromFile(Common.path + @"\Images\icon_enemyTank.png");
             }
         }
-
-        // hiển thị gameover
-        private void tmrGameOver_Tick(object sender, EventArgs e)
-        {
-            pnGameOver.Top += 5;
-            if (pnGameOver.Top >= 0)
-            {
-                tmrGameOver.Stop();
-                pnGameOver.Top += 3;
-            }
-        }
-
-        // hiển thị nextlevel
-        private void tmrNextLevel_Tick(object sender, EventArgs e)
-        {
-            pnNextLevel.Top += 5;
-            if (pnNextLevel.Top >= 0)
-            {
-                tmrNextLevel.Stop();
-                pnNextLevel.Top += 3;
-            }
-        }
-
-        // hiển thị gamewin
-        private void tmrGameWin_Tick(object sender, EventArgs e)
-        {
-            pnGameWin.Top += 5;
-            if (pnGameWin.Top >= 0)
-            {
-                tmrGameWin.Stop();
-                pnGameWin.Top += 3;
-            }
-        }
-
         #endregion các hàm hiển thị thông tin
 
         #region các hàm sự kiện click_button
@@ -599,7 +599,5 @@ namespace SuperTank
             }
         }
         #endregion các hàm sự kiện click_button
-
-       
     }
 }

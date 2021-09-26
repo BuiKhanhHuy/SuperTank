@@ -97,9 +97,7 @@
             this.btnNextLevelMenu = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.tmrShowItem = new System.Windows.Forms.Timer(this.components);
-            this.tmrGameOver = new System.Windows.Forms.Timer(this.components);
-            this.tmrNextLevel = new System.Windows.Forms.Timer(this.components);
-            this.tmrGameWin = new System.Windows.Forms.Timer(this.components);
+            this.tmrDelay = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeart)).BeginInit();
             this.panel1.SuspendLayout();
@@ -908,20 +906,10 @@
             this.tmrShowItem.Interval = 1000;
             this.tmrShowItem.Tick += new System.EventHandler(this.tmrShowItem_Tick);
             // 
-            // tmrGameOver
+            // tmrDelay
             // 
-            this.tmrGameOver.Interval = 5;
-            this.tmrGameOver.Tick += new System.EventHandler(this.tmrGameOver_Tick);
-            // 
-            // tmrNextLevel
-            // 
-            this.tmrNextLevel.Interval = 5;
-            this.tmrNextLevel.Tick += new System.EventHandler(this.tmrNextLevel_Tick);
-            // 
-            // tmrGameWin
-            // 
-            this.tmrGameWin.Interval = 5;
-            this.tmrGameWin.Tick += new System.EventHandler(this.tmrGameWin_Tick);
+            this.tmrDelay.Interval = 700;
+            this.tmrDelay.Tick += new System.EventHandler(this.tmrDelay_Tick);
             // 
             // frmGame
             // 
@@ -1015,9 +1003,6 @@
         private System.Windows.Forms.Panel pnRedBackground;
         private System.Windows.Forms.Label lblCastleBlood;
         private System.Windows.Forms.Timer tmrShowItem;
-        private System.Windows.Forms.Timer tmrGameOver;
-        private System.Windows.Forms.Timer tmrNextLevel;
-        private System.Windows.Forms.Timer tmrGameWin;
         private System.Windows.Forms.Panel pnNextLevel;
         private System.Windows.Forms.PictureBox picNextLevelRank;
         private System.Windows.Forms.Label label2;
@@ -1051,6 +1036,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Timer tmrDelay;
     }
 }
 

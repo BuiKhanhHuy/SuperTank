@@ -28,4 +28,8 @@ namespace SuperTank.General
     {
         eItemHeart, eItemShield, eItemGrenade, eItemTimer
     }
+    public enum InforStyle
+    {
+        eGameOver, eGameNext, eGameWin
+    }
 }
