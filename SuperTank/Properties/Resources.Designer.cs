@@ -103,9 +103,9 @@ namespace SuperTank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image_giangMy {
+        internal static System.Drawing.Bitmap img_aboutus {
             get {
-                object obj = ResourceManager.GetObject("image_giangMy", resourceCulture);
+                object obj = ResourceManager.GetObject("img_aboutus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace SuperTank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image_huuphat {
+        internal static System.Drawing.Bitmap img_chooselevel {
             get {
-                object obj = ResourceManager.GetObject("image_huuphat", resourceCulture);
+                object obj = ResourceManager.GetObject("img_chooselevel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace SuperTank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image_khanhhuy {
+        internal static System.Drawing.Bitmap img_giangmy {
             get {
-                object obj = ResourceManager.GetObject("image_khanhhuy", resourceCulture);
+                object obj = ResourceManager.GetObject("img_giangmy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace SuperTank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image_kimngan {
+        internal static System.Drawing.Bitmap img_huuphat {
             get {
-                object obj = ResourceManager.GetObject("image_kimngan", resourceCulture);
+                object obj = ResourceManager.GetObject("img_huuphat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,59 @@ namespace SuperTank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap image_minhhung {
+        internal static System.Drawing.Bitmap img_instructions {
             get {
-                object obj = ResourceManager.GetObject("image_minhhung", resourceCulture);
+                object obj = ResourceManager.GetObject("img_instructions", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_khanhhuy {
+            get {
+                object obj = ResourceManager.GetObject("img_khanhhuy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_kimngan {
+            get {
+                object obj = ResourceManager.GetObject("img_kimngan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_menu {
+            get {
+                object obj = ResourceManager.GetObject("img_menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_minhhung {
+            get {
+                object obj = ResourceManager.GetObject("img_minhhung", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_option {
+            get {
+                object obj = ResourceManager.GetObject("img_option", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

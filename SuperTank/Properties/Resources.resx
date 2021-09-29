@@ -118,31 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icon_title_tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_title_tank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_minhhung" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_minhhung.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_instructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_instructions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_huuphat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_huuphat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_title_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_title_plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="img_kimngan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_kimngan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_title_tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_title_tank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_title_multiply" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_title_multiply.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_khanhhuy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_khanhhuy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_chooselevel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_chooselevel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img_aboutus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_aboutus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_title_minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_title_minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image_giangMy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_giangMy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_giangmy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_giangmy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image_huuphat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_huuphat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image_khanhhuy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_khanhhuy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image_kimngan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_kimngan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image_minhhung" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image_minhhung.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img_option" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img_option.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
