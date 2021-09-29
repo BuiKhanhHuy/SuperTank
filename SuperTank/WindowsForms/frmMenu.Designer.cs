@@ -34,6 +34,7 @@ namespace SuperTank.WindowsForms
             this.btnOption = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.btnInstructions = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pnLevel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,20 +56,34 @@ namespace SuperTank.WindowsForms
             this.btnOptionMenu = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pnTitle = new System.Windows.Forms.Panel();
-            this.picMinus = new System.Windows.Forms.PictureBox();
-            this.picMultiply = new System.Windows.Forms.PictureBox();
-            this.btnInstructions = new System.Windows.Forms.Button();
             this.pnInstructions = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.picMinus = new System.Windows.Forms.PictureBox();
+            this.picMultiply = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.pnMenu.SuspendLayout();
             this.pnLevel.SuspendLayout();
             this.pnAboutUs.SuspendLayout();
             this.pnOption.SuspendLayout();
             this.pnTitle.SuspendLayout();
+            this.pnInstructions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMultiply)).BeginInit();
-            this.pnInstructions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
@@ -151,6 +166,23 @@ namespace SuperTank.WindowsForms
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(500, 600);
             this.pnMenu.TabIndex = 13;
+            // 
+            // btnInstructions
+            // 
+            this.btnInstructions.BackColor = System.Drawing.Color.Transparent;
+            this.btnInstructions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnInstructions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnInstructions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnInstructions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInstructions.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInstructions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnInstructions.Location = new System.Drawing.Point(142, 300);
+            this.btnInstructions.Name = "btnInstructions";
+            this.btnInstructions.Size = new System.Drawing.Size(204, 76);
+            this.btnInstructions.TabIndex = 25;
+            this.btnInstructions.Text = "INSTRUCTIONS";
+            this.btnInstructions.UseVisualStyleBackColor = false;
+            this.btnInstructions.Click += new System.EventHandler(this.btnInstructions_Click);
             // 
             // label3
             // 
@@ -400,9 +432,19 @@ namespace SuperTank.WindowsForms
             // 
             // pnAboutUs
             // 
+            this.pnAboutUs.Controls.Add(this.label10);
+            this.pnAboutUs.Controls.Add(this.label9);
+            this.pnAboutUs.Controls.Add(this.label8);
+            this.pnAboutUs.Controls.Add(this.label7);
+            this.pnAboutUs.Controls.Add(this.label6);
+            this.pnAboutUs.Controls.Add(this.pictureBox5);
+            this.pnAboutUs.Controls.Add(this.pictureBox4);
+            this.pnAboutUs.Controls.Add(this.pictureBox3);
+            this.pnAboutUs.Controls.Add(this.pictureBox2);
+            this.pnAboutUs.Controls.Add(this.pictureBox1);
             this.pnAboutUs.Controls.Add(this.btnAboutUsMenu);
             this.pnAboutUs.Controls.Add(this.label2);
-            this.pnAboutUs.Location = new System.Drawing.Point(1500, 40);
+            this.pnAboutUs.Location = new System.Drawing.Point(1500, 28);
             this.pnAboutUs.Name = "pnAboutUs";
             this.pnAboutUs.Size = new System.Drawing.Size(500, 600);
             this.pnAboutUs.TabIndex = 24;
@@ -487,51 +529,6 @@ namespace SuperTank.WindowsForms
             this.pnTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTitle_MouseDown);
             this.pnTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnTitle_MouseMove);
             // 
-            // picMinus
-            // 
-            this.picMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMinus.Image = global::SuperTank.Properties.Resources.icon_title_minus;
-            this.picMinus.Location = new System.Drawing.Point(430, 5);
-            this.picMinus.Name = "picMinus";
-            this.picMinus.Size = new System.Drawing.Size(30, 30);
-            this.picMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMinus.TabIndex = 2;
-            this.picMinus.TabStop = false;
-            this.picMinus.Click += new System.EventHandler(this.picMinus_Click);
-            this.picMinus.MouseEnter += new System.EventHandler(this.picMinus_MouseEnter);
-            this.picMinus.MouseLeave += new System.EventHandler(this.picMinus_MouseLeave);
-            // 
-            // picMultiply
-            // 
-            this.picMultiply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMultiply.Image = global::SuperTank.Properties.Resources.icon_title_multiply;
-            this.picMultiply.Location = new System.Drawing.Point(467, 5);
-            this.picMultiply.Name = "picMultiply";
-            this.picMultiply.Size = new System.Drawing.Size(30, 30);
-            this.picMultiply.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMultiply.TabIndex = 0;
-            this.picMultiply.TabStop = false;
-            this.picMultiply.Click += new System.EventHandler(this.picMultiply_Click);
-            this.picMultiply.MouseEnter += new System.EventHandler(this.picMultiply_MouseEnter);
-            this.picMultiply.MouseLeave += new System.EventHandler(this.picMultiply_MouseLeave);
-            // 
-            // btnInstructions
-            // 
-            this.btnInstructions.BackColor = System.Drawing.Color.Transparent;
-            this.btnInstructions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnInstructions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnInstructions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnInstructions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInstructions.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInstructions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnInstructions.Location = new System.Drawing.Point(142, 300);
-            this.btnInstructions.Name = "btnInstructions";
-            this.btnInstructions.Size = new System.Drawing.Size(204, 76);
-            this.btnInstructions.TabIndex = 25;
-            this.btnInstructions.Text = "INSTRUCTIONS";
-            this.btnInstructions.UseVisualStyleBackColor = false;
-            this.btnInstructions.Click += new System.EventHandler(this.btnInstructions_Click);
-            // 
             // pnInstructions
             // 
             this.pnInstructions.Controls.Add(this.label5);
@@ -569,6 +566,139 @@ namespace SuperTank.WindowsForms
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // picMinus
+            // 
+            this.picMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinus.Image = global::SuperTank.Properties.Resources.icon_title_minus;
+            this.picMinus.Location = new System.Drawing.Point(430, 5);
+            this.picMinus.Name = "picMinus";
+            this.picMinus.Size = new System.Drawing.Size(30, 30);
+            this.picMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMinus.TabIndex = 2;
+            this.picMinus.TabStop = false;
+            this.picMinus.Click += new System.EventHandler(this.picMinus_Click);
+            this.picMinus.MouseEnter += new System.EventHandler(this.picMinus_MouseEnter);
+            this.picMinus.MouseLeave += new System.EventHandler(this.picMinus_MouseLeave);
+            // 
+            // picMultiply
+            // 
+            this.picMultiply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMultiply.Image = global::SuperTank.Properties.Resources.icon_title_multiply;
+            this.picMultiply.Location = new System.Drawing.Point(467, 5);
+            this.picMultiply.Name = "picMultiply";
+            this.picMultiply.Size = new System.Drawing.Size(30, 30);
+            this.picMultiply.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMultiply.TabIndex = 0;
+            this.picMultiply.TabStop = false;
+            this.picMultiply.Click += new System.EventHandler(this.picMultiply_Click);
+            this.picMultiply.MouseEnter += new System.EventHandler(this.picMultiply_MouseEnter);
+            this.picMultiply.MouseLeave += new System.EventHandler(this.picMultiply_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SuperTank.Properties.Resources.image_khanhhuy;
+            this.pictureBox1.Location = new System.Drawing.Point(71, 417);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(360, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SuperTank.Properties.Resources.image_huuphat;
+            this.pictureBox2.Location = new System.Drawing.Point(71, 338);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(360, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SuperTank.Properties.Resources.image_minhhung;
+            this.pictureBox3.Location = new System.Drawing.Point(71, 259);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(360, 60);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 27;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SuperTank.Properties.Resources.image_kimngan;
+            this.pictureBox4.Location = new System.Drawing.Point(71, 180);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(360, 60);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 28;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::SuperTank.Properties.Resources.image_giangMy;
+            this.pictureBox5.Location = new System.Drawing.Point(71, 101);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(360, 60);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 29;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("UTM HelvetIns", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(181, 112);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(161, 29);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Trần Thị Giáng My";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("UTM HelvetIns", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(174, 191);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(189, 29);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Nguyễn Thị Kim Ngân";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("UTM HelvetIns", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(199, 270);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(126, 29);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "Võ Minh Hùng";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("UTM HelvetIns", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(198, 350);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(128, 29);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Đinh Hữu Phát";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("UTM HelvetIns", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(197, 429);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(131, 29);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "Bùi Khánh Huy";
+            // 
             // frmMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -576,8 +706,8 @@ namespace SuperTank.WindowsForms
             this.ClientSize = new System.Drawing.Size(500, 640);
             this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.pnInstructions);
-            this.Controls.Add(this.pnOption);
             this.Controls.Add(this.pnAboutUs);
+            this.Controls.Add(this.pnOption);
             this.Controls.Add(this.pnLevel);
             this.Controls.Add(this.pnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -594,10 +724,15 @@ namespace SuperTank.WindowsForms
             this.pnOption.ResumeLayout(false);
             this.pnOption.PerformLayout();
             this.pnTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picMinus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMultiply)).EndInit();
             this.pnInstructions.ResumeLayout(false);
             this.pnInstructions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMultiply)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -636,5 +771,15 @@ namespace SuperTank.WindowsForms
         private System.Windows.Forms.Panel pnInstructions;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

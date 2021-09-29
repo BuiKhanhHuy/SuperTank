@@ -50,7 +50,8 @@ namespace SuperTank
             // add picture box vào mảng hiển thị số lượng địch
             picNumberEnemyTanks = new PictureBox[]{picTank00, picTank01, picTank02,
             picTank03, picTank04, picTank05, picTank06, picTank07, picTank08, picTank09, picTank10,
-            picTank11, picTank12, picTank13, picTank14, picTank15, picTank16, picTank17, picTank18, picTank19};
+            picTank11, picTank12, picTank13, picTank14, picTank15, picTank16, picTank17, picTank18, picTank19,
+            picTank20, picTank21, picTank22, picTank23, picTank24, picTank25, picTank26, picTank27};
             // khởi tạo graphics
             graphics = pnMainGame.CreateGraphics();
             // khỏi tạo background

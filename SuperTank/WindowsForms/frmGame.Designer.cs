@@ -99,9 +99,17 @@
             this.tmrShowItem = new System.Windows.Forms.Timer(this.components);
             this.tmrDelay = new System.Windows.Forms.Timer(this.components);
             this.pnTitle = new System.Windows.Forms.Panel();
+            this.picPlus = new System.Windows.Forms.PictureBox();
             this.picMinus = new System.Windows.Forms.PictureBox();
             this.picMultiply = new System.Windows.Forms.PictureBox();
-            this.picPlus = new System.Windows.Forms.PictureBox();
+            this.picTank23 = new System.Windows.Forms.PictureBox();
+            this.picTank22 = new System.Windows.Forms.PictureBox();
+            this.picTank21 = new System.Windows.Forms.PictureBox();
+            this.picTank20 = new System.Windows.Forms.PictureBox();
+            this.picTank27 = new System.Windows.Forms.PictureBox();
+            this.picTank26 = new System.Windows.Forms.PictureBox();
+            this.picTank25 = new System.Windows.Forms.PictureBox();
+            this.picTank24 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTank19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank18)).BeginInit();
@@ -134,9 +142,17 @@
             this.pnNextLevel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNextLevelRank)).BeginInit();
             this.pnTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMultiply)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank24)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrGameLoop
@@ -179,6 +195,14 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.picTank27);
+            this.panel1.Controls.Add(this.picTank26);
+            this.panel1.Controls.Add(this.picTank25);
+            this.panel1.Controls.Add(this.picTank24);
+            this.panel1.Controls.Add(this.picTank23);
+            this.panel1.Controls.Add(this.picTank22);
+            this.panel1.Controls.Add(this.picTank21);
+            this.panel1.Controls.Add(this.picTank20);
             this.panel1.Controls.Add(this.lblLevel);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
@@ -945,6 +969,20 @@
             this.pnTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTitle_MouseDown);
             this.pnTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnTitle_MouseMove);
             // 
+            // picPlus
+            // 
+            this.picPlus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picPlus.Image = global::SuperTank.Properties.Resources.icon_title_plus;
+            this.picPlus.Location = new System.Drawing.Point(987, 5);
+            this.picPlus.Name = "picPlus";
+            this.picPlus.Size = new System.Drawing.Size(30, 30);
+            this.picPlus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPlus.TabIndex = 3;
+            this.picPlus.TabStop = false;
+            this.picPlus.Click += new System.EventHandler(this.picPlus_Click);
+            this.picPlus.MouseEnter += new System.EventHandler(this.picPlus_MouseEnter);
+            this.picPlus.MouseLeave += new System.EventHandler(this.picPlus_MouseLeave);
+            // 
             // picMinus
             // 
             this.picMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -973,19 +1011,85 @@
             this.picMultiply.MouseEnter += new System.EventHandler(this.picMultiply_MouseEnter);
             this.picMultiply.MouseLeave += new System.EventHandler(this.picMultiply_MouseLeave);
             // 
-            // picPlus
+            // picTank23
             // 
-            this.picPlus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picPlus.Image = global::SuperTank.Properties.Resources.icon_title_plus;
-            this.picPlus.Location = new System.Drawing.Point(987, 5);
-            this.picPlus.Name = "picPlus";
-            this.picPlus.Size = new System.Drawing.Size(30, 30);
-            this.picPlus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPlus.TabIndex = 3;
-            this.picPlus.TabStop = false;
-            this.picPlus.Click += new System.EventHandler(this.picPlus_Click);
-            this.picPlus.MouseEnter += new System.EventHandler(this.picPlus_MouseEnter);
-            this.picPlus.MouseLeave += new System.EventHandler(this.picPlus_MouseLeave);
+            this.picTank23.BackColor = System.Drawing.Color.Transparent;
+            this.picTank23.Location = new System.Drawing.Point(110, 389);
+            this.picTank23.Name = "picTank23";
+            this.picTank23.Size = new System.Drawing.Size(30, 30);
+            this.picTank23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTank23.TabIndex = 52;
+            this.picTank23.TabStop = false;
+            // 
+            // picTank22
+            // 
+            this.picTank22.BackColor = System.Drawing.Color.Transparent;
+            this.picTank22.Location = new System.Drawing.Point(76, 389);
+            this.picTank22.Name = "picTank22";
+            this.picTank22.Size = new System.Drawing.Size(30, 30);
+            this.picTank22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTank22.TabIndex = 51;
+            this.picTank22.TabStop = false;
+            // 
+            // picTank21
+            // 
+            this.picTank21.BackColor = System.Drawing.Color.Transparent;
+            this.picTank21.Location = new System.Drawing.Point(42, 389);
+            this.picTank21.Name = "picTank21";
+            this.picTank21.Size = new System.Drawing.Size(30, 30);
+            this.picTank21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTank21.TabIndex = 50;
+            this.picTank21.TabStop = false;
+            // 
+            // picTank20
+            // 
+            this.picTank20.BackColor = System.Drawing.Color.Transparent;
+            this.picTank20.Location = new System.Drawing.Point(8, 389);
+            this.picTank20.Name = "picTank20";
+            this.picTank20.Size = new System.Drawing.Size(30, 30);
+            this.picTank20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTank20.TabIndex = 49;
+            this.picTank20.TabStop = false;
+            // 
+            // picTank27
+            // 
+            this.picTank27.BackColor = System.Drawing.Color.Transparent;
+            this.picTank27.Location = new System.Drawing.Point(110, 425);
+            this.picTank27.Name = "picTank27";
+            this.picTank27.Size = new System.Drawing.Size(30, 30);
+            this.picTank27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTank27.TabIndex = 56;
+            this.picTank27.TabStop = false;
+            // 
+            // picTank26
+            // 
+            this.picTank26.BackColor = System.Drawing.Color.Transparent;
+            this.picTank26.Location = new System.Drawing.Point(76, 425);
+            this.picTank26.Name = "picTank26";
+            this.picTank26.Size = new System.Drawing.Size(30, 30);
+            this.picTank26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTank26.TabIndex = 55;
+            this.picTank26.TabStop = false;
+            // 
+            // picTank25
+            // 
+            this.picTank25.BackColor = System.Drawing.Color.Transparent;
+            this.picTank25.Location = new System.Drawing.Point(42, 425);
+            this.picTank25.Name = "picTank25";
+            this.picTank25.Size = new System.Drawing.Size(30, 30);
+            this.picTank25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTank25.TabIndex = 54;
+            this.picTank25.TabStop = false;
+            // 
+            // picTank24
+            // 
+            this.picTank24.BackColor = System.Drawing.Color.Transparent;
+            this.picTank24.Location = new System.Drawing.Point(8, 425);
+            this.picTank24.Name = "picTank24";
+            this.picTank24.Size = new System.Drawing.Size(30, 30);
+            this.picTank24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTank24.TabIndex = 53;
+            this.picTank24.TabStop = false;
             // 
             // frmGame
             // 
@@ -1041,9 +1145,17 @@
             this.pnNextLevel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNextLevelRank)).EndInit();
             this.pnTitle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPlus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMinus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMultiply)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTank24)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1122,6 +1234,14 @@
         private System.Windows.Forms.PictureBox picMultiply;
         private System.Windows.Forms.PictureBox picMinus;
         private System.Windows.Forms.PictureBox picPlus;
+        private System.Windows.Forms.PictureBox picTank27;
+        private System.Windows.Forms.PictureBox picTank26;
+        private System.Windows.Forms.PictureBox picTank25;
+        private System.Windows.Forms.PictureBox picTank24;
+        private System.Windows.Forms.PictureBox picTank23;
+        private System.Windows.Forms.PictureBox picTank22;
+        private System.Windows.Forms.PictureBox picTank21;
+        private System.Windows.Forms.PictureBox picTank20;
     }
 }
 
