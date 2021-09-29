@@ -18,71 +18,131 @@ namespace SuperTank.WindowsForms
             InitializeComponent();
         }
 
-        private void frmMenu_Paint(object sender, PaintEventArgs e)
+        #region các hàm xử lí chính
+
+        // reset panel
+        private void ResetPanel()
         {
-            e.Graphics.DrawImage(Image.FromFile(Application.StartupPath + @"\content\Images\background.jpg"), 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height);
+            pnMenu.Top = 40;
+            pnMenu.Left = 0;
+            pnLevel.Top = 40;
+            pnLevel.Left = 500;
+            pnInstructions.Top = 40;
+            pnInstructions.Left = 1000;
+            pnAboutUs.Top = 40;
+            pnAboutUs.Left = 1500;
+            pnOption.Top = 40;
+            pnOption.Left = 2000;
         }
 
-        private void frmMenu_Resize(object sender, EventArgs e)
+        // play
+        private void btnPlay_Click(object sender, EventArgs e)
         {
-            Invalidate();
+            pnLevel.Top = 40;
+            pnLevel.Left = 0;
         }
 
-        private void btPlay_Click(object sender, EventArgs e)
+        // about us
+        private void btnAboutUs_Click(object sender, EventArgs e)
         {
-            frmLoad load = new frmLoad();
-            load.Show(this);
+            pnAboutUs.Top = 40;
+            pnAboutUs.Left = 0;
+        }
+
+        // instructions
+        private void btnInstructions_Click(object sender, EventArgs e)
+        {
+            pnInstructions.Top = 40;
+            pnInstructions.Left = 0;
+        }
+
+        // option
+        private void btnOption_Click(object sender, EventArgs e)
+        {
+            pnOption.Top = 40;
+            pnOption.Left = 0;
+        }
+
+        // exit
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        // menu
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            this.ResetPanel();
+        }
+
+        // start game with level
+        private void btnLevel_Click(object sender, EventArgs e)
+        {
+            frmGame formGame = new frmGame(int.Parse(((Button)sender).Tag.ToString()));
+            formGame.formMenu = this;
             this.Hide();
+            formGame.Show();
+            this.ResetPanel();
+        }
+        #endregion các hàm xử lí chính
+
+        #region các hàm sự kiện thanh tiêu đề
+        private Point titleClickPoint;
+        private bool isZoom = false;
+        private int w, h;
+
+        // chuot click tieu de
+        private void pnTitle_MouseDown(object sender, MouseEventArgs e)
+        {
+            titleClickPoint.X = MousePosition.X;
+            titleClickPoint.Y = MousePosition.Y;
+            this.w = e.X;
+            this.h = e.Y;
+        }
+        // di chuyen form
+        private void pnTitle_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MouseButtons == MouseButtons.Left)
+                this.Location = new Point(MousePosition.X - w, MousePosition.Y - h);
         }
 
-        private void btPlay_MouseEnter(object sender, EventArgs e)
+        // chuột vào nút thu nhỏ
+        private void picMinus_MouseEnter(object sender, EventArgs e)
         {
-            btPlay.Image = Properties.Resources.PLAYhover;
+            this.picMinus.BackColor = Color.Green;
+        }
+        // chuột rời khỏi nút thu nhỏ
+        private void picMinus_MouseLeave(object sender, EventArgs e)
+        {
+            this.picMinus.BackColor = Color.Transparent;
+        }
+        // thu nhỏ cửa sổ
+        private void picMinus_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btPlay_MouseLeave(object sender, EventArgs e)
+        // chuột vào nút thoát
+        private void picMultiply_MouseEnter(object sender, EventArgs e)
         {
-            btPlay.Image = Properties.Resources.PLAYbtn;
+            this.picMultiply.BackColor = Color.Red;
+        }
+        // chuột rời khỏi nút thoát
+        private void picMultiply_MouseLeave(object sender, EventArgs e)
+        {
+            this.picMultiply.BackColor = Color.Transparent;
         }
 
-        private void btLevel_MouseEnter(object sender, EventArgs e)
+
+
+
+        // thoát game
+        private void picMultiply_Click(object sender, EventArgs e)
         {
-            btLevel.Image = Properties.Resources.LEVELhover;
+            Application.Exit();
         }
 
-        private void btLevel_MouseLeave(object sender, EventArgs e)
-        {
-            btLevel.Image = Properties.Resources.LEVEL;
-        }
 
-        private void btAbout_MouseEnter(object sender, EventArgs e)
-        {
-            btAbout.Image = Properties.Resources.ABOUTUShover;
-        }
-
-        private void btAbout_MouseLeave(object sender, EventArgs e)
-        {
-            btAbout.Image = Properties.Resources.ABOUTUS;
-        }
-
-        private void btOption_MouseEnter(object sender, EventArgs e)
-        {
-            btOption.Image = Properties.Resources.OPTIONhover;
-        }
-
-        private void btOption_MouseLeave(object sender, EventArgs e)
-        {
-            btOption.Image = Properties.Resources.OPTION;
-        }
-
-        private void btEXIT_MouseEnter(object sender, EventArgs e)
-        {
-            btEXIT.Image = Properties.Resources.EXIThover;
-        }
-
-        private void btEXIT_MouseLeave(object sender, EventArgs e)
-        {
-            btEXIT.Image = Properties.Resources.EXIT;
-        }
+        #endregion các hàm sự kiện thanh tiêu đề
     }
 }

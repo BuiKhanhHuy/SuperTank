@@ -63,9 +63,9 @@ namespace SuperTank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ABOUTUS {
+        internal static System.Drawing.Bitmap icon_title_minus {
             get {
-                object obj = ResourceManager.GetObject("ABOUTUS", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_title_minus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace SuperTank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ABOUTUShover {
+        internal static System.Drawing.Bitmap icon_title_multiply {
             get {
-                object obj = ResourceManager.GetObject("ABOUTUShover", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_title_multiply", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace SuperTank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background {
+        internal static System.Drawing.Bitmap icon_title_plus {
             get {
-                object obj = ResourceManager.GetObject("background", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_title_plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,109 +93,9 @@ namespace SuperTank.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap EXIT {
+        internal static System.Drawing.Bitmap icon_title_tank {
             get {
-                object obj = ResourceManager.GetObject("EXIT", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap EXIThover {
-            get {
-                object obj = ResourceManager.GetObject("EXIThover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap house {
-            get {
-                object obj = ResourceManager.GetObject("house", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LEVEL {
-            get {
-                object obj = ResourceManager.GetObject("LEVEL", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LEVELhover {
-            get {
-                object obj = ResourceManager.GetObject("LEVELhover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OPTION {
-            get {
-                object obj = ResourceManager.GetObject("OPTION", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OPTIONhover {
-            get {
-                object obj = ResourceManager.GetObject("OPTIONhover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PLAYbtn {
-            get {
-                object obj = ResourceManager.GetObject("PLAYbtn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PLAYhover {
-            get {
-                object obj = ResourceManager.GetObject("PLAYhover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WIP_tank_turntable_newcolors {
-            get {
-                object obj = ResourceManager.GetObject("WIP_tank_turntable_newcolors", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ZC9M {
-            get {
-                object obj = ResourceManager.GetObject("ZC9M", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_title_tank", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

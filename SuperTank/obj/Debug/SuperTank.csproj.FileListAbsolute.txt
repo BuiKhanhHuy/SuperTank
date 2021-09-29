@@ -41,3 +41,4 @@ C:\Users\khuy2\Desktop\SuperTank\SuperTank\obj\Debug\SuperTank.csproj.GenerateRe
 C:\Users\khuy2\Desktop\SuperTank\SuperTank\obj\Debug\SuperTank.csproj.CoreCompileInputs.cache
 C:\Users\khuy2\Desktop\SuperTank\SuperTank\obj\Debug\SuperTank.exe
 C:\Users\khuy2\Desktop\SuperTank\SuperTank\obj\Debug\SuperTank.pdb
+E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.WindowsForms.frmMenu.resources

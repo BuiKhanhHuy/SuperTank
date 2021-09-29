@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using SuperTank.General;
 using SuperTank.Objects;
+using SuperTank.WindowsForms;
 
 namespace SuperTank
 {
@@ -31,11 +32,14 @@ namespace SuperTank
         #endregion Đối tượng
         #region thuộc tính thông tin
         private PictureBox[] picNumberEnemyTanks;
-        private int level = 1;
+        private int level;
         private InforStyle inforStyle;
         #endregion thuộc tính thông tin
-        public frmGame()
+        public frmMenu formMenu;
+
+        public frmGame(int level)
         {
+            this.level = level;
             Common.path = Application.StartupPath + @"\Content";
             InitializeComponent();
         }
@@ -565,18 +569,7 @@ namespace SuperTank
         }
         #endregion xử lí thời gian hiển thị lại vật phẩm
 
-        #region các hàm hiển thị thông tin
-        // hiển thị số lượng địch phải tiêu diệt bên bản thông tin
-        private void ShowNumberEnemyTankDestroy(int n)
-        {
-            for (int i = 0; i < n; i++)
-            {
-                picNumberEnemyTanks[i].Image = Image.FromFile(Common.path + @"\Images\icon_enemyTank.png");
-            }
-        }
-        #endregion các hàm hiển thị thông tin
-
-        #region các hàm sự kiện click_button
+        #region các hàm sự kiện click_button trong game
         // sự kiện click button trên giao thông tin game
         private void btn_Click(object sender, EventArgs e)
         {
@@ -585,6 +578,8 @@ namespace SuperTank
             {
                 case "tag_menu":
                     // hiển thị form menu
+                    this.formMenu.Show();
+                    this.Close();
                     break;
                 case "tag_gamestart":
                     // khởi động lại vòng lặp game
@@ -598,12 +593,96 @@ namespace SuperTank
                     break;
             }
         }
-        #endregion các hàm sự kiện click_button
+        #endregion các hàm sự kiện click_button trong game
 
-        // trước khi đóng form
-        private void frmGame_FormClosing(object sender, FormClosingEventArgs e)
+        #region các hàm hiển thị thông tin
+        // hiển thị số lượng địch phải tiêu diệt bên bản thông tin
+        private void ShowNumberEnemyTankDestroy(int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                picNumberEnemyTanks[i].Image = Image.FromFile(Common.path + @"\Images\icon_enemyTank.png");
+            }
+        }
+        #endregion các hàm hiển thị thông tin
+
+        #region các hàm sự kiện thanh tiêu đề
+        private Point titleClickPoint;
+        private bool isZoom = false;
+        private int w, h;
+
+        // chuot click tieu de
+        private void pnTitle_MouseDown(object sender, MouseEventArgs e)
+        {
+            titleClickPoint.X = MousePosition.X;
+            titleClickPoint.Y = MousePosition.Y;
+            this.w = e.X;
+            this.h = e.Y;
+        }
+        // di chuyen form
+        private void pnTitle_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MouseButtons == MouseButtons.Left)
+                this.Location = new Point(MousePosition.X - w, MousePosition.Y - h);
+        }
+
+        // chuột vào nút thu nhỏ
+        private void picMinus_MouseEnter(object sender, EventArgs e)
+        {
+            this.picMinus.BackColor = Color.Green;
+        }
+        // chuột rời khỏi nút thu nhỏ
+        private void picMinus_MouseLeave(object sender, EventArgs e)
+        {
+            this.picMinus.BackColor = Color.Transparent;
+        }
+        // thu nhỏ cửa sổ
+        private void picMinus_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        // chuột vào nút phóng to
+        private void picPlus_MouseEnter(object sender, EventArgs e)
+        {
+            this.picPlus.BackColor = Color.Orange;
+        }
+        // chuột rời khỏi nút phóng to
+        private void picPlus_MouseLeave(object sender, EventArgs e)
+        {
+            this.picPlus.BackColor = Color.Transparent;
+        }
+        // phóng to cửa sổ
+        private void picPlus_Click(object sender, EventArgs e)
+        {
+            if (isZoom == false)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                isZoom = true;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                isZoom = false;
+            }
+        }
+        // chuột vào nút thoát
+        private void picMultiply_MouseEnter(object sender, EventArgs e)
+        {
+            this.picMultiply.BackColor = Color.Red;
+        }
+        // chuột rời khỏi nút thoát
+        private void picMultiply_MouseLeave(object sender, EventArgs e)
+        {
+            this.picMultiply.BackColor = Color.Transparent;
+        }
+        // thoát game
+        private void picMultiply_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+
+        #endregion các hàm sự kiện thanh tiêu đề
+       
     }
 }

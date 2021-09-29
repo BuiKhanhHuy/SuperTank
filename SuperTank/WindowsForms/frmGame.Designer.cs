@@ -33,8 +33,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblHpTankPlayer = new System.Windows.Forms.Label();
-            this.picItem = new System.Windows.Forms.PictureBox();
-            this.picHeart = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLevel = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -60,6 +58,8 @@
             this.picTank02 = new System.Windows.Forms.PictureBox();
             this.picTank01 = new System.Windows.Forms.PictureBox();
             this.picTank00 = new System.Windows.Forms.PictureBox();
+            this.picHeart = new System.Windows.Forms.PictureBox();
+            this.picItem = new System.Windows.Forms.PictureBox();
             this.pnMainGame = new System.Windows.Forms.Panel();
             this.lblCastleBlood = new System.Windows.Forms.Label();
             this.pnRedBackground = new System.Windows.Forms.Panel();
@@ -98,8 +98,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.tmrShowItem = new System.Windows.Forms.Timer(this.components);
             this.tmrDelay = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.picItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHeart)).BeginInit();
+            this.pnTitle = new System.Windows.Forms.Panel();
+            this.picMinus = new System.Windows.Forms.PictureBox();
+            this.picMultiply = new System.Windows.Forms.PictureBox();
+            this.picPlus = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTank19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank18)).BeginInit();
@@ -121,6 +123,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTank02)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank00)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHeart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picItem)).BeginInit();
             this.pnMainGame.SuspendLayout();
             this.pnRedBackground.SuspendLayout();
             this.pnGameWin.SuspendLayout();
@@ -129,6 +133,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGameOverRank)).BeginInit();
             this.pnNextLevel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNextLevelRank)).BeginInit();
+            this.pnTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMultiply)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlus)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrGameLoop
@@ -166,26 +174,6 @@
             this.lblHpTankPlayer.Name = "lblHpTankPlayer";
             this.lblHpTankPlayer.Size = new System.Drawing.Size(100, 10);
             this.lblHpTankPlayer.TabIndex = 0;
-            // 
-            // picItem
-            // 
-            this.picItem.BackColor = System.Drawing.Color.Transparent;
-            this.picItem.Location = new System.Drawing.Point(57, 127);
-            this.picItem.Name = "picItem";
-            this.picItem.Size = new System.Drawing.Size(40, 40);
-            this.picItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picItem.TabIndex = 2;
-            this.picItem.TabStop = false;
-            // 
-            // picHeart
-            // 
-            this.picHeart.BackColor = System.Drawing.Color.Transparent;
-            this.picHeart.Location = new System.Drawing.Point(8, 65);
-            this.picHeart.Name = "picHeart";
-            this.picHeart.Size = new System.Drawing.Size(25, 25);
-            this.picHeart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picHeart.TabIndex = 15;
-            this.picHeart.TabStop = false;
             // 
             // panel1
             // 
@@ -460,6 +448,26 @@
             this.picTank00.TabIndex = 26;
             this.picTank00.TabStop = false;
             // 
+            // picHeart
+            // 
+            this.picHeart.BackColor = System.Drawing.Color.Transparent;
+            this.picHeart.Location = new System.Drawing.Point(8, 65);
+            this.picHeart.Name = "picHeart";
+            this.picHeart.Size = new System.Drawing.Size(25, 25);
+            this.picHeart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHeart.TabIndex = 15;
+            this.picHeart.TabStop = false;
+            // 
+            // picItem
+            // 
+            this.picItem.BackColor = System.Drawing.Color.Transparent;
+            this.picItem.Location = new System.Drawing.Point(57, 127);
+            this.picItem.Name = "picItem";
+            this.picItem.Size = new System.Drawing.Size(40, 40);
+            this.picItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picItem.TabIndex = 2;
+            this.picItem.TabStop = false;
+            // 
             // pnMainGame
             // 
             this.pnMainGame.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -487,7 +495,7 @@
             this.pnRedBackground.Controls.Add(this.pnNextLevel);
             this.pnRedBackground.Controls.Add(this.pnMainGame);
             this.pnRedBackground.Controls.Add(this.panel1);
-            this.pnRedBackground.Location = new System.Drawing.Point(-9, -3);
+            this.pnRedBackground.Location = new System.Drawing.Point(0, 40);
             this.pnRedBackground.Name = "pnRedBackground";
             this.pnRedBackground.Size = new System.Drawing.Size(1056, 806);
             this.pnRedBackground.TabIndex = 0;
@@ -586,8 +594,10 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -600,8 +610,10 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -723,8 +735,10 @@
             // 
             // btnGameOverRetry
             // 
-            this.btnGameOverRetry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGameOverRetry.FlatAppearance.BorderSize = 0;
+            this.btnGameOverRetry.BackColor = System.Drawing.Color.Transparent;
+            this.btnGameOverRetry.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnGameOverRetry.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnGameOverRetry.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGameOverRetry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGameOverRetry.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGameOverRetry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -739,8 +753,10 @@
             // 
             // btnGameOverMenu
             // 
-            this.btnGameOverMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGameOverMenu.FlatAppearance.BorderSize = 0;
+            this.btnGameOverMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnGameOverMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnGameOverMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnGameOverMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGameOverMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGameOverMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGameOverMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -859,8 +875,10 @@
             // 
             // btnNextLevelNext
             // 
-            this.btnNextLevelNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNextLevelNext.FlatAppearance.BorderSize = 0;
+            this.btnNextLevelNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnNextLevelNext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnNextLevelNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnNextLevelNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNextLevelNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextLevelNext.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextLevelNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -875,8 +893,10 @@
             // 
             // btnNextLevelMenu
             // 
-            this.btnNextLevelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNextLevelMenu.FlatAppearance.BorderSize = 0;
+            this.btnNextLevelMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnNextLevelMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnNextLevelMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnNextLevelMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNextLevelMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextLevelMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextLevelMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -911,26 +931,80 @@
             this.tmrDelay.Interval = 700;
             this.tmrDelay.Tick += new System.EventHandler(this.tmrDelay_Tick);
             // 
+            // pnTitle
+            // 
+            this.pnTitle.BackColor = System.Drawing.Color.Purple;
+            this.pnTitle.Controls.Add(this.picPlus);
+            this.pnTitle.Controls.Add(this.picMinus);
+            this.pnTitle.Controls.Add(this.picMultiply);
+            this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnTitle.Name = "pnTitle";
+            this.pnTitle.Size = new System.Drawing.Size(1056, 40);
+            this.pnTitle.TabIndex = 1;
+            this.pnTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTitle_MouseDown);
+            this.pnTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnTitle_MouseMove);
+            // 
+            // picMinus
+            // 
+            this.picMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinus.Image = global::SuperTank.Properties.Resources.icon_title_minus;
+            this.picMinus.Location = new System.Drawing.Point(951, 5);
+            this.picMinus.Name = "picMinus";
+            this.picMinus.Size = new System.Drawing.Size(30, 30);
+            this.picMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMinus.TabIndex = 2;
+            this.picMinus.TabStop = false;
+            this.picMinus.Click += new System.EventHandler(this.picMinus_Click);
+            this.picMinus.MouseEnter += new System.EventHandler(this.picMinus_MouseEnter);
+            this.picMinus.MouseLeave += new System.EventHandler(this.picMinus_MouseLeave);
+            // 
+            // picMultiply
+            // 
+            this.picMultiply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMultiply.Image = global::SuperTank.Properties.Resources.icon_title_multiply;
+            this.picMultiply.Location = new System.Drawing.Point(1023, 5);
+            this.picMultiply.Name = "picMultiply";
+            this.picMultiply.Size = new System.Drawing.Size(30, 30);
+            this.picMultiply.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMultiply.TabIndex = 0;
+            this.picMultiply.TabStop = false;
+            this.picMultiply.Click += new System.EventHandler(this.picMultiply_Click);
+            this.picMultiply.MouseEnter += new System.EventHandler(this.picMultiply_MouseEnter);
+            this.picMultiply.MouseLeave += new System.EventHandler(this.picMultiply_MouseLeave);
+            // 
+            // picPlus
+            // 
+            this.picPlus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picPlus.Image = global::SuperTank.Properties.Resources.icon_title_plus;
+            this.picPlus.Location = new System.Drawing.Point(987, 5);
+            this.picPlus.Name = "picPlus";
+            this.picPlus.Size = new System.Drawing.Size(30, 30);
+            this.picPlus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPlus.TabIndex = 3;
+            this.picPlus.TabStop = false;
+            this.picPlus.Click += new System.EventHandler(this.picPlus_Click);
+            this.picPlus.MouseEnter += new System.EventHandler(this.picPlus_MouseEnter);
+            this.picPlus.MouseLeave += new System.EventHandler(this.picPlus_MouseLeave);
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1038, 800);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ClientSize = new System.Drawing.Size(1056, 846);
+            this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.pnRedBackground);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "frmGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SUPER TANK";
             this.TopMost = true;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGame_FormClosing);
             this.Load += new System.EventHandler(this.frmGame_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmGame_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmGame_KeyUp);
-            ((System.ComponentModel.ISupportInitialize)(this.picItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHeart)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTank19)).EndInit();
@@ -953,6 +1027,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTank02)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank00)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHeart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picItem)).EndInit();
             this.pnMainGame.ResumeLayout(false);
             this.pnRedBackground.ResumeLayout(false);
             this.pnGameWin.ResumeLayout(false);
@@ -964,6 +1040,10 @@
             this.pnNextLevel.ResumeLayout(false);
             this.pnNextLevel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNextLevelRank)).EndInit();
+            this.pnTitle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picMinus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMultiply)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1038,6 +1118,10 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Timer tmrDelay;
+        private System.Windows.Forms.Panel pnTitle;
+        private System.Windows.Forms.PictureBox picMultiply;
+        private System.Windows.Forms.PictureBox picMinus;
+        private System.Windows.Forms.PictureBox picPlus;
     }
 }
 

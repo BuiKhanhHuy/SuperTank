@@ -33,7 +33,8 @@ namespace SuperTank.General
             Graphics g = Graphics.FromImage(bmpBack);
             g.SmoothingMode = SmoothingMode.AntiAlias;
             g.DrawImage(front, x, y, new Rectangle(xFrame, yFrame, wFrame, hFrame), GraphicsUnit.Pixel);
-            //g.DrawEllipse(new Pen(Color.Yellow, 3), x, y, wFrame, hFrame);
+            //g.DrawEllipse(Pens.Yellow
+            //    , x, y, wFrame, hFrame);
             g.Dispose();
         }
 
