@@ -70,33 +70,7 @@ namespace SuperTank
             // khởi tạo quà
             item = new Item();
 
-            #region khởi tạo game
-            //// load map
-            //Array.Copy(Common.ReadMap(String.Format("{0}{1:00}.txt", Common.path + @"\Maps\Map", 1),
-            //    Common.NUMBER_OBJECT_HEIGHT, Common.NUMBER_OBJECT_WIDTH),
-            //this.map, Common.NUMBER_OBJECT_HEIGHT * Common.NUMBER_OBJECT_WIDTH);
-            //// tạo danh sách tường
-            //wallManager.CreatWall(this.map);
-            //// khởi tạo tất cả địch
-            //enemyTankManager.Init_EnemyTankManagement(String.Format("{0}{1:00}.txt",
-            //    Common.path + @"\EnemyTankParameters\EnemyParameter", 1));
-            ////// hiển thị số lượng xe tăng địch cần tiêu diệt bên bảng thông tin
-            //ShowNumberEnemyTankDestroy(enemyTankManager.NumberEnemyTank());
-            //Console.WriteLine("SO LUONG PHAI TIEU DIET: " + enemyTankManager.NumberEnemyTank());
-            //// cập nhật vị trí xe tăng player
-            //playerTank.SetLocation();
-            //// cập nhật năng lượng xe tăng player 
-            //playerTank.Energy = 100;
-            //// cập nhật thông tin máu hiển thị của xe tăng player
-            //this.lblHpTankPlayer.Width = playerTank.Energy;
-            //// cập nhật thông tin máu hiển thị của thành
-            //this.lblCastleBlood.Width = 80;
-            //// set thời gian item và chạy item
-            //timeItem = 50;
-            //tmrShowItem.Start();
-            //tmrGameLoop.Start();
-
-            #endregion khởi tạo game
+            // khởi tạo game
             this.GameStart();
         }
         // hàm khởi tạo game mới
@@ -126,12 +100,17 @@ namespace SuperTank
             playerTank.SetLocation();
             // cập nhật năng lượng xe tăng player 
             playerTank.Energy = 100;
+            // cập nhật khiên bảo vệ
+            playerTank.IsShield = false;
             // cập nhật thông tin máu hiển thị của xe tăng player
             this.lblHpTankPlayer.Width = playerTank.Energy;
             // cập nhật thông tin máu hiển thị của thành
             this.lblCastleBlood.Width = 80;
+            // cập nhật thông tin vật phẩm đang ăn
+            this.picItem.Image = null;
             // set thời gian item và chạy item
             timeItem = 50;
+            timeItemActive = 20;
             tmrShowItem.Start();
             tmrGameLoop.Start();
         }
@@ -257,14 +236,18 @@ namespace SuperTank
                         //Console.WriteLine("Địch bắn trúng ta");
                         // thêm vụ nổ vào danh sách
                         explosionManager.CreateExplosion(ExplosionSize.eBigExplosion, enemyTankManager.EnemyTanks[i].Bullets[j].Rect);
-                        // cập nhật lại thông tin vị trí cho xe tăng player
-                        playerTank.SetLocation();
-                        playerTank.IsActivate = false;
                         // viên đạn này của địch bị hủy
                         enemyTankManager.EnemyTanks[i].RemoveOneBullet(j);
-                        // cập nhật năng lượng của xe tăng player
-                        playerTank.Energy -= 10;
-                        this.lblHpTankPlayer.Width = playerTank.Energy;
+                        // nếu xe tăng player không có vật phẩm khiêng chắn
+                        if (!playerTank.IsShield)
+                        {
+                            // cập nhật lại thông tin vị trí cho xe tăng player
+                            playerTank.SetLocation();
+                            playerTank.IsActivate = false;
+                            // cập nhật năng lượng của xe tăng player
+                            playerTank.Energy -= 10;
+                            this.lblHpTankPlayer.Width = playerTank.Energy;
+                        }
                     }
 
                 }
@@ -282,7 +265,6 @@ namespace SuperTank
                             enemyTankManager.EnemyTanks[i].RemoveOneBullet(j);
                             playerTank.RemoveOneBullet(h);
                         }
-
                     }
                 }
                 //chạy danh sách đạn xe tăng player
@@ -352,33 +334,40 @@ namespace SuperTank
                 if (Common.IsCollision(playerTank.Rect, item.Rect))
                 {
                     item.IsOn = false;
-                    picItem.Image = null;
                     item.RectX = -20;
                     item.RectY = -20;
                     timeItem = 50;
+                    // hiển thị vật vật đã được ăn trên bảng thông báo
+                    picItem.Image = item.BmpObject;
+                    // item active kích hoạt trong 20s
+                    tmrItemActive.Start();
+
                     // XE TĂNG ĂN VẬT PHẨM
                     switch (item.ItemType)
                     {
                         // vật phẩm là máu
                         case ItemType.eItemHeart:
+                            //Console.WriteLine("máu");
                             playerTank.Energy = 100;
                             lblHpTankPlayer.Width = playerTank.Energy;
                             break;
                         // vật phẩm là khiên chắn bảo vệ
                         case ItemType.eItemShield:
-                            Console.WriteLine("khiên");
+                            //Console.WriteLine("khiên");
+                            playerTank.IsShield = true;
                             break;
                         // vật phẩm là lựu đạn
                         case ItemType.eItemGrenade:
-                            Console.WriteLine("lựu đạn");
+                            //Console.WriteLine("lựu đạn");
                             break;
                         // vật phẩm là thời gian
                         case ItemType.eItemTimer:
+                            //Console.WriteLine("thời gian");
                             //foreach (EnemyTank enemyTank in enemyTankManager.EnemyTanks)
                             //{
                             //    enemyTank.IsActivate = false;
                             //}
-                            Console.WriteLine("thời gian");
+
                             break;
                     }
                 }
@@ -419,6 +408,7 @@ namespace SuperTank
                 }
             }
         }
+
         #endregion Vòng lặp game
 
         #region sự kiện phím
@@ -517,6 +507,7 @@ namespace SuperTank
         {
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
+            tmrItemActive.Stop();
             pnGameOver.Top = 3;
             pnGameOver.Left = 3;
             pnGameOver.Enabled = true;
@@ -530,6 +521,7 @@ namespace SuperTank
             this.level++;
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
+            tmrItemActive.Stop();
             pnNextLevel.Top = 3;
             pnNextLevel.Left = 3;
             pnNextLevel.Enabled = true;
@@ -542,6 +534,7 @@ namespace SuperTank
         {
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
+            tmrItemActive.Stop();
             pnGameWin.Top = 3;
             pnGameWin.Left = 3;
             pnGameWin.Enabled = true;
@@ -549,23 +542,39 @@ namespace SuperTank
         #endregion các hàm xử lí chính
 
         #region xử lí thời gian hiển thị lại vật phẩm
+
+        // thời gian chờ và xuất hiện của vật phẩm
         private int timeItem = 50;
         private void tmrShowItem_Tick(object sender, EventArgs e)
         {
             timeItem -= 1;
-            this.Text = timeItem.ToString();
             if (timeItem == 20)
             {
                 item.IsOn = true;
                 item.CreateItem();
-                picItem.Image = item.BmpObject;
             }
             else
                 if (timeItem < 0)
             {
                 timeItem = 50;
                 item.IsOn = false;
+                //picItem.Image = null;
+            }
+        }
+
+        // thời gian tác dụng của vật phẩm
+        private int timeItemActive = 20;
+        private void tmrItemActive_Tick(object sender, EventArgs e)
+        {
+            timeItemActive--;
+            if (timeItemActive == 0)
+            {
+                timeItemActive = 20;
+                // đưa xe tăng player về thông số mặc định
+                playerTank.IsShield = false;
+                // hình ảnh thông tin vật phẩm về null
                 picItem.Image = null;
+                // thời gian tác dụng vật phẩm về rỗng
             }
         }
         #endregion xử lí thời gian hiển thị lại vật phẩm
@@ -676,6 +685,9 @@ namespace SuperTank
         {
             this.picMultiply.BackColor = Color.Transparent;
         }
+
+
+
         // thoát game
         private void picMultiply_Click(object sender, EventArgs e)
         {
@@ -684,6 +696,5 @@ namespace SuperTank
 
 
         #endregion các hàm sự kiện thanh tiêu đề
-       
     }
 }

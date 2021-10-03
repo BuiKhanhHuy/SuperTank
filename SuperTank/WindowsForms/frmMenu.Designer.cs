@@ -96,7 +96,7 @@ namespace SuperTank.WindowsForms
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnExit.Location = new System.Drawing.Point(142, 488);
+            this.btnExit.Location = new System.Drawing.Point(142, 496);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(204, 76);
             this.btnExit.TabIndex = 12;
@@ -113,7 +113,7 @@ namespace SuperTank.WindowsForms
             this.btnAboutUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAboutUs.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAboutUs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAboutUs.Location = new System.Drawing.Point(142, 394);
+            this.btnAboutUs.Location = new System.Drawing.Point(142, 402);
             this.btnAboutUs.Name = "btnAboutUs";
             this.btnAboutUs.Size = new System.Drawing.Size(204, 76);
             this.btnAboutUs.TabIndex = 11;
@@ -130,7 +130,7 @@ namespace SuperTank.WindowsForms
             this.btnOption.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOption.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnOption.Location = new System.Drawing.Point(142, 206);
+            this.btnOption.Location = new System.Drawing.Point(142, 214);
             this.btnOption.Name = "btnOption";
             this.btnOption.Size = new System.Drawing.Size(204, 76);
             this.btnOption.TabIndex = 10;
@@ -147,7 +147,7 @@ namespace SuperTank.WindowsForms
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlay.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnPlay.Location = new System.Drawing.Point(142, 112);
+            this.btnPlay.Location = new System.Drawing.Point(142, 120);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(204, 76);
             this.btnPlay.TabIndex = 9;
@@ -187,7 +187,7 @@ namespace SuperTank.WindowsForms
             this.btnInstructions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInstructions.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInstructions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnInstructions.Location = new System.Drawing.Point(142, 300);
+            this.btnInstructions.Location = new System.Drawing.Point(142, 308);
             this.btnInstructions.Name = "btnInstructions";
             this.btnInstructions.Size = new System.Drawing.Size(204, 76);
             this.btnInstructions.TabIndex = 25;
@@ -273,7 +273,7 @@ namespace SuperTank.WindowsForms
             this.btnLevelMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLevelMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLevelMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnLevelMenu.Location = new System.Drawing.Point(180, 513);
+            this.btnLevelMenu.Location = new System.Drawing.Point(180, 527);
             this.btnLevelMenu.Name = "btnLevelMenu";
             this.btnLevelMenu.Size = new System.Drawing.Size(139, 53);
             this.btnLevelMenu.TabIndex = 22;
@@ -552,7 +552,7 @@ namespace SuperTank.WindowsForms
             this.btnAboutUsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAboutUsMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAboutUsMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAboutUsMenu.Location = new System.Drawing.Point(186, 513);
+            this.btnAboutUsMenu.Location = new System.Drawing.Point(180, 527);
             this.btnAboutUsMenu.Name = "btnAboutUsMenu";
             this.btnAboutUsMenu.Size = new System.Drawing.Size(139, 53);
             this.btnAboutUsMenu.TabIndex = 24;
@@ -589,7 +589,7 @@ namespace SuperTank.WindowsForms
             this.btnOptionMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOptionMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOptionMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnOptionMenu.Location = new System.Drawing.Point(186, 513);
+            this.btnOptionMenu.Location = new System.Drawing.Point(180, 527);
             this.btnOptionMenu.Name = "btnOptionMenu";
             this.btnOptionMenu.Size = new System.Drawing.Size(139, 53);
             this.btnOptionMenu.TabIndex = 24;
@@ -625,7 +625,7 @@ namespace SuperTank.WindowsForms
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.Location = new System.Drawing.Point(183, 513);
+            this.button1.Location = new System.Drawing.Point(180, 527);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 53);
             this.button1.TabIndex = 22;

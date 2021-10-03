@@ -16,7 +16,7 @@ namespace SuperTank.Objects
         private const int MAX_NUMBER_FRAME_TANK = 7;
         private const int MAX_NUMBER_FRAME_EFFECT = 6;
         #endregion
-        #region Số làm việc với frame (tank: có 8 frame 0-7; effect: )
+        #region Số làm việc với frame (tank: có 8 frame 0-7; effect: có 6 frame 0-5)
         private int frx_tank = 7;
         private int frx_effect = 0;
         private int fry_effect = 0;
@@ -26,7 +26,6 @@ namespace SuperTank.Objects
         protected int energy;
         private Skin skinTank;
         protected bool isMove;
-        //protected bool isFire;
         private bool isActivate;
         protected bool left, right, up, down;
         protected Direction directionTank;

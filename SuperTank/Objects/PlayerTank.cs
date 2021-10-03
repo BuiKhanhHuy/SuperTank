@@ -12,6 +12,10 @@ namespace SuperTank.Objects
 {
     class PlayerTank : Tank
     {
+        private bool isShield;
+
+
+
         public PlayerTank()
         {
             this.moveSpeed = 10;
@@ -44,5 +48,9 @@ namespace SuperTank.Objects
 
         // hiển thị vòng tròn bảo vệ
 
+
+        #region properties
+        public bool IsShield { get => isShield; set => isShield = value; }
+        #endregion properties
     }
 }
