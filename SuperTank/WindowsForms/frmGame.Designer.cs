@@ -111,6 +111,8 @@
             this.picMinus = new System.Windows.Forms.PictureBox();
             this.picMultiply = new System.Windows.Forms.PictureBox();
             this.tmrItemActive = new System.Windows.Forms.Timer(this.components);
+            this.lbltam1 = new System.Windows.Forms.Label();
+            this.lbltam2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTank27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank26)).BeginInit();
@@ -196,6 +198,8 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.lbltam2);
+            this.panel1.Controls.Add(this.lbltam1);
             this.panel1.Controls.Add(this.picTank27);
             this.panel1.Controls.Add(this.picTank26);
             this.panel1.Controls.Add(this.picTank25);
@@ -1033,7 +1037,7 @@
             // 
             // tmrDelay
             // 
-            this.tmrDelay.Interval = 500;
+            this.tmrDelay.Interval = 700;
             this.tmrDelay.Tick += new System.EventHandler(this.tmrDelay_Tick);
             // 
             // pnTitle
@@ -1096,6 +1100,26 @@
             // 
             this.tmrItemActive.Interval = 1000;
             this.tmrItemActive.Tick += new System.EventHandler(this.tmrItemActive_Tick);
+            // 
+            // lbltam1
+            // 
+            this.lbltam1.AutoSize = true;
+            this.lbltam1.ForeColor = System.Drawing.Color.Lime;
+            this.lbltam1.Location = new System.Drawing.Point(34, 527);
+            this.lbltam1.Name = "lbltam1";
+            this.lbltam1.Size = new System.Drawing.Size(46, 17);
+            this.lbltam1.TabIndex = 57;
+            this.lbltam1.Text = "label3";
+            // 
+            // lbltam2
+            // 
+            this.lbltam2.AutoSize = true;
+            this.lbltam2.ForeColor = System.Drawing.Color.Lime;
+            this.lbltam2.Location = new System.Drawing.Point(36, 571);
+            this.lbltam2.Name = "lbltam2";
+            this.lbltam2.Size = new System.Drawing.Size(46, 17);
+            this.lbltam2.TabIndex = 58;
+            this.lbltam2.Text = "label3";
             // 
             // frmGame
             // 
@@ -1249,6 +1273,8 @@
         private System.Windows.Forms.PictureBox picTank21;
         private System.Windows.Forms.PictureBox picTank20;
         private System.Windows.Forms.Timer tmrItemActive;
+        private System.Windows.Forms.Label lbltam2;
+        private System.Windows.Forms.Label lbltam1;
     }
 }
 

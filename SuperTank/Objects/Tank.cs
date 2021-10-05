@@ -13,18 +13,18 @@ namespace SuperTank.Objects
     class Tank : BaseObject
     {
         #region số frame lớn nhất
-        private const int MAX_NUMBER_FRAME_TANK = 7;
-        private const int MAX_NUMBER_FRAME_EFFECT = 6;
+        protected const int MAX_NUMBER_FRAME_TANK = 7;
+        protected const int MAX_NUMBER_FRAME_EFFECT = 6;
         #endregion
         #region Số làm việc với frame (tank: có 8 frame 0-7; effect: có 6 frame 0-5)
-        private int frx_tank = 7;
-        private int frx_effect = 0;
-        private int fry_effect = 0;
+        protected int frx_tank = 7;
+        protected int frx_effect = 0;
+        protected int fry_effect = 0;
         #endregion
         protected int moveSpeed;
         protected int tankBulletSpeed;
         protected int energy;
-        private Skin skinTank;
+        protected Skin skinTank;
         protected bool isMove;
         private bool isActivate;
         protected bool left, right, up, down;
@@ -66,6 +66,7 @@ namespace SuperTank.Objects
                             frx_tank * Common.tankSize, (int)skinTank * Common.tankSize, this.RectWidth, this.RectHeight);
                         break;
                 }
+                // nếu xe tăng được di chuyển bánh xe sẽ xoay
                 if (this.isMove)
                 {
                     frx_tank--;
@@ -75,7 +76,6 @@ namespace SuperTank.Objects
             }
             else
             {
-                //Console.WriteLine("Hiển thị hiệu ứng");
                 // hiển thị hiệu ứng xuất hiện
                 Common.PaintObject(background, this.bmpEffect, this.RectX, this.RectY,
                        frx_effect * this.RectWidth, fry_effect * this.RectHeight, this.RectWidth, this.RectHeight);

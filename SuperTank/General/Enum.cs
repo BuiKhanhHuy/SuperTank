@@ -26,7 +26,7 @@ namespace SuperTank.General
     }
     public enum ItemType
     {
-        eItemHeart, eItemShield, eItemGrenade, eItemTimer, eItemLightning
+        eItemHeart, eItemShield, eItemGrenade, eItemTimer
     }
     public enum InforStyle
     {

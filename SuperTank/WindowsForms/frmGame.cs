@@ -21,6 +21,7 @@ namespace SuperTank
         #endregion Đồ họa graphics
         #region các thuộc tính chung
         private Bitmap background;
+        private Bitmap bmpCastle;
         private int[,] map;
         #endregion các thuộc tính chung
         #region Đối tượng
@@ -56,6 +57,8 @@ namespace SuperTank
             graphics = pnMainGame.CreateGraphics();
             // khỏi tạo background
             background = new Bitmap(Common.SCREEN_WIDTH, Common.SCREEN_HEIGHT);
+            // khởi tạo bitmap castle
+            bmpCastle = new Bitmap(Common.STEP * 4, Common.STEP * 4);
             // khởi tạo map
             map = new int[Common.NUMBER_OBJECT_HEIGHT, Common.NUMBER_OBJECT_WIDTH];
             // tạo đối tượng quản lí tường
@@ -108,6 +111,8 @@ namespace SuperTank
             this.lblCastleBlood.Width = 80;
             // cập nhật thông tin vật phẩm đang ăn
             this.picItem.Image = null;
+            // load hình castle 
+            bmpCastle = (Bitmap)Image.FromFile(Common.path + @"\Images\castle.png");
             // set thời gian item và chạy item
             timeItem = 50;
             timeItemActive = 20;
@@ -121,9 +126,8 @@ namespace SuperTank
             // xóa background
             Common.PaintClear(this.background);
             // hiển thị castle
-            Common.PaintObject(this.background, new Bitmap(Common.path + @"\Images\castle.png"),
+            Common.PaintObject(this.background, bmpCastle,
                 400, 680, 0, 0, 80, 80);
-
             // vẽ và di chuyển đạn player
             playerTank.ShowBulletAndMove(this.background);
             //tạo và di chuyển đạn của địch
@@ -172,6 +176,8 @@ namespace SuperTank
                             {
                                 // game over
                                 inforStyle = InforStyle.eGameOver;
+                                // lâu đài bị hỏng
+                                bmpCastle = (Bitmap)Image.FromFile(Common.path + @"\Images\ruinedcastle.png");
                                 // thời gian delay
                                 tmrDelay.Start();
                             }
@@ -212,6 +218,8 @@ namespace SuperTank
                                 {
                                     // game over
                                     inforStyle = InforStyle.eGameOver;
+                                    // lâu đài bị hỏng
+                                    bmpCastle = (Bitmap)Image.FromFile(Common.path + @"\Images\ruinedcastle.png");
                                     // thời gian delay
                                     tmrDelay.Start();
                                 }
@@ -548,6 +556,7 @@ namespace SuperTank
         private void tmrShowItem_Tick(object sender, EventArgs e)
         {
             timeItem -= 1;
+            lbltam1.Text = timeItem.ToString();
             if (timeItem == 20)
             {
                 item.IsOn = true;
@@ -567,8 +576,10 @@ namespace SuperTank
         private void tmrItemActive_Tick(object sender, EventArgs e)
         {
             timeItemActive--;
+            lbltam2.Text = timeItemActive.ToString();
             if (timeItemActive == 0)
             {
+                tmrItemActive.Stop();
                 timeItemActive = 20;
                 // đưa xe tăng player về thông số mặc định
                 playerTank.IsShield = false;
