@@ -34,6 +34,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblHpTankPlayer = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblItemActive = new System.Windows.Forms.Label();
+            this.lbltam1 = new System.Windows.Forms.Label();
             this.picTank27 = new System.Windows.Forms.PictureBox();
             this.picTank26 = new System.Windows.Forms.PictureBox();
             this.picTank25 = new System.Windows.Forms.PictureBox();
@@ -111,8 +113,6 @@
             this.picMinus = new System.Windows.Forms.PictureBox();
             this.picMultiply = new System.Windows.Forms.PictureBox();
             this.tmrItemActive = new System.Windows.Forms.Timer(this.components);
-            this.lbltam1 = new System.Windows.Forms.Label();
-            this.lbltam2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTank27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank26)).BeginInit();
@@ -198,7 +198,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.lbltam2);
+            this.panel1.Controls.Add(this.lblItemActive);
             this.panel1.Controls.Add(this.lbltam1);
             this.panel1.Controls.Add(this.picTank27);
             this.panel1.Controls.Add(this.picTank26);
@@ -241,6 +241,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(147, 800);
             this.panel1.TabIndex = 4;
+            // 
+            // lblItemActive
+            // 
+            this.lblItemActive.Font = new System.Drawing.Font("UTM Nokia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemActive.ForeColor = System.Drawing.Color.Red;
+            this.lblItemActive.Location = new System.Drawing.Point(53, 173);
+            this.lblItemActive.Name = "lblItemActive";
+            this.lblItemActive.Size = new System.Drawing.Size(46, 17);
+            this.lblItemActive.TabIndex = 58;
+            this.lblItemActive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbltam1
+            // 
+            this.lbltam1.AutoSize = true;
+            this.lbltam1.ForeColor = System.Drawing.Color.Lime;
+            this.lbltam1.Location = new System.Drawing.Point(26, 482);
+            this.lbltam1.Name = "lbltam1";
+            this.lbltam1.Size = new System.Drawing.Size(46, 17);
+            this.lbltam1.TabIndex = 57;
+            this.lbltam1.Text = "label3";
             // 
             // picTank27
             // 
@@ -570,7 +590,7 @@
             // picItem
             // 
             this.picItem.BackColor = System.Drawing.Color.Transparent;
-            this.picItem.Location = new System.Drawing.Point(57, 135);
+            this.picItem.Location = new System.Drawing.Point(57, 127);
             this.picItem.Name = "picItem";
             this.picItem.Size = new System.Drawing.Size(40, 40);
             this.picItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -714,6 +734,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 55);
             this.button1.TabIndex = 2;
+            this.button1.TabStop = false;
             this.button1.Text = "Retry";
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -730,6 +751,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 55);
             this.button2.TabIndex = 1;
+            this.button2.TabStop = false;
             this.button2.Text = "Menu";
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -855,6 +877,7 @@
             this.btnGameOverRetry.Name = "btnGameOverRetry";
             this.btnGameOverRetry.Size = new System.Drawing.Size(134, 55);
             this.btnGameOverRetry.TabIndex = 2;
+            this.btnGameOverRetry.TabStop = false;
             this.btnGameOverRetry.Tag = "tag_gamestart";
             this.btnGameOverRetry.Text = "Retry";
             this.btnGameOverRetry.UseVisualStyleBackColor = false;
@@ -873,6 +896,7 @@
             this.btnGameOverMenu.Name = "btnGameOverMenu";
             this.btnGameOverMenu.Size = new System.Drawing.Size(134, 55);
             this.btnGameOverMenu.TabIndex = 1;
+            this.btnGameOverMenu.TabStop = false;
             this.btnGameOverMenu.Tag = "tag_menu";
             this.btnGameOverMenu.Text = "Menu";
             this.btnGameOverMenu.UseVisualStyleBackColor = false;
@@ -995,6 +1019,7 @@
             this.btnNextLevelNext.Name = "btnNextLevelNext";
             this.btnNextLevelNext.Size = new System.Drawing.Size(134, 55);
             this.btnNextLevelNext.TabIndex = 2;
+            this.btnNextLevelNext.TabStop = false;
             this.btnNextLevelNext.Tag = "tag_gamestart";
             this.btnNextLevelNext.Text = "Next";
             this.btnNextLevelNext.UseVisualStyleBackColor = false;
@@ -1013,6 +1038,7 @@
             this.btnNextLevelMenu.Name = "btnNextLevelMenu";
             this.btnNextLevelMenu.Size = new System.Drawing.Size(134, 55);
             this.btnNextLevelMenu.TabIndex = 1;
+            this.btnNextLevelMenu.TabStop = false;
             this.btnNextLevelMenu.Tag = "tag_menu";
             this.btnNextLevelMenu.Text = "Menu";
             this.btnNextLevelMenu.UseVisualStyleBackColor = false;
@@ -1101,26 +1127,6 @@
             this.tmrItemActive.Interval = 1000;
             this.tmrItemActive.Tick += new System.EventHandler(this.tmrItemActive_Tick);
             // 
-            // lbltam1
-            // 
-            this.lbltam1.AutoSize = true;
-            this.lbltam1.ForeColor = System.Drawing.Color.Lime;
-            this.lbltam1.Location = new System.Drawing.Point(34, 527);
-            this.lbltam1.Name = "lbltam1";
-            this.lbltam1.Size = new System.Drawing.Size(46, 17);
-            this.lbltam1.TabIndex = 57;
-            this.lbltam1.Text = "label3";
-            // 
-            // lbltam2
-            // 
-            this.lbltam2.AutoSize = true;
-            this.lbltam2.ForeColor = System.Drawing.Color.Lime;
-            this.lbltam2.Location = new System.Drawing.Point(36, 571);
-            this.lbltam2.Name = "lbltam2";
-            this.lbltam2.Size = new System.Drawing.Size(46, 17);
-            this.lbltam2.TabIndex = 58;
-            this.lbltam2.Text = "label3";
-            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -1131,7 +1137,6 @@
             this.Controls.Add(this.pnRedBackground);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.KeyPreview = true;
             this.Name = "frmGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SUPER TANK";
@@ -1273,7 +1278,7 @@
         private System.Windows.Forms.PictureBox picTank21;
         private System.Windows.Forms.PictureBox picTank20;
         private System.Windows.Forms.Timer tmrItemActive;
-        private System.Windows.Forms.Label lbltam2;
+        private System.Windows.Forms.Label lblItemActive;
         private System.Windows.Forms.Label lbltam1;
     }
 }

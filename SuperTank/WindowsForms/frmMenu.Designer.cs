@@ -99,7 +99,8 @@ namespace SuperTank.WindowsForms
             this.btnExit.Location = new System.Drawing.Point(142, 496);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(204, 76);
-            this.btnExit.TabIndex = 12;
+            this.btnExit.TabIndex = 4;
+            this.btnExit.TabStop = false;
             this.btnExit.Text = "EXIT";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -116,7 +117,8 @@ namespace SuperTank.WindowsForms
             this.btnAboutUs.Location = new System.Drawing.Point(142, 402);
             this.btnAboutUs.Name = "btnAboutUs";
             this.btnAboutUs.Size = new System.Drawing.Size(204, 76);
-            this.btnAboutUs.TabIndex = 11;
+            this.btnAboutUs.TabIndex = 3;
+            this.btnAboutUs.TabStop = false;
             this.btnAboutUs.Text = "ABOUT US";
             this.btnAboutUs.UseVisualStyleBackColor = false;
             this.btnAboutUs.Click += new System.EventHandler(this.btnAboutUs_Click);
@@ -133,7 +135,8 @@ namespace SuperTank.WindowsForms
             this.btnOption.Location = new System.Drawing.Point(142, 214);
             this.btnOption.Name = "btnOption";
             this.btnOption.Size = new System.Drawing.Size(204, 76);
-            this.btnOption.TabIndex = 10;
+            this.btnOption.TabIndex = 1;
+            this.btnOption.TabStop = false;
             this.btnOption.Text = "OPTION";
             this.btnOption.UseVisualStyleBackColor = false;
             this.btnOption.Click += new System.EventHandler(this.btnOption_Click);
@@ -150,7 +153,8 @@ namespace SuperTank.WindowsForms
             this.btnPlay.Location = new System.Drawing.Point(142, 120);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(204, 76);
-            this.btnPlay.TabIndex = 9;
+            this.btnPlay.TabIndex = 0;
+            this.btnPlay.TabStop = false;
             this.btnPlay.Text = "PLAY";
             this.btnPlay.UseVisualStyleBackColor = false;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
@@ -190,7 +194,8 @@ namespace SuperTank.WindowsForms
             this.btnInstructions.Location = new System.Drawing.Point(142, 308);
             this.btnInstructions.Name = "btnInstructions";
             this.btnInstructions.Size = new System.Drawing.Size(204, 76);
-            this.btnInstructions.TabIndex = 25;
+            this.btnInstructions.TabIndex = 2;
+            this.btnInstructions.TabStop = false;
             this.btnInstructions.Text = "INSTRUCTIONS";
             this.btnInstructions.UseVisualStyleBackColor = false;
             this.btnInstructions.Click += new System.EventHandler(this.btnInstructions_Click);
@@ -277,6 +282,7 @@ namespace SuperTank.WindowsForms
             this.btnLevelMenu.Name = "btnLevelMenu";
             this.btnLevelMenu.Size = new System.Drawing.Size(139, 53);
             this.btnLevelMenu.TabIndex = 22;
+            this.btnLevelMenu.TabStop = false;
             this.btnLevelMenu.Text = "Menu";
             this.btnLevelMenu.UseVisualStyleBackColor = false;
             this.btnLevelMenu.Click += new System.EventHandler(this.btnMenu_Click);
@@ -295,6 +301,7 @@ namespace SuperTank.WindowsForms
             this.btnLevel8.Name = "btnLevel8";
             this.btnLevel8.Size = new System.Drawing.Size(165, 53);
             this.btnLevel8.TabIndex = 21;
+            this.btnLevel8.TabStop = false;
             this.btnLevel8.Tag = "8";
             this.btnLevel8.Text = "Level 8";
             this.btnLevel8.UseVisualStyleBackColor = false;
@@ -314,6 +321,7 @@ namespace SuperTank.WindowsForms
             this.btnLevel7.Name = "btnLevel7";
             this.btnLevel7.Size = new System.Drawing.Size(165, 53);
             this.btnLevel7.TabIndex = 20;
+            this.btnLevel7.TabStop = false;
             this.btnLevel7.Tag = "7";
             this.btnLevel7.Text = "Level 7";
             this.btnLevel7.UseVisualStyleBackColor = false;
@@ -333,6 +341,7 @@ namespace SuperTank.WindowsForms
             this.btnLevel6.Name = "btnLevel6";
             this.btnLevel6.Size = new System.Drawing.Size(165, 53);
             this.btnLevel6.TabIndex = 19;
+            this.btnLevel6.TabStop = false;
             this.btnLevel6.Tag = "6";
             this.btnLevel6.Text = "Level 6";
             this.btnLevel6.UseVisualStyleBackColor = false;
@@ -352,6 +361,7 @@ namespace SuperTank.WindowsForms
             this.btnLevel5.Name = "btnLevel5";
             this.btnLevel5.Size = new System.Drawing.Size(165, 53);
             this.btnLevel5.TabIndex = 18;
+            this.btnLevel5.TabStop = false;
             this.btnLevel5.Tag = "5";
             this.btnLevel5.Text = "Level 5";
             this.btnLevel5.UseVisualStyleBackColor = false;
@@ -371,6 +381,7 @@ namespace SuperTank.WindowsForms
             this.btnLevel4.Name = "btnLevel4";
             this.btnLevel4.Size = new System.Drawing.Size(165, 53);
             this.btnLevel4.TabIndex = 17;
+            this.btnLevel4.TabStop = false;
             this.btnLevel4.Tag = "4";
             this.btnLevel4.Text = "Level 4";
             this.btnLevel4.UseVisualStyleBackColor = false;
@@ -390,6 +401,7 @@ namespace SuperTank.WindowsForms
             this.btnLevel3.Name = "btnLevel3";
             this.btnLevel3.Size = new System.Drawing.Size(165, 53);
             this.btnLevel3.TabIndex = 16;
+            this.btnLevel3.TabStop = false;
             this.btnLevel3.Tag = "3";
             this.btnLevel3.Text = "Level 3";
             this.btnLevel3.UseVisualStyleBackColor = false;
@@ -409,6 +421,7 @@ namespace SuperTank.WindowsForms
             this.btnLevel10.Name = "btnLevel10";
             this.btnLevel10.Size = new System.Drawing.Size(165, 53);
             this.btnLevel10.TabIndex = 15;
+            this.btnLevel10.TabStop = false;
             this.btnLevel10.Tag = "10";
             this.btnLevel10.Text = "Level 10";
             this.btnLevel10.UseVisualStyleBackColor = false;
@@ -428,6 +441,7 @@ namespace SuperTank.WindowsForms
             this.btnLevel9.Name = "btnLevel9";
             this.btnLevel9.Size = new System.Drawing.Size(165, 53);
             this.btnLevel9.TabIndex = 14;
+            this.btnLevel9.TabStop = false;
             this.btnLevel9.Tag = "9";
             this.btnLevel9.Text = "Level 9";
             this.btnLevel9.UseVisualStyleBackColor = false;
@@ -446,6 +460,7 @@ namespace SuperTank.WindowsForms
             this.btnLevel2.Name = "btnLevel2";
             this.btnLevel2.Size = new System.Drawing.Size(165, 53);
             this.btnLevel2.TabIndex = 13;
+            this.btnLevel2.TabStop = false;
             this.btnLevel2.Tag = "2";
             this.btnLevel2.Text = "Level 2";
             this.btnLevel2.UseVisualStyleBackColor = false;
@@ -464,6 +479,7 @@ namespace SuperTank.WindowsForms
             this.btnLevel1.Name = "btnLevel1";
             this.btnLevel1.Size = new System.Drawing.Size(165, 53);
             this.btnLevel1.TabIndex = 12;
+            this.btnLevel1.TabStop = false;
             this.btnLevel1.Tag = "1";
             this.btnLevel1.Text = "Level 1";
             this.btnLevel1.UseVisualStyleBackColor = false;
@@ -556,6 +572,7 @@ namespace SuperTank.WindowsForms
             this.btnAboutUsMenu.Name = "btnAboutUsMenu";
             this.btnAboutUsMenu.Size = new System.Drawing.Size(139, 53);
             this.btnAboutUsMenu.TabIndex = 24;
+            this.btnAboutUsMenu.TabStop = false;
             this.btnAboutUsMenu.Text = "Menu";
             this.btnAboutUsMenu.UseVisualStyleBackColor = false;
             this.btnAboutUsMenu.Click += new System.EventHandler(this.btnMenu_Click);
@@ -593,6 +610,7 @@ namespace SuperTank.WindowsForms
             this.btnOptionMenu.Name = "btnOptionMenu";
             this.btnOptionMenu.Size = new System.Drawing.Size(139, 53);
             this.btnOptionMenu.TabIndex = 24;
+            this.btnOptionMenu.TabStop = false;
             this.btnOptionMenu.Text = "Menu";
             this.btnOptionMenu.UseVisualStyleBackColor = false;
             this.btnOptionMenu.Click += new System.EventHandler(this.btnMenu_Click);
@@ -629,6 +647,7 @@ namespace SuperTank.WindowsForms
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 53);
             this.button1.TabIndex = 22;
+            this.button1.TabStop = false;
             this.button1.Text = "Menu";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnMenu_Click);

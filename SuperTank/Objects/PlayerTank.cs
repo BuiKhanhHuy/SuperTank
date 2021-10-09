@@ -107,7 +107,11 @@ namespace SuperTank.Objects
         }
 
         #region properties
-        public bool IsShield { get => isShield; set => isShield = value; }
+        public bool IsShield
+        {
+            get { return isShield; }
+            set { isShield = value; }
+        }
         #endregion properties
     }
 }

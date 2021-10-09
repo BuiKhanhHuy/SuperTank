@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,14 +28,14 @@ namespace SuperTank.Objects
         }
 
         // hiển thị vật phẩm ra giao diện chơi
-        public void CreateItem()
+        public void CreateItem(Point itemPoint)
         {
             // tạo vật phẩm và bắt đầu chạy thời gian hiển thị vật phẩm
-            //timer.Start();
-            this.RectX = 200;
-            this.RectY = 200;
+            // tìm vị trí cho item
+            this.RectX = itemPoint.X;
+            this.RectY = itemPoint.Y;
             Random rand = new Random();
-            switch (rand.Next(1,2))
+            switch (rand.Next(3, 4))
             {
                 case 0:
                     this.ItemType = ItemType.eItemHeart;
