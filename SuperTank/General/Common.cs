@@ -17,6 +17,7 @@ namespace SuperTank.General
         public const int SCREEN_HEIGHT = 900;
         public const int NUMBER_OBJECT_WIDTH = 45;
         public const int NUMBER_OBJECT_HEIGHT = 40;
+        public const int MAX_LEVEL = 10;
         public const int STEP = 20;
         public const int tankSize = 40;
         #endregion
@@ -33,7 +34,7 @@ namespace SuperTank.General
             Graphics g = Graphics.FromImage(bmpBack);
             g.SmoothingMode = SmoothingMode.AntiAlias;
             g.DrawImage(front, x, y, new Rectangle(xFrame, yFrame, wFrame, hFrame), GraphicsUnit.Pixel);
-            //g.DrawEllipse(new Pen(Color.Yellow, 5)
+            //g.DrawRectangle(new Pen(Color.Yellow, 2)
             //    , x, y, wFrame, hFrame);
             g.Dispose();
         }

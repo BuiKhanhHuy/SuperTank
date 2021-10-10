@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SuperTank.General;
 using System.Windows.Forms;
 
 
@@ -13,12 +14,46 @@ namespace SuperTank.WindowsForms
 {
     public partial class frmMenu : Form
     {
+        // mảng các button level
+        private Button[] levelButtons;
+
         public frmMenu()
         {
+            // load đường dẫn dùng chung
+            Common.path = Application.StartupPath + @"\Content";
+            // thiết kế control
             InitializeComponent();
+            // add các button level vào mảng
+            levelButtons = new Button[] { btnLevel1, btnLevel2, btnLevel3, btnLevel4, btnLevel5,
+                btnLevel6, btnLevel7, btnLevel8, btnLevel9, btnLevel10 };
+        }
+
+        // load form
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            // đọc level người chơi từ file
+            PlayerInfor.ReadPlayerLevel(@"\PlayerLevel.txt");
+            // hiển thị các nút level được mở 
+            this.ShowOpenedLevels( PlayerInfor.level);
         }
 
         #region các hàm xử lí chính
+        // hiển thị các level được mở
+        public void ShowOpenedLevels(int level)
+        {
+            for (int i = 0; i < level; i++)
+                levelButtons[i].Enabled = true;
+        }
+
+        // start game with level
+        private void btnLevel_Click(object sender, EventArgs e)
+        {
+            frmGame formGame = new frmGame(int.Parse(((Button)sender).Tag.ToString()));
+            formGame.formMenu = this;
+            this.Hide();
+            formGame.Show();
+            this.ResetPanel();
+        }
 
         // reset panel
         private void ResetPanel()
@@ -66,6 +101,8 @@ namespace SuperTank.WindowsForms
         // exit
         private void btnExit_Click(object sender, EventArgs e)
         {
+            // lưu thông tin level người chơi lại
+            PlayerInfor.WritePlayerLevel(@"\PlayerLevel.txt");
             Application.Exit();
         }
 
@@ -75,15 +112,6 @@ namespace SuperTank.WindowsForms
             this.ResetPanel();
         }
 
-        // start game with level
-        private void btnLevel_Click(object sender, EventArgs e)
-        {
-            frmGame formGame = new frmGame(int.Parse(((Button)sender).Tag.ToString()));
-            formGame.formMenu = this;
-            this.Hide();
-            formGame.Show();
-            this.ResetPanel();
-        }
         #endregion các hàm xử lí chính
 
         #region các hàm sự kiện thanh tiêu đề
@@ -133,12 +161,11 @@ namespace SuperTank.WindowsForms
             this.picMultiply.BackColor = Color.Transparent;
         }
 
-
-
-
         // thoát game
         private void picMultiply_Click(object sender, EventArgs e)
         {
+            // lưu thông tin level người chơi lại
+            PlayerInfor.WritePlayerLevel(@"\PlayerLevel.txt");
             Application.Exit();
         }
 

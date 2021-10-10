@@ -35,7 +35,7 @@ namespace SuperTank.Objects
             this.RectX = itemPoint.X;
             this.RectY = itemPoint.Y;
             Random rand = new Random();
-            switch (rand.Next(3, 4))
+            switch (rand.Next(0, 4))
             {
                 case 0:
                     this.ItemType = ItemType.eItemHeart;

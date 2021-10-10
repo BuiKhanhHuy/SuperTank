@@ -51,7 +51,6 @@ namespace SuperTank
         public frmGame(int level)
         {
             this.level = level;
-            Common.path = Application.StartupPath + @"\Content";
             InitializeComponent();
         }
         private void frmGame_Load(object sender, EventArgs e)
@@ -177,7 +176,7 @@ namespace SuperTank
                         // hủy viên gạch đi khi nó là gạch có thể phá hủy
                         if (wallManager.Walls[i].WallNumber == 1)
                         {
-                            Console.WriteLine("Ta bắn trúng tường có thể phá.");
+                            //Console.WriteLine("Ta bắn trúng tường có thể phá.");
                             wallManager.RemoveOneWall(i);
                         }
                         else
@@ -461,7 +460,8 @@ namespace SuperTank
             {
                 time_delay = 0;
                 tmrDelay.Stop();
-                // hiển thị theo loại thông báo
+                tmrGameLoop.Stop();
+                // hiển thị theo loại thông báo 
                 switch (inforStyle)
                 {
                     case InforStyle.eGameOver:
@@ -566,47 +566,61 @@ namespace SuperTank
         #endregion sự kiện phím
 
         #region các hàm xử lí chính
-        private void PlayerBulletHitsWall()
-        {
-
-        }
-
         // game over
         private void GameOver()
         {
+
+            // dừng các timer
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
             tmrItemActive.Stop();
+            // hiển thị panel GameOver
             pnGameOver.Top = 3;
             pnGameOver.Left = 3;
             pnGameOver.Enabled = true;
+            // cập nhật thông tin lên panel
             picGameOverRank.Image = Image.FromFile(String.Format("{0}{1:00}.png",
-                Common.path + @"\Images\rank", 1));
+                Common.path + @"\Images\rank", PlayerInfor.level));
+            lblGameOverLevel.Text = "LEVEL " + level;
         }
 
         // game next
         private void GameNext()
         {
-            this.level++;
+            // dừng các timer
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
             tmrItemActive.Stop();
+            // hiển thị panel NextLevel
             pnNextLevel.Top = 3;
             pnNextLevel.Left = 3;
             pnNextLevel.Enabled = true;
+            // cập nhật thông tin lên panel
             picNextLevelRank.Image = Image.FromFile(String.Format("{0}{1:00}.png",
-              Common.path + @"\Images\rank", 1));
+              Common.path + @"\Images\rank", PlayerInfor.level));
+            lblNextLevelLevel.Text = "LEVEL " + level;
+
+            // tăng level
+            this.level++;
+            // nếu level đang chơi phá vỡ kỉ lục trước
+            if (level > PlayerInfor.level)
+                PlayerInfor.level++;
+
         }
 
         // game win
         private void GameWin()
         {
+            // dừng các timer
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
             tmrItemActive.Stop();
+            // hiển thị panel GameWin
             pnGameWin.Top = 3;
             pnGameWin.Left = 3;
             pnGameWin.Enabled = true;
+            // cập nhật thông tin lên panel
+
         }
         #endregion các hàm xử lí chính
 
@@ -689,6 +703,8 @@ namespace SuperTank
             switch (button.Tag.ToString())
             {
                 case "tag_menu":
+                    // bật các button level của form menu
+                    this.formMenu.ShowOpenedLevels(PlayerInfor.level);
                     // hiển thị form menu
                     this.formMenu.Show();
                     this.Close();
@@ -793,6 +809,8 @@ namespace SuperTank
         // thoát game
         private void picMultiply_Click(object sender, EventArgs e)
         {
+            // lưu thông tin level người chơi lại
+            PlayerInfor.WritePlayerLevel(@"\PlayerLevel.txt");
             Application.Exit();
         }
 
@@ -800,3 +818,40 @@ namespace SuperTank
         #endregion các hàm sự kiện thanh tiêu đề
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

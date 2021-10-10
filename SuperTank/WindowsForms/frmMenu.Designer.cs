@@ -450,6 +450,7 @@ namespace SuperTank.WindowsForms
             // btnLevel2
             // 
             this.btnLevel2.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel2.Enabled = false;
             this.btnLevel2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnLevel2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -469,6 +470,7 @@ namespace SuperTank.WindowsForms
             // btnLevel1
             // 
             this.btnLevel1.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel1.Enabled = false;
             this.btnLevel1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnLevel1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -668,6 +670,7 @@ namespace SuperTank.WindowsForms
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenu";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.pnTitle.ResumeLayout(false);

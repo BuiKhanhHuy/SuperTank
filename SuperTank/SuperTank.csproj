@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="General\PlayerInfor.cs" />
     <Compile Include="Objects\EnemyTank.cs" />
     <Compile Include="General\Common.cs" />
     <Compile Include="General\Enum.cs" />
@@ -168,6 +169,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\img_option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ezgif.com-gif-maker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imggameover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imggamewin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imglevelcomplete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
