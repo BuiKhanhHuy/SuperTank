@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGame));
             this.tmrGameLoop = new System.Windows.Forms.Timer(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -659,6 +660,7 @@
             // 
             // picGameWinRank
             // 
+            this.picGameWinRank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.picGameWinRank.Location = new System.Drawing.Point(445, 284);
             this.picGameWinRank.Name = "picGameWinRank";
             this.picGameWinRank.Size = new System.Drawing.Size(150, 150);
@@ -711,14 +713,14 @@
             // 
             // lblGameWinLevel
             // 
-            this.lblGameWinLevel.AutoSize = true;
-            this.lblGameWinLevel.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameWinLevel.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGameWinLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblGameWinLevel.Location = new System.Drawing.Point(469, 442);
+            this.lblGameWinLevel.Location = new System.Drawing.Point(440, 437);
             this.lblGameWinLevel.Name = "lblGameWinLevel";
-            this.lblGameWinLevel.Size = new System.Drawing.Size(105, 39);
+            this.lblGameWinLevel.Size = new System.Drawing.Size(162, 39);
             this.lblGameWinLevel.TabIndex = 3;
             this.lblGameWinLevel.Text = "level 5";
+            this.lblGameWinLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -778,7 +780,7 @@
             // 
             // picGameOverRank
             // 
-            this.picGameOverRank.BackColor = System.Drawing.Color.Transparent;
+            this.picGameOverRank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.picGameOverRank.Location = new System.Drawing.Point(445, 305);
             this.picGameOverRank.Name = "picGameOverRank";
             this.picGameOverRank.Size = new System.Drawing.Size(150, 150);
@@ -846,14 +848,14 @@
             // 
             // lblGameOverLevel
             // 
-            this.lblGameOverLevel.AutoSize = true;
-            this.lblGameOverLevel.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameOverLevel.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGameOverLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblGameOverLevel.Location = new System.Drawing.Point(469, 460);
+            this.lblGameOverLevel.Location = new System.Drawing.Point(438, 460);
             this.lblGameOverLevel.Name = "lblGameOverLevel";
-            this.lblGameOverLevel.Size = new System.Drawing.Size(105, 39);
+            this.lblGameOverLevel.Size = new System.Drawing.Size(164, 39);
             this.lblGameOverLevel.TabIndex = 3;
             this.lblGameOverLevel.Text = "level 5";
+            this.lblGameOverLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnGameOverRetry
             // 
@@ -923,6 +925,7 @@
             // 
             // picNextLevelRank
             // 
+            this.picNextLevelRank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.picNextLevelRank.Location = new System.Drawing.Point(445, 280);
             this.picNextLevelRank.Name = "picNextLevelRank";
             this.picNextLevelRank.Size = new System.Drawing.Size(150, 150);
@@ -976,14 +979,14 @@
             // 
             // lblNextLevelLevel
             // 
-            this.lblNextLevelLevel.AutoSize = true;
-            this.lblNextLevelLevel.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNextLevelLevel.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNextLevelLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblNextLevelLevel.Location = new System.Drawing.Point(469, 442);
+            this.lblNextLevelLevel.Location = new System.Drawing.Point(440, 435);
             this.lblNextLevelLevel.Name = "lblNextLevelLevel";
-            this.lblNextLevelLevel.Size = new System.Drawing.Size(105, 39);
+            this.lblNextLevelLevel.Size = new System.Drawing.Size(162, 39);
             this.lblNextLevelLevel.TabIndex = 3;
             this.lblNextLevelLevel.Text = "level 5";
+            this.lblNextLevelLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnNextLevelNext
             // 
@@ -1104,6 +1107,7 @@
             this.Controls.Add(this.pnRedBackground);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SUPER TANK";
