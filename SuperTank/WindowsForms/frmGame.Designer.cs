@@ -664,6 +664,7 @@
             this.picGameWinRank.Location = new System.Drawing.Point(445, 284);
             this.picGameWinRank.Name = "picGameWinRank";
             this.picGameWinRank.Size = new System.Drawing.Size(150, 150);
+            this.picGameWinRank.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picGameWinRank.TabIndex = 9;
             this.picGameWinRank.TabStop = false;
             // 
@@ -1112,6 +1113,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SUPER TANK";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGame_FormClosing);
             this.Load += new System.EventHandler(this.frmGame_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmGame_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmGame_KeyUp);

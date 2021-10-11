@@ -339,7 +339,7 @@ namespace SuperTank
                             // cập nhật lại thông tin số địch còn lại lên pic
                             picNumberEnemyTanks[enemyTankManager.NumberEnemyTankDestroy].Image = null;
                             // đã tiêu diệt toàn bộ kẻ địch
-                            if (enemyTankManager.NumberEnemyTankDestroy == 0 && this.level == 10)
+                            if (enemyTankManager.NumberEnemyTankDestroy == 0 && this.level == Common.MAX_LEVEL)
                             {
                                 // Gamewin
                                 inforStyle = InforStyle.eGameWin;
@@ -425,14 +425,25 @@ namespace SuperTank
                                 // cập nhật lại thông tin số địch còn lại lên pic
                                 picNumberEnemyTanks[enemyTankManager.NumberEnemyTankDestroy].Image = null;
                                 // đã tiêu diệt toàn bộ kẻ địch
-                                if (enemyTankManager.NumberEnemyTankDestroy <= 0)
+                                if (enemyTankManager.NumberEnemyTankDestroy == 0 && this.level == Common.MAX_LEVEL)
                                 {
-                                    // Gamenext
-                                    inforStyle = InforStyle.eGameNext;
+                                    // Gamewin
+                                    inforStyle = InforStyle.eGameWin;
+                                    // dừng timer show vật phẩm
+                                    tmrShowItem.Stop();
                                     // thời gian delay
                                     tmrDelay.Start();
                                 }
-
+                                else
+                                   if (enemyTankManager.NumberEnemyTankDestroy == 0)
+                                {
+                                    // Gamenext
+                                    inforStyle = InforStyle.eGameNext;
+                                    // dừng timer show vật phẩm
+                                    tmrShowItem.Stop();
+                                    // thời gian delay
+                                    tmrDelay.Start();
+                                }
                             }
                             //-------> tạm
                             break;
@@ -822,13 +833,16 @@ namespace SuperTank
             this.picMultiply.BackColor = Color.Transparent;
         }
 
-
+        // trước khi thoát game
+        private void frmGame_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // lưu thông tin level người chơi lại
+            PlayerInfor.WritePlayerLevel(@"\PlayerLevel.txt");
+        }
 
         // thoát game
         private void picMultiply_Click(object sender, EventArgs e)
         {
-            // lưu thông tin level người chơi lại
-            PlayerInfor.WritePlayerLevel(@"\PlayerLevel.txt");
             Application.Exit();
         }
 

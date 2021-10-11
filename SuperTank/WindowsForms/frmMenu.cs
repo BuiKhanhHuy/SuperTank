@@ -168,11 +168,16 @@ namespace SuperTank.WindowsForms
             this.picMultiply.BackColor = Color.Transparent;
         }
 
-        // thoát game
-        private void picMultiply_Click(object sender, EventArgs e)
+        // trước khi thoát
+        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             // lưu thông tin level người chơi lại
             PlayerInfor.WritePlayerLevel(@"\PlayerLevel.txt");
+        }
+
+        // thoát game
+        private void picMultiply_Click(object sender, EventArgs e)
+        {
             Application.Exit();
         }
 
