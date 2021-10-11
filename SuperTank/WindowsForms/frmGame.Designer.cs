@@ -76,11 +76,11 @@
             this.pnGameWin = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picGameWinRank = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblGameWinTotal = new System.Windows.Forms.Label();
+            this.lblGameWinScores = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblGameWinLevel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pnGameOver = new System.Windows.Forms.Panel();
@@ -634,11 +634,11 @@
             this.pnGameWin.BackColor = System.Drawing.Color.Black;
             this.pnGameWin.Controls.Add(this.pictureBox2);
             this.pnGameWin.Controls.Add(this.picGameWinRank);
-            this.pnGameWin.Controls.Add(this.label8);
-            this.pnGameWin.Controls.Add(this.label13);
+            this.pnGameWin.Controls.Add(this.lblGameWinTotal);
+            this.pnGameWin.Controls.Add(this.lblGameWinScores);
             this.pnGameWin.Controls.Add(this.label15);
             this.pnGameWin.Controls.Add(this.label16);
-            this.pnGameWin.Controls.Add(this.label17);
+            this.pnGameWin.Controls.Add(this.lblGameWinLevel);
             this.pnGameWin.Controls.Add(this.button1);
             this.pnGameWin.Controls.Add(this.button2);
             this.pnGameWin.Enabled = false;
@@ -665,27 +665,27 @@
             this.picGameWinRank.TabIndex = 9;
             this.picGameWinRank.TabStop = false;
             // 
-            // label8
+            // lblGameWinTotal
             // 
-            this.label8.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(557, 605);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(213, 37);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "0";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGameWinTotal.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameWinTotal.ForeColor = System.Drawing.Color.White;
+            this.lblGameWinTotal.Location = new System.Drawing.Point(557, 605);
+            this.lblGameWinTotal.Name = "lblGameWinTotal";
+            this.lblGameWinTotal.Size = new System.Drawing.Size(213, 37);
+            this.lblGameWinTotal.TabIndex = 7;
+            this.lblGameWinTotal.Text = "0";
+            this.lblGameWinTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label13
+            // lblGameWinScores
             // 
-            this.label13.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(557, 536);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(213, 37);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "0";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGameWinScores.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameWinScores.ForeColor = System.Drawing.Color.White;
+            this.lblGameWinScores.Location = new System.Drawing.Point(557, 536);
+            this.lblGameWinScores.Name = "lblGameWinScores";
+            this.lblGameWinScores.Size = new System.Drawing.Size(213, 37);
+            this.lblGameWinScores.TabIndex = 6;
+            this.lblGameWinScores.Text = "0";
+            this.lblGameWinScores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label15
             // 
@@ -709,16 +709,16 @@
             this.label16.TabIndex = 4;
             this.label16.Text = "Scores:";
             // 
-            // label17
+            // lblGameWinLevel
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label17.Location = new System.Drawing.Point(469, 442);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(105, 39);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "level 5";
+            this.lblGameWinLevel.AutoSize = true;
+            this.lblGameWinLevel.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameWinLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblGameWinLevel.Location = new System.Drawing.Point(469, 442);
+            this.lblGameWinLevel.Name = "lblGameWinLevel";
+            this.lblGameWinLevel.Size = new System.Drawing.Size(105, 39);
+            this.lblGameWinLevel.TabIndex = 3;
+            this.lblGameWinLevel.Text = "level 5";
             // 
             // button1
             // 
@@ -734,8 +734,10 @@
             this.button1.Size = new System.Drawing.Size(134, 55);
             this.button1.TabIndex = 2;
             this.button1.TabStop = false;
+            this.button1.Tag = "tag_gamestart";
             this.button1.Text = "Retry";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btn_Click);
             // 
             // button2
             // 
@@ -751,8 +753,10 @@
             this.button2.Size = new System.Drawing.Size(134, 55);
             this.button2.TabIndex = 1;
             this.button2.TabStop = false;
+            this.button2.Tag = "tag_menu";
             this.button2.Text = "Menu";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btn_Click);
             // 
             // pnGameOver
             // 
@@ -1217,11 +1221,11 @@
         private System.Windows.Forms.Panel pnGameOver;
         private System.Windows.Forms.Panel pnGameWin;
         private System.Windows.Forms.PictureBox picGameWinRank;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblGameWinTotal;
+        private System.Windows.Forms.Label lblGameWinScores;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblGameWinLevel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Timer tmrDelay;

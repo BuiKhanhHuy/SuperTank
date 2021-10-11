@@ -339,7 +339,17 @@ namespace SuperTank
                             // cập nhật lại thông tin số địch còn lại lên pic
                             picNumberEnemyTanks[enemyTankManager.NumberEnemyTankDestroy].Image = null;
                             // đã tiêu diệt toàn bộ kẻ địch
-                            if (enemyTankManager.NumberEnemyTankDestroy == 0)
+                            if (enemyTankManager.NumberEnemyTankDestroy == 0 && this.level == 10)
+                            {
+                                // Gamewin
+                                inforStyle = InforStyle.eGameWin;
+                                // dừng timer show vật phẩm
+                                tmrShowItem.Stop();
+                                // thời gian delay
+                                tmrDelay.Start();
+                            }
+                            else
+                                if (enemyTankManager.NumberEnemyTankDestroy == 0)
                             {
                                 // Gamenext
                                 inforStyle = InforStyle.eGameNext;
@@ -580,31 +590,35 @@ namespace SuperTank
             pnGameOver.Enabled = true;
             // cập nhật thông tin lên panel
             picGameOverRank.Image = Image.FromFile(String.Format("{0}{1:00}.png",
-                Common.path + @"\Images\rank", PlayerInfor.level));
+                Common.path + @"\Images\rank", PlayerInfor.rank));
             lblGameOverLevel.Text = "LEVEL " + level;
         }
 
         // game next
         private void GameNext()
         {
+
             // dừng các timer
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
             tmrItemActive.Stop();
-            // hiển thị panel NextLevel
-            pnNextLevel.Top = 3;
-            pnNextLevel.Left = 3;
-            pnNextLevel.Enabled = true;
-            // cập nhật thông tin lên panel
-            picNextLevelRank.Image = Image.FromFile(String.Format("{0}{1:00}.png",
-              Common.path + @"\Images\rank", PlayerInfor.level));
+            // hiển thị level hiện tại lên panel thông tin
             lblNextLevelLevel.Text = "LEVEL " + level;
-
             // tăng level
             this.level++;
             // nếu level đang chơi phá vỡ kỉ lục trước
             if (level > PlayerInfor.level)
+            {
+                PlayerInfor.rank = PlayerInfor.level;
                 PlayerInfor.level++;
+            }
+            // hiển thị panel NextLevel
+            pnNextLevel.Top = 3;
+            pnNextLevel.Left = 3;
+            pnNextLevel.Enabled = true;
+            // hiển thị ảnh rank lên panel thông tin
+            picNextLevelRank.Image = Image.FromFile(String.Format("{0}{1:00}.png",
+              Common.path + @"\Images\rank", PlayerInfor.rank));
 
         }
 
@@ -619,8 +633,12 @@ namespace SuperTank
             pnGameWin.Top = 3;
             pnGameWin.Left = 3;
             pnGameWin.Enabled = true;
-            // cập nhật thông tin lên panel
-
+            // rank cuối cùng 
+            PlayerInfor.rank = PlayerInfor.level;
+            // hiển thị level hiện tại lên panel thông tin
+            lblGameWinLevel.Text = "LEVEL " + level;
+            picGameWinRank.Image = Image.FromFile(String.Format("{0}{1:00}.png",
+            Common.path + @"\Images\rank", PlayerInfor.rank));
         }
         #endregion các hàm xử lí chính
 

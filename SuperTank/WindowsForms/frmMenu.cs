@@ -42,13 +42,20 @@ namespace SuperTank.WindowsForms
         public void ShowOpenedLevels(int level)
         {
             for (int i = 0; i < level; i++)
+            {
                 levelButtons[i].Enabled = true;
+                levelButtons[i].ForeColor = Color.FromArgb(224, 224, 224);
+
+            }
+            levelButtons[level - 1].ForeColor = Color.Gold;
         }
 
         // start game with level
         private void btnLevel_Click(object sender, EventArgs e)
         {
-            frmGame formGame = new frmGame(int.Parse(((Button)sender).Tag.ToString()));
+            int level;
+            level = int.Parse(((Button)sender).Tag.ToString());
+            frmGame formGame = new frmGame(level);
             formGame.formMenu = this;
             this.Hide();
             formGame.Show();
