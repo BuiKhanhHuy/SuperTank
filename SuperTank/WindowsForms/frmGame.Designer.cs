@@ -36,7 +36,6 @@
             this.lblHpTankPlayer = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblItemActive = new System.Windows.Forms.Label();
-            this.lbltam1 = new System.Windows.Forms.Label();
             this.picTank27 = new System.Windows.Forms.PictureBox();
             this.picTank26 = new System.Windows.Forms.PictureBox();
             this.picTank25 = new System.Windows.Forms.PictureBox();
@@ -200,7 +199,6 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.lblItemActive);
-            this.panel1.Controls.Add(this.lbltam1);
             this.panel1.Controls.Add(this.picTank27);
             this.panel1.Controls.Add(this.picTank26);
             this.panel1.Controls.Add(this.picTank25);
@@ -252,16 +250,6 @@
             this.lblItemActive.Size = new System.Drawing.Size(46, 17);
             this.lblItemActive.TabIndex = 58;
             this.lblItemActive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbltam1
-            // 
-            this.lbltam1.AutoSize = true;
-            this.lbltam1.ForeColor = System.Drawing.Color.Lime;
-            this.lbltam1.Location = new System.Drawing.Point(26, 482);
-            this.lbltam1.Name = "lbltam1";
-            this.lbltam1.Size = new System.Drawing.Size(46, 17);
-            this.lbltam1.TabIndex = 57;
-            this.lbltam1.Text = "label3";
             // 
             // picTank27
             // 
@@ -1249,7 +1237,6 @@
         private System.Windows.Forms.PictureBox picTank20;
         private System.Windows.Forms.Timer tmrItemActive;
         private System.Windows.Forms.Label lblItemActive;
-        private System.Windows.Forms.Label lbltam1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;

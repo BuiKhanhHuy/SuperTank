@@ -93,14 +93,14 @@ namespace SuperTank
             bool isWallCollision;
             // kiểm tra xe tăng địch có va chạm xe tăng player
             bool isPlayerTankCollision;
-            // kiểm tra xe tăng địch có va chạm với xe tắng địch đồng minh
+            // kiểm tra xe tăng địch có va chạm với xe tăng địch đồng minh
             bool isAlliedTanksCollision;
 
             isWallCollision = this.IsWallCollision(walls, this.directionTank);
             isPlayerTankCollision = this.IsPlayerTankCollision(playerTank);
             isAlliedTanksCollision = this.IsAlliedTanksCollision(alliedTanks);
-            // nếu va chạm tường hoặc xe tăng đồng minh của địch thì xử lí đổi hướng
-            if (isWallCollision || isAlliedTanksCollision)
+            // nếu va chạm tường, player hoặc xe tăng đồng minh của địch thì xử lí đổi hướng
+            if (isWallCollision || isAlliedTanksCollision || isPlayerTankCollision)
             {
                 Random rand = new Random();
                 // random ngẫu nhiên hướng di chuyển (0: left; 1:right; 2: up; 3: down)
@@ -125,12 +125,6 @@ namespace SuperTank
                 }
                 this.RotateFrame();
                 rand = null;
-                return false;
-            }
-            else if (isPlayerTankCollision)
-            {
-                // nếu xe tăng địch va chạm xe tăng player thì dừng di chuyển
-                this.IsMove = false;
                 return false;
             }
             else
@@ -147,14 +141,14 @@ namespace SuperTank
             bool isWallCollision;
             // kiểm tra xe tăng địch có va chạm xe tăng player
             bool isPlayerTankCollision;
-            // kiểm tra xe tăng địch có va chạm với xe tắng địch đồng minh
+            // kiểm tra xe tăng địch có va chạm với xe tăng địch đồng minh
             bool isAlliedTanksCollision;
 
             isWallCollision = this.IsWallCollision(walls, this.directionTank);
             isPlayerTankCollision = this.IsPlayerTankCollision(playerTank);
             isAlliedTanksCollision = this.IsAlliedTanksCollision(alliedTanks);
-            // nếu va chạm tường hoặc xe tăng đồng minh của địch thì xử lí đổi hướng
-            if (isWallCollision || isAlliedTanksCollision)
+            // nếu va chạm tường, player hoặc xe tăng đồng minh của địch thì xử lí đổi hướng
+            if (isWallCollision || isAlliedTanksCollision || isPlayerTankCollision)
             {
                 Random rand = new Random();
                 // random ngẫu nhiên hướng di chuyển (0: left; 1:right; 2: up; 3: down)
@@ -179,12 +173,6 @@ namespace SuperTank
                 }
                 this.RotateFrame();
                 rand = null;
-                return false;
-            }
-            else if (isPlayerTankCollision)
-            {
-                // nếu xe tăng địch va chạm xe tăng player thì dừng di chuyển
-                this.IsMove = false;
                 return false;
             }
             else

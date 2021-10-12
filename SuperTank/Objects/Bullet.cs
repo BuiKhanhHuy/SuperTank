@@ -11,6 +11,7 @@ namespace SuperTank.Objects
     {
         private Direction directionBullet;
         private int speedBullet;
+        private int power;
             
         // viên đạn di chuyển
         public void BulletMove()
@@ -55,6 +56,17 @@ namespace SuperTank.Objects
             set
             {
                 speedBullet = value;
+            }
+        }
+
+        public int Power {
+            get
+            {
+                return power;
+            }
+            set
+            {
+                power = value;
             }
         }
         #endregion

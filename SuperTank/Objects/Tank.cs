@@ -24,6 +24,7 @@ namespace SuperTank.Objects
         protected int moveSpeed;
         protected int tankBulletSpeed;
         protected int energy;
+        private BulletType bulletType;
         protected Skin skinTank;
         protected bool isMove;
         private bool isActivate;
@@ -38,6 +39,7 @@ namespace SuperTank.Objects
             this.RectWidth = Common.tankSize;
             this.RectHeight = Common.tankSize;
             this.Bullets = new List<Bullet>();
+            this.BulletType = BulletType.eTriangleBullet;
         }
 
         // hiển thị xe tăng
@@ -135,27 +137,47 @@ namespace SuperTank.Objects
         }
 
         // tạo đạn cho xe tăng
-        public void CreatBullet(string path)
+        public void CreatBullet(string pathRoundBullet, string pathRocketBullet)
         {
             if (this.bullets.Count == 0 && this.IsActivate)
             {
                 // đạn
                 Bullet bullet;
                 bullet = new Bullet();
-                bullet.LoadImage(path);
-                bullet.RectWidth = 8;
-                bullet.RectHeight = 8;
                 bullet.SpeedBullet = this.TankBulletSpeed;
+
+                // set loại bullet
+                switch (this.bulletType)
+                {
+                    case BulletType.eTriangleBullet:
+                        bullet.LoadImage(Common.path + pathRoundBullet);
+                        // đạn tam giác có kích thước 8x8
+                        bullet.RectWidth =8;
+                        bullet.RectHeight = 8;
+                        // năng lượng của đạn tam giác mặc định là 10
+                        bullet.Power = 10;
+                        break;
+                    case BulletType.eRocketBullet:
+                        bullet.LoadImage(Common.path + pathRocketBullet);
+                        // đạn rocket có kích thước 12x12
+                        bullet.RectWidth = 12;
+                        bullet.RectHeight = 12;
+                        // năng lượng của đạn rocket mặc định là 40
+                        bullet.Power = 30;
+                        break;
+                }
                 // hướng của xe tăng
                 switch (directionTank)
                 {
                     case Direction.eLeft:
                         bullet.DirectionBullet = Direction.eLeft;
+                        bullet.BmpObject.RotateFlip(RotateFlipType.Rotate270FlipNone);
                         bullet.RectX = this.RectX + bullet.RectWidth;
                         bullet.RectY = this.RectY + this.RectHeight / 2 - bullet.RectHeight / 2;
                         break;
                     case Direction.eRight:
                         bullet.DirectionBullet = Direction.eRight;
+                        bullet.BmpObject.RotateFlip(RotateFlipType.Rotate90FlipNone);
                         bullet.RectX = this.RectX + this.RectWidth - bullet.RectWidth;
                         bullet.RectY = this.RectY + this.RectHeight / 2 - bullet.RectHeight / 2;
                         break;
@@ -166,14 +188,13 @@ namespace SuperTank.Objects
                         break;
                     case Direction.eDown:
                         bullet.DirectionBullet = Direction.eDown;
+                        bullet.BmpObject.RotateFlip(RotateFlipType.Rotate180FlipNone);
                         bullet.RectY = this.RectY + this.RectHeight - bullet.RectHeight;
                         bullet.RectX = this.RectX + this.RectWidth / 2 - bullet.RectWidth / 2;
                         break;
                 }
                 this.bullets.Add(bullet);
                 bullet = null;
-                //this.isFire = false;
-                //Console.WriteLine("Số đạn player bắn ra: " + Bullets.Count);
             }
         }
 
@@ -383,18 +404,6 @@ namespace SuperTank.Objects
                 isMove = value;
             }
         }
-        //public bool IsFire
-        //{
-        //    get
-        //    {
-        //        //return isFire;
-        //    }
-
-        //    set
-        //    {
-        //        //isFire = value;
-        //    }
-        //}
         public List<Bullet> Bullets
         {
             get
@@ -430,6 +439,17 @@ namespace SuperTank.Objects
             set
             {
                 isActivate = value;
+            }
+        }
+
+        public BulletType BulletType {
+            get
+            {
+                return bulletType;
+            }
+            set
+            {
+                bulletType = value;
             }
         }
         #endregion property

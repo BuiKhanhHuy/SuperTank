@@ -10,6 +10,10 @@ namespace SuperTank.General
     {
         eLeft, eRight, eUp, eDown
     }
+    public enum BulletType
+    {
+        eTriangleBullet, eRocketBullet
+    }
     public enum ExplosionSize
     {
         eSmallExplosion, eBigExplosion
@@ -26,7 +30,7 @@ namespace SuperTank.General
     }
     public enum ItemType
     {
-        eItemHeart, eItemShield, eItemGrenade, eItemTimer
+        eItemHeart, eItemShield, eItemGrenade, eItemRocket
     }
     public enum InforStyle
     {

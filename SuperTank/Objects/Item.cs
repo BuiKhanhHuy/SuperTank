@@ -35,7 +35,7 @@ namespace SuperTank.Objects
             this.RectX = itemPoint.X;
             this.RectY = itemPoint.Y;
             Random rand = new Random();
-            switch (rand.Next(2,3))
+            switch (rand.Next(0,4))
             {
                 case 0:
                     this.ItemType = ItemType.eItemHeart;
@@ -50,8 +50,8 @@ namespace SuperTank.Objects
                     this.LoadImage(Common.path + @"\Images\icon_grenade.png");
                     break;
                 case 3:
-                    this.ItemType = ItemType.eItemTimer;
-                    this.LoadImage(Common.path + @"\Images\icon_timer.png");
+                    this.ItemType = ItemType.eItemRocket;
+                    this.LoadImage(Common.path + @"\Images\icon_rocket.png");
                     break;
             }
             rand = null;
