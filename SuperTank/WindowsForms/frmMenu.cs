@@ -123,7 +123,6 @@ namespace SuperTank.WindowsForms
 
         #region các hàm sự kiện thanh tiêu đề
         private Point titleClickPoint;
-        private bool isZoom = false;
         private int w, h;
 
         // chuot click tieu de

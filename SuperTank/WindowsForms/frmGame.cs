@@ -158,6 +158,7 @@ namespace SuperTank
             //hiển thị toàn bộ xe tăng địch
             enemyTankManager.ShowAllEnemyTank(this.background);
 
+            //int tam = 0;
             #region đạn player và đạn địch trúng tường
             for (int i = wallManager.Walls.Count - 1; i >= 0; i--)
             {
@@ -174,7 +175,12 @@ namespace SuperTank
                             // thêm vụ nổ vào danh sách
                             explosionManager.CreateExplosion(ExplosionSize.eSmallExplosion, playerTank.Bullets[j].Rect);
                             // viên đạn xe tăng player này bị hủy
-                            playerTank.RemoveOneBullet(j);
+                            //tam++;
+                            //if (tam == 2)
+                            //{     
+                                playerTank.RemoveOneBullet(j);
+                            //    tam = 0;
+                            //}
                         }
                         // hủy viên gạch đi khi nó là gạch có thể phá hủy
                         if (wallManager.Walls[i].WallNumber == 1)

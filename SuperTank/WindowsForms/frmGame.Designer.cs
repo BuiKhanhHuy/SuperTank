@@ -648,7 +648,7 @@
             // 
             // picGameWinRank
             // 
-            this.picGameWinRank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.picGameWinRank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.picGameWinRank.Location = new System.Drawing.Point(445, 284);
             this.picGameWinRank.Name = "picGameWinRank";
             this.picGameWinRank.Size = new System.Drawing.Size(150, 150);
@@ -769,7 +769,7 @@
             // 
             // picGameOverRank
             // 
-            this.picGameOverRank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.picGameOverRank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.picGameOverRank.Location = new System.Drawing.Point(445, 305);
             this.picGameOverRank.Name = "picGameOverRank";
             this.picGameOverRank.Size = new System.Drawing.Size(150, 150);
@@ -914,7 +914,7 @@
             // 
             // picNextLevelRank
             // 
-            this.picNextLevelRank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.picNextLevelRank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.picNextLevelRank.Location = new System.Drawing.Point(445, 280);
             this.picNextLevelRank.Name = "picNextLevelRank";
             this.picNextLevelRank.Size = new System.Drawing.Size(150, 150);
