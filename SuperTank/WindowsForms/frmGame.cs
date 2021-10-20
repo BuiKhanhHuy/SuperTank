@@ -37,6 +37,8 @@ namespace SuperTank
         #region thuộc tính thông tin
         private PictureBox[] picNumberEnemyTanks;
         private int level;
+        private int scores;
+        private int killed;
         private InforStyle inforStyle;
         #endregion thuộc tính thông tin
 
@@ -120,12 +122,15 @@ namespace SuperTank
             // cập nhật thông tin máu hiển thị của xe tăng player
             this.lblHpTankPlayer.Width = playerTank.Energy;
             // cập nhật thông tin máu hiển thị của thành
-            this.lblCastleBlood.Width = 80;
+            this.lblCastleBlood.Width = 60;
             // cập nhật thông tin vật phẩm đang ăn
             this.picItem.Image = null;
             this.lblItemActive.Text = "";
             // load hình castle 
             bmpCastle = (Bitmap)Image.FromFile(Common.path + @"\Images\castle.png");
+            // điểm và số lượng địch tiêu diệt được là 0
+            this.scores = 0;
+            this.killed = 0;
             // hủy hình ảnh item
             item.BmpObject = null;
             item.IsOn = false;
@@ -143,7 +148,7 @@ namespace SuperTank
             Common.PaintClear(this.background);
             // hiển thị castle
             Common.PaintObject(this.background, bmpCastle,
-                400, 680, 0, 0, 80, 80);
+                420, 700, 0, 0, 60, 60);
             // vẽ và di chuyển đạn player
             playerTank.ShowBulletAndMove(this.background);
             //tạo và di chuyển đạn của địch
@@ -193,7 +198,7 @@ namespace SuperTank
                         if (wallManager.Walls[i].WallNumber == 6)
                         {
                             //Console.WriteLine("player bắn trúng boss player!");
-                            lblCastleBlood.Width -= 8;
+                            lblCastleBlood.Width -= 6;
                             if (lblCastleBlood.Width == 0)
                             {
                                 // game over
@@ -237,7 +242,7 @@ namespace SuperTank
                              if (wallManager.Walls[i].WallNumber == 6)
                             {
                                 //Console.WriteLine("địch bắn trúng boss player!");
-                                lblCastleBlood.Width -= 8;
+                                lblCastleBlood.Width -= 6;
                                 if (lblCastleBlood.Width == 0)
                                 {
                                     // game over
@@ -311,6 +316,7 @@ namespace SuperTank
                         }
                     }
                 }
+
                 //chạy danh sách đạn xe tăng player
                 for (int k = 0; k < playerTank.Bullets.Count; k++)
                 {
@@ -345,6 +351,8 @@ namespace SuperTank
                             }
                             // tiêu diệt được một kẻ địch
                             enemyTankManager.NumberEnemyTankDestroy--;
+                            killed++;
+                            scores += 100;
                             // cập nhật lại thông tin số địch còn lại lên pic
                             picNumberEnemyTanks[enemyTankManager.NumberEnemyTankDestroy].Image = null;
                             // đã tiêu diệt toàn bộ kẻ địch
@@ -432,6 +440,8 @@ namespace SuperTank
                                 }
                                 // tiêu diệt được một kẻ địch
                                 enemyTankManager.NumberEnemyTankDestroy--;
+                                scores += 100;
+                                killed++;
                                 // cập nhật lại thông tin số địch còn lại lên pic
                                 picNumberEnemyTanks[enemyTankManager.NumberEnemyTankDestroy].Image = null;
                                 // đã tiêu diệt toàn bộ kẻ địch
@@ -476,6 +486,8 @@ namespace SuperTank
                             picItem.Image = item.BmpObject;
                             break;
                     }
+                    // cộng điểm ăn vật phẩm là 500
+                    scores += 500;
                 }
             }
 
@@ -497,13 +509,13 @@ namespace SuperTank
                 switch (inforStyle)
                 {
                     case InforStyle.eGameOver:
-                        this.GameOver();
+                        this.GameOver(this.scores, this.killed);
                         break;
                     case InforStyle.eGameNext:
-                        this.GameNext();
+                        this.GameNext(this.scores, this.killed);
                         break;
                     case InforStyle.eGameWin:
-                        this.GameWin();
+                        this.GameWin(this.scores, this.killed);
                         break;
                 }
             }
@@ -599,13 +611,16 @@ namespace SuperTank
 
         #region các hàm xử lí chính
         // game over
-        private void GameOver()
+        private void GameOver(int scores, int killed)
         {
 
             // dừng các timer
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
             tmrItemActive.Stop();
+            // hiển thị điểm và số lượng địch đã tiêu diệt
+            lblGameOverScores.Text = scores.ToString();
+            lblGameOverTotal.Text = killed.ToString();
             // hiển thị panel GameOver
             pnGameOver.Top = 3;
             pnGameOver.Left = 3;
@@ -617,7 +632,7 @@ namespace SuperTank
         }
 
         // game next
-        private void GameNext()
+        private void GameNext(int scores, int killed)
         {
 
             // dừng các timer
@@ -634,6 +649,9 @@ namespace SuperTank
                 PlayerInfor.rank = PlayerInfor.level;
                 PlayerInfor.level++;
             }
+            // hiển thị điểm và số lượng địch đã tiêu diệt
+            lblNextLevelScores.Text = scores.ToString();
+            lblNextLevelTotal.Text = killed.ToString();
             // hiển thị panel NextLevel
             pnNextLevel.Top = 3;
             pnNextLevel.Left = 3;
@@ -645,7 +663,7 @@ namespace SuperTank
         }
 
         // game win
-        private void GameWin()
+        private void GameWin(int scores, int killed)
         {
             // dừng các timer
             tmrGameLoop.Stop();
@@ -657,6 +675,9 @@ namespace SuperTank
             pnGameWin.Enabled = true;
             // rank cuối cùng 
             PlayerInfor.rank = PlayerInfor.level;
+            // hiển thị điểm và số lượng địch đã tiêu diệt
+            lblGameWinScores.Text = scores.ToString();
+            lblGameWinTotal.Text = killed.ToString();
             // hiển thị level hiện tại lên panel thông tin
             lblGameWinLevel.Text = "LEVEL " + level;
             picGameWinRank.Image = Image.FromFile(String.Format("{0}{1:00}.png",

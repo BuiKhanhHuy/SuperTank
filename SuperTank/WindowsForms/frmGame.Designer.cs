@@ -161,7 +161,7 @@
             // tmrGameLoop
             // 
             this.tmrGameLoop.Enabled = true;
-            this.tmrGameLoop.Interval = 20;
+            this.tmrGameLoop.Interval = 5;
             this.tmrGameLoop.Tick += new System.EventHandler(this.tmrGameLoop_Tick);
             // 
             // label9
@@ -599,9 +599,9 @@
             // lblCastleBlood
             // 
             this.lblCastleBlood.BackColor = System.Drawing.Color.Red;
-            this.lblCastleBlood.Location = new System.Drawing.Point(400, 755);
+            this.lblCastleBlood.Location = new System.Drawing.Point(420, 755);
             this.lblCastleBlood.Name = "lblCastleBlood";
-            this.lblCastleBlood.Size = new System.Drawing.Size(80, 5);
+            this.lblCastleBlood.Size = new System.Drawing.Size(60, 5);
             this.lblCastleBlood.TabIndex = 0;
             // 
             // pnRedBackground

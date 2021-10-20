@@ -31,7 +31,7 @@ namespace SuperTank.Objects
         // cập nhật vị trí xe tăng player
         public void SetLocation()
         {
-            int i = 16, j = 36;
+            int i = 17, j = 36;
             this.RectX = i * Common.STEP;
             this.RectY = j * Common.STEP;
         }
