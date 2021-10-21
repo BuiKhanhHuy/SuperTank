@@ -95,12 +95,14 @@ namespace SuperTank
             bool isPlayerTankCollision;
             // kiểm tra xe tăng địch có va chạm với xe tắng địch đồng minh
             bool isAlliedTanksCollision;
+            bool flag;
+            flag = false;
 
             isWallCollision = this.IsWallCollision(walls, this.directionTank);
             isPlayerTankCollision = this.IsPlayerTankCollision(playerTank);
             isAlliedTanksCollision = this.IsAlliedTanksCollision(alliedTanks);
             // nếu va chạm tường hoặc xe tăng đồng minh của địch thì xử lí đổi hướng
-            if (isWallCollision || isAlliedTanksCollision)
+            if (isWallCollision || isAlliedTanksCollision || isPlayerTankCollision)
             {
                 Random rand = new Random();
                 // random ngẫu nhiên hướng di chuyển (0: left; 1:right; 2: up; 3: down)
@@ -127,13 +129,8 @@ namespace SuperTank
                 rand = null;
                 return false;
             }
-            else if (isPlayerTankCollision)
-            {
-                // nếu xe tăng địch va chạm xe tăng player thì dừng di chuyển
-                this.IsMove = false;
-                return false;
-            }
             else
+            if (playerTank.RectX != 17 * Common.STEP || playerTank.RectY != 36 * Common.STEP)
             {
                 if (this.Rect.Top + this.Rect.Height / 2 > playerTank.Rect.Top &&
                    this.Rect.Top + this.Rect.Height / 2 < playerTank.Rect.Bottom &&
@@ -141,9 +138,7 @@ namespace SuperTank
                 {
                     Left = true;
                     Down = Up = Right = false;
-                    this.RotateFrame();
-                    this.isMove = false;
-                    return false;
+                    flag = true;
                 }
                 else
                    if (this.Rect.Top + this.Rect.Height / 2 > playerTank.Rect.Top &&
@@ -152,9 +147,7 @@ namespace SuperTank
                 {
                     Right = true;
                     Down = Up = Left = false;
-                    this.RotateFrame();
-                    this.isMove = false;
-                    return false;
+                    flag = true;
                 }
                 else
                    if (this.Rect.Left + this.Rect.Width / 2 > playerTank.Rect.Left &&
@@ -163,9 +156,7 @@ namespace SuperTank
                 {
                     Up = true;
                     Left = Down = Right = false;
-                    this.RotateFrame();
-                    this.isMove = false;
-                    return false;
+                    flag = true;
                 }
                 else
                    if (this.Rect.Left + this.Rect.Width / 2 > playerTank.Rect.Left &&
@@ -174,17 +165,25 @@ namespace SuperTank
                 {
                     Down = true;
                     Left = Up = Right = false;
+                    flag = true;
+                }
+                if (flag)
+                {
+                    flag = false;
                     this.RotateFrame();
                     this.isMove = false;
                     return false;
                 }
-                // xe tăng được phép di chuyển khi không va chạm gì
                 else
                 {
-                    this.IsMove = true;
+                    this.isMove = true;
                     return true;
                 }
-
+            }
+            else
+            {
+                this.isMove = true;
+                return true;
             }
         }
         // xử lí di chuyển của xe tăng type = hard

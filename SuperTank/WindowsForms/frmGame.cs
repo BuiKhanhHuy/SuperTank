@@ -182,7 +182,7 @@ namespace SuperTank
                             // viên đạn xe tăng player này bị hủy
                             //tam++;
                             //if (tam == 2)
-                            //{     
+                            //{
                                 playerTank.RemoveOneBullet(j);
                             //    tam = 0;
                             //}
@@ -273,6 +273,8 @@ namespace SuperTank
                         && playerTank.IsActivate)
                     {
                         //Console.WriteLine("Địch bắn trúng ta");
+                        // phát âm thanh
+                        Sound.PlayHitByBulletsSound();
                         // thêm vụ nổ vào danh sách
                         explosionManager.CreateExplosion(ExplosionSize.eBigExplosion, enemyTankManager.EnemyTanks[i].Bullets[j].Rect);
                         // nếu xe tăng player không có vật phẩm khiêng chắn
@@ -325,6 +327,7 @@ namespace SuperTank
                         enemyTankManager.EnemyTanks[i].IsActivate)
                     {
                         Console.WriteLine("Địch bị trúng đạn");
+                      
                         // thêm vụ nổ vào danh sách
                         explosionManager.CreateExplosion(ExplosionSize.eBigExplosion, playerTank.Bullets[k].Rect);
 
@@ -353,6 +356,8 @@ namespace SuperTank
                             enemyTankManager.NumberEnemyTankDestroy--;
                             killed++;
                             scores += 100;
+                            // phát âm thanh
+                            Sound.PlayHitByBulletsSound();
                             // cập nhật lại thông tin số địch còn lại lên pic
                             picNumberEnemyTanks[enemyTankManager.NumberEnemyTankDestroy].Image = null;
                             // đã tiêu diệt toàn bộ kẻ địch

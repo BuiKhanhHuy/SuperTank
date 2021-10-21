@@ -21,11 +21,14 @@ namespace SuperTank.WindowsForms
         {
             // load đường dẫn dùng chung
             Common.path = Application.StartupPath + @"\Content";
+            // thiết lập âm thanh
+            Sound.InitSound(Common.path);
             // thiết kế control
             InitializeComponent();
             // add các button level vào mảng
             levelButtons = new Button[] { btnLevel1, btnLevel2, btnLevel3, btnLevel4, btnLevel5,
                 btnLevel6, btnLevel7, btnLevel8, btnLevel9, btnLevel10 };
+          
         }
 
         // load form
@@ -53,6 +56,8 @@ namespace SuperTank.WindowsForms
         // start game with level
         private void btnLevel_Click(object sender, EventArgs e)
         {
+            // phát âm thanh click
+            Sound.PlayClickRoomSound();
             int level;
             level = int.Parse(((Button)sender).Tag.ToString());
             frmGame formGame = new frmGame(level);
@@ -80,6 +85,8 @@ namespace SuperTank.WindowsForms
         // play
         private void btnPlay_Click(object sender, EventArgs e)
         {
+            // phát âm thanh click
+            Sound.PlayClickRoomSound();
             pnLevel.Top = 40;
             pnLevel.Left = 0;
         }
@@ -87,6 +94,8 @@ namespace SuperTank.WindowsForms
         // about us
         private void btnAboutUs_Click(object sender, EventArgs e)
         {
+            // phát âm thanh click
+            Sound.PlayClickRoomSound();
             pnAboutUs.Top = 40;
             pnAboutUs.Left = 0;
         }
@@ -94,6 +103,8 @@ namespace SuperTank.WindowsForms
         // instructions
         private void btnInstructions_Click(object sender, EventArgs e)
         {
+            // phát âm thanh click
+            Sound.PlayClickRoomSound();
             pnInstructions.Top = 40;
             pnInstructions.Left = 0;
         }
@@ -101,6 +112,8 @@ namespace SuperTank.WindowsForms
         // option
         private void btnOption_Click(object sender, EventArgs e)
         {
+            // phát âm thanh click
+            Sound.PlayClickRoomSound();
             pnOption.Top = 40;
             pnOption.Left = 0;
         }
@@ -108,6 +121,8 @@ namespace SuperTank.WindowsForms
         // exit
         private void btnExit_Click(object sender, EventArgs e)
         {
+            // phát âm thanh click
+            Sound.PlayClickRoomSound();
             // lưu thông tin level người chơi lại
             PlayerInfor.WritePlayerLevel(@"\PlayerLevel.txt");
             Application.Exit();
@@ -116,6 +131,8 @@ namespace SuperTank.WindowsForms
         // menu
         private void btnMenu_Click(object sender, EventArgs e)
         {
+            // phát âm thanh click
+            Sound.PlayClickRoomSound();
             this.ResetPanel();
         }
 

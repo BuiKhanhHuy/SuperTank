@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="General\Sound.cs" />
     <Compile Include="General\PlayerInfor.cs" />
     <Compile Include="Objects\EnemyTank.cs" />
     <Compile Include="General\Common.cs" />
@@ -181,6 +182,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imglevelcomplete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respawnlocation.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
