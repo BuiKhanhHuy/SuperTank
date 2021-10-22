@@ -91,6 +91,8 @@ namespace SuperTank
         // hàm khởi tạo game mới
         private void GameStart()
         {
+            // phát âm thanh
+            Sound.PlayStartSound();
             // load map
             Array.Copy(Common.ReadMap(String.Format("{0}{1:00}.txt", Common.path + @"\Maps\Map", this.level),
                 Common.NUMBER_OBJECT_HEIGHT, Common.NUMBER_OBJECT_WIDTH),
@@ -336,6 +338,8 @@ namespace SuperTank
                         enemyTankManager.EnemyTanks[i].Energy -= playerTank.Bullets[k].Power;
                         if (enemyTankManager.EnemyTanks[i].Energy > 0)
                         {
+                            // phát âm thanh
+                            Sound.PlayLowAmmoEnergySound();
                             // đổi màu skin
                             enemyTankManager.EnemyTanks[i].SkinTank = enemyTankManager.SkinEnemyTank(enemyTankManager.EnemyTanks[i]);
                         }
@@ -409,6 +413,8 @@ namespace SuperTank
                 // xe tăng player ăn vật phẩm
                 if (Common.IsCollision(playerTank.Rect, item.Rect))
                 {
+                    // phát âm thanh
+                    Sound.PlayEatItemsSound();
                     item.IsOn = false;
                     item.RectX = -20;
                     item.RectY = -20;
@@ -470,6 +476,8 @@ namespace SuperTank
                                     tmrDelay.Start();
                                 }
                             }
+                            // phát âm thanh
+                            Sound.PlayHitByBulletsSound();
                             //------->  item nổ
                             break;
                         case ItemType.eItemShield:
@@ -514,9 +522,13 @@ namespace SuperTank
                 switch (inforStyle)
                 {
                     case InforStyle.eGameOver:
+                        // phát âm thanh
+                        Sound.PlayGameOverSound();
                         this.GameOver(this.scores, this.killed);
                         break;
                     case InforStyle.eGameNext:
+                        // phát âm thanh
+                        Sound.PlayNextLevelSound();
                         this.GameNext(this.scores, this.killed);
                         break;
                     case InforStyle.eGameWin:
@@ -618,7 +630,6 @@ namespace SuperTank
         // game over
         private void GameOver(int scores, int killed)
         {
-
             // dừng các timer
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
@@ -639,7 +650,6 @@ namespace SuperTank
         // game next
         private void GameNext(int scores, int killed)
         {
-
             // dừng các timer
             tmrGameLoop.Stop();
             tmrShowItem.Stop();

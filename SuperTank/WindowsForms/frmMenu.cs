@@ -56,8 +56,6 @@ namespace SuperTank.WindowsForms
         // start game with level
         private void btnLevel_Click(object sender, EventArgs e)
         {
-            // phát âm thanh click
-            Sound.PlayClickRoomSound();
             int level;
             level = int.Parse(((Button)sender).Tag.ToString());
             frmGame formGame = new frmGame(level);
