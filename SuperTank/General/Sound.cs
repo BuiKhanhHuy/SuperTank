@@ -12,6 +12,7 @@ namespace SuperTank
         private static SoundPlayer startSound;
         private static SoundPlayer nextLevelSound;
         private static SoundPlayer gameOverSound;
+        private static SoundPlayer gameWinSound;
         private static SoundPlayer clickRoomSound;
         private static SoundPlayer hitByBulletsSound;
         private static SoundPlayer eatItemsSound;
@@ -21,6 +22,7 @@ namespace SuperTank
             Sound.startSound = new SoundPlayer(path + @"\Sounds\amThanhGameStart.wav");
             Sound.nextLevelSound = new SoundPlayer(path + @"\Sounds\amThanhNextLevel.wav");
             Sound.gameOverSound = new SoundPlayer(path + @"\Sounds\amThanhGameOver.wav");
+            Sound.gameWinSound = new SoundPlayer(path + @"\Sounds\amThanhChienThang.wav");
             Sound.clickRoomSound = new SoundPlayer(path + @"\Sounds\amThanhClick.wav");
             Sound.hitByBulletsSound = new SoundPlayer(path + @"\Sounds\amThanhNo.wav");
             Sound.eatItemsSound = new SoundPlayer(path + @"\Sounds\amThanhAnVatPham.wav");
@@ -33,7 +35,7 @@ namespace SuperTank
             Sound.startSound.Play();
         }
 
-        // dừng âm thanh next level
+        // dừng âm thanh bắt đầu
         public static void StopStartSound()
         {
             Sound.startSound.Play();
@@ -45,7 +47,7 @@ namespace SuperTank
             Sound.nextLevelSound.Play();
         }
 
-        // dừng âm thanh bắt đầu
+        // dừng âm thanh next level
         public static void StopNextLevelSound()
         {
             Sound.nextLevelSound.Play();
@@ -61,6 +63,18 @@ namespace SuperTank
         public static void StopGameOverSound()
         {
             Sound.gameOverSound.Play();
+        }
+
+        // phát âm thanh game win
+        public static void PlayGameWinSound()
+        {
+            Sound.gameWinSound.Play();
+        }
+
+        // dừng âm thanh game win
+        public static void StopGameWinSound()
+        {
+            Sound.gameWinSound.Play();
         }
 
         // phát âm thanh click

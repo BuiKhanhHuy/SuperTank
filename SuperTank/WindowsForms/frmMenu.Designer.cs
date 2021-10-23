@@ -35,13 +35,9 @@ namespace SuperTank.WindowsForms
             this.btnOption = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.pnMenu = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnInstructions = new System.Windows.Forms.Button();
             this.pnTitle = new System.Windows.Forms.Panel();
-            this.picMinus = new System.Windows.Forms.PictureBox();
-            this.picMultiply = new System.Windows.Forms.PictureBox();
             this.pnLevel = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnLevelMenu = new System.Windows.Forms.Button();
             this.btnLevel8 = new System.Windows.Forms.Button();
             this.btnLevel7 = new System.Windows.Forms.Button();
@@ -54,37 +50,45 @@ namespace SuperTank.WindowsForms
             this.btnLevel2 = new System.Windows.Forms.Button();
             this.btnLevel1 = new System.Windows.Forms.Button();
             this.pnAboutUs = new System.Windows.Forms.Panel();
+            this.btnAboutUsMenu = new System.Windows.Forms.Button();
+            this.pnOption = new System.Windows.Forms.Panel();
+            this.btnOptionMenu = new System.Windows.Forms.Button();
+            this.pnInstructions = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanelInstructions = new System.Windows.Forms.FlowLayoutPanel();
+            this.picMinus = new System.Windows.Forms.PictureBox();
+            this.picMultiply = new System.Windows.Forms.PictureBox();
+            this.picInstructions = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAboutUsMenu = new System.Windows.Forms.Button();
-            this.pnOption = new System.Windows.Forms.Panel();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.btnOptionMenu = new System.Windows.Forms.Button();
-            this.pnInstructions = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pnMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.pnTitle.SuspendLayout();
+            this.pnLevel.SuspendLayout();
+            this.pnAboutUs.SuspendLayout();
+            this.pnOption.SuspendLayout();
+            this.pnInstructions.SuspendLayout();
+            this.flowLayoutPanelInstructions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMultiply)).BeginInit();
-            this.pnLevel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.pnAboutUs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picInstructions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnOption.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.pnInstructions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
@@ -172,16 +176,6 @@ namespace SuperTank.WindowsForms
             this.pnMenu.Size = new System.Drawing.Size(500, 600);
             this.pnMenu.TabIndex = 13;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::SuperTank.Properties.Resources.img_menu;
-            this.pictureBox6.Location = new System.Drawing.Point(37, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(418, 101);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 26;
-            this.pictureBox6.TabStop = false;
-            // 
             // btnInstructions
             // 
             this.btnInstructions.BackColor = System.Drawing.Color.Transparent;
@@ -212,34 +206,6 @@ namespace SuperTank.WindowsForms
             this.pnTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnTitle_MouseDown);
             this.pnTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnTitle_MouseMove);
             // 
-            // picMinus
-            // 
-            this.picMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMinus.Image = ((System.Drawing.Image)(resources.GetObject("picMinus.Image")));
-            this.picMinus.Location = new System.Drawing.Point(430, 5);
-            this.picMinus.Name = "picMinus";
-            this.picMinus.Size = new System.Drawing.Size(30, 30);
-            this.picMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMinus.TabIndex = 2;
-            this.picMinus.TabStop = false;
-            this.picMinus.Click += new System.EventHandler(this.picMinus_Click);
-            this.picMinus.MouseEnter += new System.EventHandler(this.picMinus_MouseEnter);
-            this.picMinus.MouseLeave += new System.EventHandler(this.picMinus_MouseLeave);
-            // 
-            // picMultiply
-            // 
-            this.picMultiply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picMultiply.Image = ((System.Drawing.Image)(resources.GetObject("picMultiply.Image")));
-            this.picMultiply.Location = new System.Drawing.Point(467, 5);
-            this.picMultiply.Name = "picMultiply";
-            this.picMultiply.Size = new System.Drawing.Size(30, 30);
-            this.picMultiply.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picMultiply.TabIndex = 0;
-            this.picMultiply.TabStop = false;
-            this.picMultiply.Click += new System.EventHandler(this.picMultiply_Click);
-            this.picMultiply.MouseEnter += new System.EventHandler(this.picMultiply_MouseEnter);
-            this.picMultiply.MouseLeave += new System.EventHandler(this.picMultiply_MouseLeave);
-            // 
             // pnLevel
             // 
             this.pnLevel.Controls.Add(this.pictureBox7);
@@ -258,16 +224,6 @@ namespace SuperTank.WindowsForms
             this.pnLevel.Name = "pnLevel";
             this.pnLevel.Size = new System.Drawing.Size(500, 600);
             this.pnLevel.TabIndex = 14;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::SuperTank.Properties.Resources.img_chooselevel;
-            this.pictureBox7.Location = new System.Drawing.Point(37, 3);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(418, 101);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 27;
-            this.pictureBox7.TabStop = false;
             // 
             // btnLevelMenu
             // 
@@ -501,6 +457,139 @@ namespace SuperTank.WindowsForms
             this.pnAboutUs.Size = new System.Drawing.Size(500, 600);
             this.pnAboutUs.TabIndex = 24;
             // 
+            // btnAboutUsMenu
+            // 
+            this.btnAboutUsMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnAboutUsMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAboutUsMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnAboutUsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAboutUsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAboutUsMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAboutUsMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAboutUsMenu.Location = new System.Drawing.Point(180, 527);
+            this.btnAboutUsMenu.Name = "btnAboutUsMenu";
+            this.btnAboutUsMenu.Size = new System.Drawing.Size(139, 53);
+            this.btnAboutUsMenu.TabIndex = 24;
+            this.btnAboutUsMenu.TabStop = false;
+            this.btnAboutUsMenu.Text = "Menu";
+            this.btnAboutUsMenu.UseVisualStyleBackColor = false;
+            this.btnAboutUsMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // pnOption
+            // 
+            this.pnOption.BackColor = System.Drawing.Color.Black;
+            this.pnOption.Controls.Add(this.pictureBox10);
+            this.pnOption.Controls.Add(this.btnOptionMenu);
+            this.pnOption.Location = new System.Drawing.Point(1000, 40);
+            this.pnOption.Name = "pnOption";
+            this.pnOption.Size = new System.Drawing.Size(500, 600);
+            this.pnOption.TabIndex = 25;
+            // 
+            // btnOptionMenu
+            // 
+            this.btnOptionMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnOptionMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnOptionMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnOptionMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnOptionMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOptionMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOptionMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnOptionMenu.Location = new System.Drawing.Point(180, 527);
+            this.btnOptionMenu.Name = "btnOptionMenu";
+            this.btnOptionMenu.Size = new System.Drawing.Size(139, 53);
+            this.btnOptionMenu.TabIndex = 24;
+            this.btnOptionMenu.TabStop = false;
+            this.btnOptionMenu.Text = "Menu";
+            this.btnOptionMenu.UseVisualStyleBackColor = false;
+            this.btnOptionMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // pnInstructions
+            // 
+            this.pnInstructions.Controls.Add(this.flowLayoutPanelInstructions);
+            this.pnInstructions.Controls.Add(this.pictureBox8);
+            this.pnInstructions.Controls.Add(this.button1);
+            this.pnInstructions.Location = new System.Drawing.Point(1500, 40);
+            this.pnInstructions.Name = "pnInstructions";
+            this.pnInstructions.Size = new System.Drawing.Size(500, 600);
+            this.pnInstructions.TabIndex = 24;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.Location = new System.Drawing.Point(180, 527);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 53);
+            this.button1.TabIndex = 22;
+            this.button1.TabStop = false;
+            this.button1.Text = "Menu";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // flowLayoutPanelInstructions
+            // 
+            this.flowLayoutPanelInstructions.AllowDrop = true;
+            this.flowLayoutPanelInstructions.AutoScroll = true;
+            this.flowLayoutPanelInstructions.Controls.Add(this.picInstructions);
+            this.flowLayoutPanelInstructions.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelInstructions.Location = new System.Drawing.Point(35, 129);
+            this.flowLayoutPanelInstructions.Name = "flowLayoutPanelInstructions";
+            this.flowLayoutPanelInstructions.Size = new System.Drawing.Size(430, 380);
+            this.flowLayoutPanelInstructions.TabIndex = 29;
+            // 
+            // picMinus
+            // 
+            this.picMinus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMinus.Image = ((System.Drawing.Image)(resources.GetObject("picMinus.Image")));
+            this.picMinus.Location = new System.Drawing.Point(430, 5);
+            this.picMinus.Name = "picMinus";
+            this.picMinus.Size = new System.Drawing.Size(30, 30);
+            this.picMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMinus.TabIndex = 2;
+            this.picMinus.TabStop = false;
+            this.picMinus.Click += new System.EventHandler(this.picMinus_Click);
+            this.picMinus.MouseEnter += new System.EventHandler(this.picMinus_MouseEnter);
+            this.picMinus.MouseLeave += new System.EventHandler(this.picMinus_MouseLeave);
+            // 
+            // picMultiply
+            // 
+            this.picMultiply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picMultiply.Image = ((System.Drawing.Image)(resources.GetObject("picMultiply.Image")));
+            this.picMultiply.Location = new System.Drawing.Point(467, 5);
+            this.picMultiply.Name = "picMultiply";
+            this.picMultiply.Size = new System.Drawing.Size(30, 30);
+            this.picMultiply.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMultiply.TabIndex = 0;
+            this.picMultiply.TabStop = false;
+            this.picMultiply.Click += new System.EventHandler(this.picMultiply_Click);
+            this.picMultiply.MouseEnter += new System.EventHandler(this.picMultiply_MouseEnter);
+            this.picMultiply.MouseLeave += new System.EventHandler(this.picMultiply_MouseLeave);
+            // 
+            // picInstructions
+            // 
+            this.picInstructions.Image = global::SuperTank.Properties.Resources.instruction;
+            this.picInstructions.Location = new System.Drawing.Point(3, 3);
+            this.picInstructions.Name = "picInstructions";
+            this.picInstructions.Size = new System.Drawing.Size(400, 1000);
+            this.picInstructions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInstructions.TabIndex = 0;
+            this.picInstructions.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::SuperTank.Properties.Resources.img_instructions;
+            this.pictureBox8.Location = new System.Drawing.Point(37, 3);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(418, 101);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 28;
+            this.pictureBox8.TabStop = false;
+            // 
             // pictureBox9
             // 
             this.pictureBox9.Image = global::SuperTank.Properties.Resources.img_aboutus;
@@ -561,34 +650,6 @@ namespace SuperTank.WindowsForms
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
-            // btnAboutUsMenu
-            // 
-            this.btnAboutUsMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnAboutUsMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAboutUsMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnAboutUsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAboutUsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAboutUsMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAboutUsMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAboutUsMenu.Location = new System.Drawing.Point(180, 527);
-            this.btnAboutUsMenu.Name = "btnAboutUsMenu";
-            this.btnAboutUsMenu.Size = new System.Drawing.Size(139, 53);
-            this.btnAboutUsMenu.TabIndex = 24;
-            this.btnAboutUsMenu.TabStop = false;
-            this.btnAboutUsMenu.Text = "Menu";
-            this.btnAboutUsMenu.UseVisualStyleBackColor = false;
-            this.btnAboutUsMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // pnOption
-            // 
-            this.pnOption.BackColor = System.Drawing.Color.Black;
-            this.pnOption.Controls.Add(this.pictureBox10);
-            this.pnOption.Controls.Add(this.btnOptionMenu);
-            this.pnOption.Location = new System.Drawing.Point(1000, 40);
-            this.pnOption.Name = "pnOption";
-            this.pnOption.Size = new System.Drawing.Size(500, 600);
-            this.pnOption.TabIndex = 25;
-            // 
             // pictureBox10
             // 
             this.pictureBox10.Image = global::SuperTank.Properties.Resources.img_option;
@@ -599,60 +660,25 @@ namespace SuperTank.WindowsForms
             this.pictureBox10.TabIndex = 28;
             this.pictureBox10.TabStop = false;
             // 
-            // btnOptionMenu
+            // pictureBox7
             // 
-            this.btnOptionMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnOptionMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnOptionMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnOptionMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnOptionMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOptionMenu.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOptionMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnOptionMenu.Location = new System.Drawing.Point(180, 527);
-            this.btnOptionMenu.Name = "btnOptionMenu";
-            this.btnOptionMenu.Size = new System.Drawing.Size(139, 53);
-            this.btnOptionMenu.TabIndex = 24;
-            this.btnOptionMenu.TabStop = false;
-            this.btnOptionMenu.Text = "Menu";
-            this.btnOptionMenu.UseVisualStyleBackColor = false;
-            this.btnOptionMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.pictureBox7.Image = global::SuperTank.Properties.Resources.img_chooselevel;
+            this.pictureBox7.Location = new System.Drawing.Point(37, 3);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(418, 101);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 27;
+            this.pictureBox7.TabStop = false;
             // 
-            // pnInstructions
+            // pictureBox6
             // 
-            this.pnInstructions.Controls.Add(this.pictureBox8);
-            this.pnInstructions.Controls.Add(this.button1);
-            this.pnInstructions.Location = new System.Drawing.Point(1500, 40);
-            this.pnInstructions.Name = "pnInstructions";
-            this.pnInstructions.Size = new System.Drawing.Size(500, 600);
-            this.pnInstructions.TabIndex = 24;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::SuperTank.Properties.Resources.img_instructions;
-            this.pictureBox8.Location = new System.Drawing.Point(37, 3);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(418, 101);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 28;
-            this.pictureBox8.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.Location = new System.Drawing.Point(180, 527);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 53);
-            this.button1.TabIndex = 22;
-            this.button1.TabStop = false;
-            this.button1.Text = "Menu";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnMenu_Click);
+            this.pictureBox6.Image = global::SuperTank.Properties.Resources.img_menu;
+            this.pictureBox6.Location = new System.Drawing.Point(37, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(418, 101);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 26;
+            this.pictureBox6.TabStop = false;
             // 
             // frmMenu
             // 
@@ -671,26 +697,29 @@ namespace SuperTank.WindowsForms
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenu";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.pnMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.pnTitle.ResumeLayout(false);
+            this.pnLevel.ResumeLayout(false);
+            this.pnAboutUs.ResumeLayout(false);
+            this.pnOption.ResumeLayout(false);
+            this.pnInstructions.ResumeLayout(false);
+            this.flowLayoutPanelInstructions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picMinus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMultiply)).EndInit();
-            this.pnLevel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.pnAboutUs.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picInstructions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnOption.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.pnInstructions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -734,5 +763,7 @@ namespace SuperTank.WindowsForms
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelInstructions;
+        private System.Windows.Forms.PictureBox picInstructions;
     }
 }

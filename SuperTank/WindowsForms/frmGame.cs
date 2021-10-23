@@ -532,6 +532,8 @@ namespace SuperTank
                         this.GameNext(this.scores, this.killed);
                         break;
                     case InforStyle.eGameWin:
+                        // phát âm thanh
+                        Sound.PlayGameWinSound();
                         this.GameWin(this.scores, this.killed);
                         break;
                 }
