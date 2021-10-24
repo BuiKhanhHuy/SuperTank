@@ -137,6 +137,15 @@
         rclxHMdxHMdxZklRfAMaSAbP41kmewAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="lblInstructions.Text" xml:space="preserve">
+    <value>- For Medium-type tanks you should not stand with them
+- For Hard tanks you need to keep moving or they will chase you and destroy you
+- Always be on the lookout for enemy tanks near your base. Remember it's game over if the base is destroyed
+- A risky way to play is to stay in the position where the enemy tanks appear and shoot as soon as the enemy tanks appear, this is dangerous if 3 enemy tanks appear at the same time
+- If an item appears but you face dangerous enemies. Who knows what might happen while you eat that item
+- Don't let yourself be surrounded by enemy tanks
+- Finally, don't let the first stages of the game fool you. You will soon find out that enemy tanks have good AI</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAb28AAAEAIACcxwAAFgAAACgAAABvAAAA3gAAAAEAIAAAAAAAhMAAAAAAAAAAAAAAAAAAAAAA

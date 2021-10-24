@@ -76,8 +76,6 @@ namespace SuperTank.WindowsForms
             pnInstructions.Left = 1000;
             pnAboutUs.Top = 40;
             pnAboutUs.Left = 1500;
-            pnOption.Top = 40;
-            pnOption.Left = 2000;
         }
 
         // play
@@ -107,14 +105,6 @@ namespace SuperTank.WindowsForms
             pnInstructions.Left = 0;
         }
 
-        // option
-        private void btnOption_Click(object sender, EventArgs e)
-        {
-            // phát âm thanh click
-            Sound.PlayClickRoomSound();
-            pnOption.Top = 40;
-            pnOption.Left = 0;
-        }
 
         // exit
         private void btnExit_Click(object sender, EventArgs e)

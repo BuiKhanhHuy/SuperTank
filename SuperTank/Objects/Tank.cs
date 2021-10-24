@@ -13,8 +13,8 @@ namespace SuperTank.Objects
     class Tank : BaseObject
     {
         #region số frame lớn nhất
-        protected const int MAX_NUMBER_FRAME_TANK = 7;
-        protected const int MAX_NUMBER_FRAME_EFFECT = 6;
+        protected const int MAX_NUMBER_SPRITE_TANK = 7;
+        protected const int MAX_NUMBER_SPRITE_EFFECT = 6;
         #endregion
         #region Số làm việc với frame (tank: có 8 frame 0-7; effect: có 6 frame 0-5)
         protected int frx_tank = 7;
@@ -57,11 +57,11 @@ namespace SuperTank.Objects
                         break;
                     case Direction.eDown:
                         Common.PaintObject(background, this.bmpObject, rect.X, rect.Y,
-                               (MAX_NUMBER_FRAME_TANK - (int)skinTank) * Common.tankSize, frx_tank * Common.tankSize, this.RectWidth, this.RectHeight);
+                               (MAX_NUMBER_SPRITE_TANK - (int)skinTank) * Common.tankSize, frx_tank * Common.tankSize, this.RectWidth, this.RectHeight);
                         break;
                     case Direction.eLeft:
                         Common.PaintObject(background, this.bmpObject, rect.X, rect.Y,
-                                 frx_tank * Common.tankSize, (MAX_NUMBER_FRAME_TANK - (int)skinTank) * Common.tankSize, this.RectWidth, this.RectHeight);
+                                 frx_tank * Common.tankSize, (MAX_NUMBER_SPRITE_TANK - (int)skinTank) * Common.tankSize, this.RectWidth, this.RectHeight);
                         break;
                     case Direction.eRight:
                         Common.PaintObject(background, this.bmpObject, rect.X, rect.Y,
@@ -73,7 +73,7 @@ namespace SuperTank.Objects
                 {
                     frx_tank--;
                     if (frx_tank == -1)
-                        frx_tank = MAX_NUMBER_FRAME_TANK;
+                        frx_tank = MAX_NUMBER_SPRITE_TANK;
                 }
             }
             else
@@ -82,11 +82,11 @@ namespace SuperTank.Objects
                 Common.PaintObject(background, this.bmpEffect, this.RectX, this.RectY,
                        frx_effect * this.RectWidth, fry_effect * this.RectHeight, this.RectWidth, this.RectHeight);
                 frx_effect++;
-                if (frx_effect == MAX_NUMBER_FRAME_EFFECT)
+                if (frx_effect == MAX_NUMBER_SPRITE_EFFECT)
                 {
                     frx_effect = 0;
                     fry_effect++;
-                    if (fry_effect == MAX_NUMBER_FRAME_EFFECT)
+                    if (fry_effect == MAX_NUMBER_SPRITE_EFFECT)
                     {
                         fry_effect = 0;
                         // hiệu ứng kết thúc, bật lại hoạt động của xe

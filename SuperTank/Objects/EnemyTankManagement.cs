@@ -41,7 +41,7 @@ namespace SuperTank.Objects
         }
 
         #region Các hàm khởi tạo xe tăng địch nội bộ
-        // đọc thông số xe tăng địch vào list
+        // đọc thông số xe tăng địch vào danh sách
         private void ReadEnemyTankParameters(string path)
         {
             string s = "";

@@ -62,8 +62,7 @@ namespace SuperTank
             // add picture box vào mảng hiển thị số lượng địch
             picNumberEnemyTanks = new PictureBox[]{picTank00, picTank01, picTank02,
             picTank03, picTank04, picTank05, picTank06, picTank07, picTank08, picTank09, picTank10,
-            picTank11, picTank12, picTank13, picTank14, picTank15, picTank16, picTank17, picTank18, picTank19,
-            picTank20, picTank21, picTank22, picTank23, picTank24, picTank25, picTank26, picTank27};
+            picTank11, picTank12, picTank13, picTank14, picTank15, picTank16, picTank17, picTank18, picTank19};
             // khởi tạo graphics
             graphics = pnMainGame.CreateGraphics();
             // khỏi tạo background
@@ -240,7 +239,7 @@ namespace SuperTank
                                 wallManager.RemoveOneWall(i);
                             }
                             else
-                            // địch bắn trúng boss của player
+                             // địch bắn trúng boss của player
                              if (wallManager.Walls[i].WallNumber == 6)
                             {
                                 //Console.WriteLine("địch bắn trúng boss player!");
@@ -329,7 +328,7 @@ namespace SuperTank
                         enemyTankManager.EnemyTanks[i].IsActivate)
                     {
                         Console.WriteLine("Địch bị trúng đạn");
-                      
+
                         // thêm vụ nổ vào danh sách
                         explosionManager.CreateExplosion(ExplosionSize.eBigExplosion, playerTank.Bullets[k].Rect);
 
@@ -506,7 +505,6 @@ namespace SuperTank
 
             //vẽ lại Bitmap background lên form
             graphics.DrawImageUnscaled(this.background, 0, 0);
-
         }
 
         // hàm delay vòng lặp game sau khi game kết thúc

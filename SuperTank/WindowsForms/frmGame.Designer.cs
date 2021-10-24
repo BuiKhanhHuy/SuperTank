@@ -36,14 +36,6 @@
             this.lblHpTankPlayer = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblItemActive = new System.Windows.Forms.Label();
-            this.picTank27 = new System.Windows.Forms.PictureBox();
-            this.picTank26 = new System.Windows.Forms.PictureBox();
-            this.picTank25 = new System.Windows.Forms.PictureBox();
-            this.picTank24 = new System.Windows.Forms.PictureBox();
-            this.picTank23 = new System.Windows.Forms.PictureBox();
-            this.picTank22 = new System.Windows.Forms.PictureBox();
-            this.picTank21 = new System.Windows.Forms.PictureBox();
-            this.picTank20 = new System.Windows.Forms.PictureBox();
             this.lblLevel = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -111,14 +103,6 @@
             this.picMultiply = new System.Windows.Forms.PictureBox();
             this.tmrItemActive = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank17)).BeginInit();
@@ -199,14 +183,6 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.lblItemActive);
-            this.panel1.Controls.Add(this.picTank27);
-            this.panel1.Controls.Add(this.picTank26);
-            this.panel1.Controls.Add(this.picTank25);
-            this.panel1.Controls.Add(this.picTank24);
-            this.panel1.Controls.Add(this.picTank23);
-            this.panel1.Controls.Add(this.picTank22);
-            this.panel1.Controls.Add(this.picTank21);
-            this.panel1.Controls.Add(this.picTank20);
             this.panel1.Controls.Add(this.lblLevel);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
@@ -250,86 +226,6 @@
             this.lblItemActive.Size = new System.Drawing.Size(46, 17);
             this.lblItemActive.TabIndex = 58;
             this.lblItemActive.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picTank27
-            // 
-            this.picTank27.BackColor = System.Drawing.Color.Transparent;
-            this.picTank27.Location = new System.Drawing.Point(110, 435);
-            this.picTank27.Name = "picTank27";
-            this.picTank27.Size = new System.Drawing.Size(30, 30);
-            this.picTank27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTank27.TabIndex = 56;
-            this.picTank27.TabStop = false;
-            // 
-            // picTank26
-            // 
-            this.picTank26.BackColor = System.Drawing.Color.Transparent;
-            this.picTank26.Location = new System.Drawing.Point(76, 435);
-            this.picTank26.Name = "picTank26";
-            this.picTank26.Size = new System.Drawing.Size(30, 30);
-            this.picTank26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTank26.TabIndex = 55;
-            this.picTank26.TabStop = false;
-            // 
-            // picTank25
-            // 
-            this.picTank25.BackColor = System.Drawing.Color.Transparent;
-            this.picTank25.Location = new System.Drawing.Point(42, 435);
-            this.picTank25.Name = "picTank25";
-            this.picTank25.Size = new System.Drawing.Size(30, 30);
-            this.picTank25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTank25.TabIndex = 54;
-            this.picTank25.TabStop = false;
-            // 
-            // picTank24
-            // 
-            this.picTank24.BackColor = System.Drawing.Color.Transparent;
-            this.picTank24.Location = new System.Drawing.Point(8, 435);
-            this.picTank24.Name = "picTank24";
-            this.picTank24.Size = new System.Drawing.Size(30, 30);
-            this.picTank24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTank24.TabIndex = 53;
-            this.picTank24.TabStop = false;
-            // 
-            // picTank23
-            // 
-            this.picTank23.BackColor = System.Drawing.Color.Transparent;
-            this.picTank23.Location = new System.Drawing.Point(110, 399);
-            this.picTank23.Name = "picTank23";
-            this.picTank23.Size = new System.Drawing.Size(30, 30);
-            this.picTank23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTank23.TabIndex = 52;
-            this.picTank23.TabStop = false;
-            // 
-            // picTank22
-            // 
-            this.picTank22.BackColor = System.Drawing.Color.Transparent;
-            this.picTank22.Location = new System.Drawing.Point(76, 399);
-            this.picTank22.Name = "picTank22";
-            this.picTank22.Size = new System.Drawing.Size(30, 30);
-            this.picTank22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTank22.TabIndex = 51;
-            this.picTank22.TabStop = false;
-            // 
-            // picTank21
-            // 
-            this.picTank21.BackColor = System.Drawing.Color.Transparent;
-            this.picTank21.Location = new System.Drawing.Point(42, 399);
-            this.picTank21.Name = "picTank21";
-            this.picTank21.Size = new System.Drawing.Size(30, 30);
-            this.picTank21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTank21.TabIndex = 50;
-            this.picTank21.TabStop = false;
-            // 
-            // picTank20
-            // 
-            this.picTank20.BackColor = System.Drawing.Color.Transparent;
-            this.picTank20.Location = new System.Drawing.Point(8, 399);
-            this.picTank20.Name = "picTank20";
-            this.picTank20.Size = new System.Drawing.Size(30, 30);
-            this.picTank20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTank20.TabIndex = 49;
-            this.picTank20.TabStop = false;
             // 
             // lblLevel
             // 
@@ -1107,14 +1003,6 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmGame_KeyUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTank20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank17)).EndInit();
@@ -1227,14 +1115,6 @@
         private System.Windows.Forms.PictureBox picMultiply;
         private System.Windows.Forms.PictureBox picMinus;
         private System.Windows.Forms.PictureBox picPlus;
-        private System.Windows.Forms.PictureBox picTank27;
-        private System.Windows.Forms.PictureBox picTank26;
-        private System.Windows.Forms.PictureBox picTank25;
-        private System.Windows.Forms.PictureBox picTank24;
-        private System.Windows.Forms.PictureBox picTank23;
-        private System.Windows.Forms.PictureBox picTank22;
-        private System.Windows.Forms.PictureBox picTank21;
-        private System.Windows.Forms.PictureBox picTank20;
         private System.Windows.Forms.Timer tmrItemActive;
         private System.Windows.Forms.Label lblItemActive;
         private System.Windows.Forms.PictureBox pictureBox1;
