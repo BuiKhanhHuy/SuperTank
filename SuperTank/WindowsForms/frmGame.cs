@@ -104,7 +104,7 @@ namespace SuperTank
             explosionManager.Explosions.Clear();
             GC.Collect();
             // tạo danh sách tường
-            wallManager.CreatWall(this.map);
+            wallManager.CreatWall(this.map, this.level);
             // khởi tạo danh sách địch
             enemyTankManager.Init_EnemyTankManagement(String.Format("{0}{1:00}.txt",
                 Common.path + @"\EnemyTankParameters\EnemyParameter", this.level));

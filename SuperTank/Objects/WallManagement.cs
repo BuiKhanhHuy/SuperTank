@@ -21,7 +21,7 @@ namespace SuperTank.Objects
         }
 
         // tạo một danh sách tường
-        public void CreatWall(int[,] map)
+        public void CreatWall(int[,] map, int level)
         {
             Wall wall = null;
             for (int i = 0; i < map.GetLength(0); i++)
@@ -38,9 +38,24 @@ namespace SuperTank.Objects
                         wall.RectWidth = Common.STEP;
                         wall.RectHeight = Common.STEP;
                         wall.WallNumber = map[i, j];
-                        // load ảnh tường theo số của map
-                        if (map[i, j] != 6)
-                            wall.LoadImage(Common.path + @"\Images\wall" + map[i, j] + ".png");
+                        switch(map[i, j])
+                        {
+                            case 1:
+                            case 2:
+                                // là gạch
+                                wall.LoadImage(Common.path + @"\Images\wall" + map[i, j] + Convert.ToInt32(level / 3) + ".png");
+                                break;
+                            case 3:
+                                // là thép
+                                wall.LoadImage(Common.path + @"\Images\wall" + map[i, j] + ".png");
+                                break;
+                            case 4:
+                                // là bụi cây
+                                wall.LoadImage(Common.path + @"\Images\wall" + map[i, j] + (int)(level / 6) + ".png");
+                                break;
+                            case 5:
+                                break;
+                        }
                         walls.Add(wall);
                     }
                 }

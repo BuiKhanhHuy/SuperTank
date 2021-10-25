@@ -201,126 +201,23 @@ namespace SuperTank
         }
 
         // xử lí di chuyển của xe tăng type = hard
-        //int allowedMove; // cho phép chạy khi bật sang 1 ;(0 : không được phép di chuyển ; 1 : được phép di chuyển)
 
         public bool HandleMoveHard(List<Wall> walls, PlayerTank playerTank, List<EnemyTank> alliedTanks)
         {
-            //// kiểm tra xe tăng địch có va chạm tường
-            //bool isWallCollision;
-            //// kiểm tra xe tăng địch có va chạm xe tăng player
-            //bool isPlayerTankCollision;
-            //// kiểm tra xe tăng địch có va chạm với xe tắng địch đồng minh
-            //bool isAlliedTanksCollision;
-            //// xét dộ ưu tiên
-            //bool flag = false;
-
-            //// bẻ hướng khi vẫn còn vật cản;
-            //int count = 0;
-            //isWallCollision = this.IsWallCollision(walls, this.directionTank);
-            //isPlayerTankCollision = this.IsPlayerTankCollision(playerTank);
-            //isAlliedTanksCollision = this.IsAlliedTanksCollision(alliedTanks);
-
-            //// nếu va chạm tường hoặc xe tăng đồng minh của địch thì xử lí đổi hướng
-            //if (isWallCollision || isAlliedTanksCollision || isPlayerTankCollision)
-            //{
-            //    Random rand = new Random();
-            //    // random ngẫu nhiên hướng di chuyển (0: left; 1:right; 2: up; 3: down)
-            //    switch (rand.Next(0, 3))
-            //    {
-            //        case 0:
-            //            Left = true;
-            //            Right = Up = Down = false;
-            //            flag = true;
-            //            count++;
-            //            break;
-            //        case 1:
-            //            Right = true;
-            //            Left = Up = Down = false;
-            //            flag = true;
-            //            count++;
-            //            break;
-            //        case 2:
-            //            Up = true;
-            //            Left = Right = Down = false;
-            //            flag = true;
-            //            count++;
-            //            break;
-            //        case 3:
-            //            Down = true;
-            //            Left = Right = Up = false;
-            //            flag = true;
-            //            count++;
-            //            break;
-            //    }
-            //    rand = null;
-            //    // nếu xoay frame thì phải dừng không cho di chuyển
-            //    if (flag)
-            //    {
-            //        this.RotateFrame();
-            //        allowedMove = 1;
-            //        return false;
-            //    }
-            //    return false;
-
-
-            //}
-            //else
-            //{
-            //    // cho phép chạy khi không chạm 
-            //    if (allowedMove == 1)
-            //    {
-            //        allowedMove = 0; // bật trở lại trạng thái ban đầu
-            //        return true;
-            //    }
-            //    if (this.RectY < playerTank.RectY)
-            //    {
-            //        Down = true;
-            //        Up = Left = Right = false;
-            //        flag = true;
-            //    }
-            //    else
-            //        if (this.RectY > playerTank.RectY)
-            //    {
-            //        Up = true;
-            //        Down = Left = Right = false;
-            //        flag = true;
-            //    }
-            //    else
-            //        if (this.RectX > playerTank.RectX)
-            //    {
-            //        Left = true;
-            //        Down = Up = Right = false;
-            //        flag = true;
-            //    }
-            //    else
-            //        if (this.RectX < playerTank.RectX)
-            //    {
-            //        Right = true;
-            //        Down = Up = Left = false;
-            //        flag = true;
-            //    }
-            //    // nếu xoay frame thì phải dừng không cho di chuyển
-            //    if (flag)
-            //    {
-            //        this.RotateFrame();
-            //        allowedMove = 1;
-            //        return false;
-            //    }
-            //    return false;
-
-            //}
             // kiểm tra xe tăng địch có va chạm tường
             bool isWallCollision;
             // kiểm tra xe tăng địch có va chạm xe tăng player
             bool isPlayerTankCollision;
-            // kiểm tra xe tăng địch có va chạm với xe tăng địch đồng minh
+            // kiểm tra xe tăng địch có va chạm với xe tắng địch đồng minh
             bool isAlliedTanksCollision;
+            bool flag;
+            flag = false;
 
             isWallCollision = this.IsWallCollision(walls, this.directionTank);
             isPlayerTankCollision = this.IsPlayerTankCollision(playerTank);
             isAlliedTanksCollision = this.IsAlliedTanksCollision(alliedTanks);
-            // nếu va chạm tường, player hoặc xe tăng đồng minh của địch thì xử lí đổi hướng
-            if (isWallCollision || isAlliedTanksCollision || isPlayerTankCollision)
+            // nếu va chạm tường hoặc xe tăng đồng minh của địch thì xử lí đổi hướng
+            if ((isWallCollision || isAlliedTanksCollision || isPlayerTankCollision) && isPriority == false)
             {
                 Random rand = new Random();
                 // random ngẫu nhiên hướng di chuyển (0: left; 1:right; 2: up; 3: down)
@@ -348,9 +245,69 @@ namespace SuperTank
                 return false;
             }
             else
+            if (playerTank.RectX != 17 * Common.STEP || playerTank.RectY != 36 * Common.STEP)
             {
-                // xe tăng được phép di chuyển khi không va chạm gì
-                this.IsMove = true;
+                if (this.Rect.Top + this.Rect.Height / 2 > playerTank.Rect.Top &&
+                   this.Rect.Top + this.Rect.Height / 2 < playerTank.Rect.Bottom &&
+                   this.RectX > playerTank.RectX)
+                {
+                    Left = true;
+                    Down = Up = Right = false;
+                    flag = true;
+                }
+                else
+                   if (this.Rect.Top + this.Rect.Height / 2 > playerTank.Rect.Top &&
+                   this.Rect.Top + this.Rect.Height / 2 < playerTank.Rect.Bottom &&
+                   this.RectX < playerTank.RectX)
+                {
+                    Right = true;
+                    Down = Up = Left = false;
+                    flag = true;
+                }
+                else
+                   if (this.Rect.Left + this.Rect.Width / 2 > playerTank.Rect.Left &&
+                   this.Rect.Left + this.Rect.Width / 2 < playerTank.Rect.Right &&
+                   this.RectY > playerTank.RectY)
+                {
+                    Up = true;
+                    Left = Down = Right = false;
+                    flag = true;
+                }
+                else
+                   if (this.Rect.Left + this.Rect.Width / 2 > playerTank.Rect.Left &&
+                   this.Rect.Left + this.Rect.Width / 2 < playerTank.Rect.Right &&
+                   this.RectY < playerTank.RectY)
+                {
+                    Down = true;
+                    Left = Up = Right = false;
+                    flag = true;
+                }
+                if (flag)
+                {
+                    isPriority = true;
+                    flag = false;
+                    this.RotateFrame();
+                    this.isMove = false;
+                    return false;
+                }
+                else
+                {
+                    if (isPriority == true)
+                    {
+                        isPriority = false;
+                        return false;
+                    }
+                    else
+                    {
+                        this.isMove = true;
+                        return true;
+                    }
+                }
+            }
+            else
+            {
+                isPriority = false;
+                this.isMove = true;
                 return true;
             }
         }
