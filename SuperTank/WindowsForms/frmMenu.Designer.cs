@@ -89,6 +89,7 @@ namespace SuperTank.WindowsForms
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -107,6 +108,7 @@ namespace SuperTank.WindowsForms
             // btnAboutUs
             // 
             this.btnAboutUs.BackColor = System.Drawing.Color.Transparent;
+            this.btnAboutUs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAboutUs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnAboutUs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnAboutUs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -125,6 +127,7 @@ namespace SuperTank.WindowsForms
             // btnPlay
             // 
             this.btnPlay.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlay.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnPlay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnPlay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -155,6 +158,7 @@ namespace SuperTank.WindowsForms
             // btnInstructions
             // 
             this.btnInstructions.BackColor = System.Drawing.Color.Transparent;
+            this.btnInstructions.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInstructions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnInstructions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnInstructions.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -204,6 +208,7 @@ namespace SuperTank.WindowsForms
             // btnLevelMenu
             // 
             this.btnLevelMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevelMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLevelMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevelMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnLevelMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -222,6 +227,7 @@ namespace SuperTank.WindowsForms
             // btnLevel8
             // 
             this.btnLevel8.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLevel8.Enabled = false;
             this.btnLevel8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
@@ -242,6 +248,7 @@ namespace SuperTank.WindowsForms
             // btnLevel7
             // 
             this.btnLevel7.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLevel7.Enabled = false;
             this.btnLevel7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
@@ -262,6 +269,7 @@ namespace SuperTank.WindowsForms
             // btnLevel6
             // 
             this.btnLevel6.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLevel6.Enabled = false;
             this.btnLevel6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
@@ -282,6 +290,7 @@ namespace SuperTank.WindowsForms
             // btnLevel5
             // 
             this.btnLevel5.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLevel5.Enabled = false;
             this.btnLevel5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
@@ -302,6 +311,7 @@ namespace SuperTank.WindowsForms
             // btnLevel4
             // 
             this.btnLevel4.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLevel4.Enabled = false;
             this.btnLevel4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
@@ -322,6 +332,7 @@ namespace SuperTank.WindowsForms
             // btnLevel3
             // 
             this.btnLevel3.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLevel3.Enabled = false;
             this.btnLevel3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
@@ -342,6 +353,7 @@ namespace SuperTank.WindowsForms
             // btnLevel10
             // 
             this.btnLevel10.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLevel10.Enabled = false;
             this.btnLevel10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
@@ -362,6 +374,7 @@ namespace SuperTank.WindowsForms
             // btnLevel9
             // 
             this.btnLevel9.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLevel9.Enabled = false;
             this.btnLevel9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
@@ -382,6 +395,7 @@ namespace SuperTank.WindowsForms
             // btnLevel2
             // 
             this.btnLevel2.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLevel2.Enabled = false;
             this.btnLevel2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
@@ -402,6 +416,7 @@ namespace SuperTank.WindowsForms
             // btnLevel1
             // 
             this.btnLevel1.BackColor = System.Drawing.Color.Transparent;
+            this.btnLevel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLevel1.Enabled = false;
             this.btnLevel1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLevel1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
@@ -436,6 +451,7 @@ namespace SuperTank.WindowsForms
             // btnAboutUsMenu
             // 
             this.btnAboutUsMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnAboutUsMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAboutUsMenu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnAboutUsMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.btnAboutUsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -467,6 +483,7 @@ namespace SuperTank.WindowsForms
             this.flowLayoutPanelInstructions.AutoScroll = true;
             this.flowLayoutPanelInstructions.Controls.Add(this.picInstructions);
             this.flowLayoutPanelInstructions.Controls.Add(this.lblInstructions);
+            this.flowLayoutPanelInstructions.Cursor = System.Windows.Forms.Cursors.NoMoveVert;
             this.flowLayoutPanelInstructions.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelInstructions.Location = new System.Drawing.Point(35, 129);
             this.flowLayoutPanelInstructions.Name = "flowLayoutPanelInstructions";
@@ -487,6 +504,7 @@ namespace SuperTank.WindowsForms
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -532,7 +550,7 @@ namespace SuperTank.WindowsForms
             // 
             // picInstructions
             // 
-            this.picInstructions.Image = ((System.Drawing.Image)(resources.GetObject("picInstructions.Image")));
+            this.picInstructions.Image = global::SuperTank.Properties.Resources.instruction;
             this.picInstructions.Location = new System.Drawing.Point(3, 3);
             this.picInstructions.Name = "picInstructions";
             this.picInstructions.Size = new System.Drawing.Size(400, 1000);

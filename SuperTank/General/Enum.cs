@@ -20,8 +20,8 @@ namespace SuperTank.General
     }
     public enum EnemyTankType
     {
-        // 0, 1, 2
-        eNormal, eMedium, eHard
+        // 0, 1
+        eNormal, eMedium
     }
     public enum Skin
     {

@@ -43,7 +43,7 @@ namespace SuperTank.Objects
                             case 1:
                             case 2:
                                 // là gạch
-                                wall.LoadImage(Common.path + @"\Images\wall" + map[i, j] + Convert.ToInt32(level / 3) + ".png");
+                                wall.LoadImage(Common.path + @"\Images\wall" + map[i, j] +(int)(level / 2.2) + ".png");
                                 break;
                             case 3:
                                 // là thép

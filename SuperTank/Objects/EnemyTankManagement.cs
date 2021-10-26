@@ -125,7 +125,7 @@ namespace SuperTank.Objects
             enemyTank.DirectionTank = Direction.eUp;
             enemyTank.IsMove = true;
             //enemyTank.IsFire = true;
-            // thiết lập loại xe tăng (0: normal; 1: medium; 2: hard)
+            // thiết lập loại xe tăng (0: normal; 1: medium)
             switch (enemyTankParameter.Type)
             {
                 case 0:
@@ -133,9 +133,6 @@ namespace SuperTank.Objects
                     break;
                 case 1:
                     enemyTank.EnemyType = EnemyTankType.eMedium;
-                    break;
-                case 2:
-                    enemyTank.EnemyType = EnemyTankType.eHard;
                     break;
             }
             enemyTank.Energy = enemyTankParameter.Energy;
@@ -160,9 +157,6 @@ namespace SuperTank.Objects
                         break;
                     case EnemyTankType.eMedium:
                         isMove_local = enemyTank.HandleMoveMedium(walls, playerTank, this.EnemyTanks);
-                        break;
-                    case EnemyTankType.eHard:
-                        isMove_local = enemyTank.HandleMoveHard(walls, playerTank, this.EnemyTanks);
                         break;
                 }
                 // di chuyển xe tăng địch khi đã qua xử lí là đã được phép di chuyển
