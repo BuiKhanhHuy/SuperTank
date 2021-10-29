@@ -34,7 +34,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblHpTankPlayer = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnInfor = new System.Windows.Forms.Panel();
+            this.lblInforExit = new System.Windows.Forms.Label();
+            this.lblInforMenu = new System.Windows.Forms.Label();
+            this.lblInforPandP = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.lblItemActive = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -102,7 +106,7 @@
             this.picMinus = new System.Windows.Forms.PictureBox();
             this.picMultiply = new System.Windows.Forms.PictureBox();
             this.tmrItemActive = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
+            this.pnInfor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTank19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank17)).BeginInit();
@@ -178,44 +182,110 @@
             this.lblHpTankPlayer.Size = new System.Drawing.Size(100, 10);
             this.lblHpTankPlayer.TabIndex = 0;
             // 
-            // panel1
+            // pnInfor
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.lblItemActive);
-            this.panel1.Controls.Add(this.lblLevel);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.picTank19);
-            this.panel1.Controls.Add(this.picTank18);
-            this.panel1.Controls.Add(this.picTank17);
-            this.panel1.Controls.Add(this.picTank16);
-            this.panel1.Controls.Add(this.picTank15);
-            this.panel1.Controls.Add(this.picTank14);
-            this.panel1.Controls.Add(this.picTank13);
-            this.panel1.Controls.Add(this.picTank12);
-            this.panel1.Controls.Add(this.picTank11);
-            this.panel1.Controls.Add(this.picTank10);
-            this.panel1.Controls.Add(this.picTank09);
-            this.panel1.Controls.Add(this.picTank08);
-            this.panel1.Controls.Add(this.picTank07);
-            this.panel1.Controls.Add(this.picTank06);
-            this.panel1.Controls.Add(this.picTank05);
-            this.panel1.Controls.Add(this.picTank04);
-            this.panel1.Controls.Add(this.picTank03);
-            this.panel1.Controls.Add(this.picTank02);
-            this.panel1.Controls.Add(this.picTank01);
-            this.panel1.Controls.Add(this.picTank00);
-            this.panel1.Controls.Add(this.picHeart);
-            this.panel1.Controls.Add(this.picItem);
-            this.panel1.Controls.Add(this.lblHpTankPlayer);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(906, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(147, 800);
-            this.panel1.TabIndex = 4;
+            this.pnInfor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnInfor.BackColor = System.Drawing.Color.Black;
+            this.pnInfor.Controls.Add(this.lblInforExit);
+            this.pnInfor.Controls.Add(this.lblInforMenu);
+            this.pnInfor.Controls.Add(this.lblInforPandP);
+            this.pnInfor.Controls.Add(this.panel2);
+            this.pnInfor.Controls.Add(this.lblItemActive);
+            this.pnInfor.Controls.Add(this.lblLevel);
+            this.pnInfor.Controls.Add(this.panel5);
+            this.pnInfor.Controls.Add(this.panel4);
+            this.pnInfor.Controls.Add(this.panel3);
+            this.pnInfor.Controls.Add(this.picTank19);
+            this.pnInfor.Controls.Add(this.picTank18);
+            this.pnInfor.Controls.Add(this.picTank17);
+            this.pnInfor.Controls.Add(this.picTank16);
+            this.pnInfor.Controls.Add(this.picTank15);
+            this.pnInfor.Controls.Add(this.picTank14);
+            this.pnInfor.Controls.Add(this.picTank13);
+            this.pnInfor.Controls.Add(this.picTank12);
+            this.pnInfor.Controls.Add(this.picTank11);
+            this.pnInfor.Controls.Add(this.picTank10);
+            this.pnInfor.Controls.Add(this.picTank09);
+            this.pnInfor.Controls.Add(this.picTank08);
+            this.pnInfor.Controls.Add(this.picTank07);
+            this.pnInfor.Controls.Add(this.picTank06);
+            this.pnInfor.Controls.Add(this.picTank05);
+            this.pnInfor.Controls.Add(this.picTank04);
+            this.pnInfor.Controls.Add(this.picTank03);
+            this.pnInfor.Controls.Add(this.picTank02);
+            this.pnInfor.Controls.Add(this.picTank01);
+            this.pnInfor.Controls.Add(this.picTank00);
+            this.pnInfor.Controls.Add(this.picHeart);
+            this.pnInfor.Controls.Add(this.picItem);
+            this.pnInfor.Controls.Add(this.lblHpTankPlayer);
+            this.pnInfor.Controls.Add(this.label6);
+            this.pnInfor.Controls.Add(this.label9);
+            this.pnInfor.Location = new System.Drawing.Point(906, 3);
+            this.pnInfor.Name = "pnInfor";
+            this.pnInfor.Size = new System.Drawing.Size(147, 800);
+            this.pnInfor.TabIndex = 4;
+            // 
+            // lblInforExit
+            // 
+            this.lblInforExit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInforExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblInforExit.Enabled = false;
+            this.lblInforExit.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInforExit.ForeColor = System.Drawing.Color.White;
+            this.lblInforExit.Location = new System.Drawing.Point(9, 541);
+            this.lblInforExit.Name = "lblInforExit";
+            this.lblInforExit.Size = new System.Drawing.Size(126, 38);
+            this.lblInforExit.TabIndex = 64;
+            this.lblInforExit.Tag = "exit";
+            this.lblInforExit.Text = "Exit";
+            this.lblInforExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInforExit.Click += new System.EventHandler(this.lblInfor_Click);
+            this.lblInforExit.MouseEnter += new System.EventHandler(this.lblInfor_MouseEnter);
+            this.lblInforExit.MouseLeave += new System.EventHandler(this.lblInfor_MouseLeave);
+            // 
+            // lblInforMenu
+            // 
+            this.lblInforMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInforMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblInforMenu.Enabled = false;
+            this.lblInforMenu.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInforMenu.ForeColor = System.Drawing.Color.White;
+            this.lblInforMenu.Location = new System.Drawing.Point(9, 490);
+            this.lblInforMenu.Name = "lblInforMenu";
+            this.lblInforMenu.Size = new System.Drawing.Size(126, 38);
+            this.lblInforMenu.TabIndex = 63;
+            this.lblInforMenu.Tag = "menu";
+            this.lblInforMenu.Text = "Menu";
+            this.lblInforMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInforMenu.Click += new System.EventHandler(this.lblInfor_Click);
+            this.lblInforMenu.MouseEnter += new System.EventHandler(this.lblInfor_MouseEnter);
+            this.lblInforMenu.MouseLeave += new System.EventHandler(this.lblInfor_MouseLeave);
+            // 
+            // lblInforPandP
+            // 
+            this.lblInforPandP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInforPandP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblInforPandP.Enabled = false;
+            this.lblInforPandP.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInforPandP.ForeColor = System.Drawing.Color.White;
+            this.lblInforPandP.Location = new System.Drawing.Point(9, 439);
+            this.lblInforPandP.Name = "lblInforPandP";
+            this.lblInforPandP.Size = new System.Drawing.Size(126, 38);
+            this.lblInforPandP.TabIndex = 62;
+            this.lblInforPandP.Tag = "pandp";
+            this.lblInforPandP.Text = "Pause";
+            this.lblInforPandP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblInforPandP.Click += new System.EventHandler(this.lblInfor_Click);
+            this.lblInforPandP.MouseEnter += new System.EventHandler(this.lblInfor_MouseEnter);
+            this.lblInforPandP.MouseLeave += new System.EventHandler(this.lblInfor_MouseLeave);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Location = new System.Drawing.Point(8, 415);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(130, 1);
+            this.panel2.TabIndex = 61;
             // 
             // lblItemActive
             // 
@@ -491,6 +561,7 @@
             this.pnMainGame.Name = "pnMainGame";
             this.pnMainGame.Size = new System.Drawing.Size(900, 800);
             this.pnMainGame.TabIndex = 5;
+            this.pnMainGame.TabStop = true;
             // 
             // lblCastleBlood
             // 
@@ -508,7 +579,7 @@
             this.pnRedBackground.Controls.Add(this.pnGameOver);
             this.pnRedBackground.Controls.Add(this.pnNextLevel);
             this.pnRedBackground.Controls.Add(this.pnMainGame);
-            this.pnRedBackground.Controls.Add(this.panel1);
+            this.pnRedBackground.Controls.Add(this.pnInfor);
             this.pnRedBackground.Location = new System.Drawing.Point(0, 40);
             this.pnRedBackground.Name = "pnRedBackground";
             this.pnRedBackground.Size = new System.Drawing.Size(1056, 806);
@@ -1001,8 +1072,8 @@
             this.Load += new System.EventHandler(this.frmGame_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmGame_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmGame_KeyUp);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnInfor.ResumeLayout(false);
+            this.pnInfor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTank19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTank17)).EndInit();
@@ -1054,7 +1125,7 @@
         private System.Windows.Forms.Label lblHpTankPlayer;
         private System.Windows.Forms.PictureBox picItem;
         private System.Windows.Forms.PictureBox picHeart;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnInfor;
         private System.Windows.Forms.PictureBox picTank19;
         private System.Windows.Forms.PictureBox picTank18;
         private System.Windows.Forms.PictureBox picTank17;
@@ -1120,6 +1191,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblInforExit;
+        private System.Windows.Forms.Label lblInforMenu;
+        private System.Windows.Forms.Label lblInforPandP;
     }
 }
 

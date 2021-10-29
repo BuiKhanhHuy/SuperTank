@@ -121,18 +121,19 @@ namespace SuperTank.Objects
         // cập nhật tham số xe tăng địch
         public void UpdateParameter(EnemyTank enemyTank, EnemyTankParameter enemyTankParameter)
         {
-            enemyTank.LoadImage(Common.path + @"\Images\tank.png");
+
             enemyTank.DirectionTank = Direction.eUp;
             enemyTank.IsMove = true;
-            //enemyTank.IsFire = true;
             // thiết lập loại xe tăng (0: normal; 1: medium)
             switch (enemyTankParameter.Type)
             {
                 case 0:
                     enemyTank.EnemyType = EnemyTankType.eNormal;
+                    enemyTank.LoadImage(Common.path + @"\Images\tank0.png");
                     break;
                 case 1:
                     enemyTank.EnemyType = EnemyTankType.eMedium;
+                    enemyTank.LoadImage(Common.path + @"\Images\tank1.png");
                     break;
             }
             enemyTank.Energy = enemyTankParameter.Energy;

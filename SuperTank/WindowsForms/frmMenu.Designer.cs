@@ -550,7 +550,8 @@ namespace SuperTank.WindowsForms
             // 
             // picInstructions
             // 
-            this.picInstructions.Image = global::SuperTank.Properties.Resources.instruction;
+            this.picInstructions.Cursor = System.Windows.Forms.Cursors.NoMove2D;
+            this.picInstructions.Image = ((System.Drawing.Image)(resources.GetObject("picInstructions.Image")));
             this.picInstructions.Location = new System.Drawing.Point(3, 3);
             this.picInstructions.Name = "picInstructions";
             this.picInstructions.Size = new System.Drawing.Size(400, 1000);

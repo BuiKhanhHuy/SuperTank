@@ -45,6 +45,7 @@ namespace SuperTank
         #region thuộc tính thời gian
         private int timeItem = 50;
         private int timeItemActive = 15;
+        private bool isTimeItemActive;
         private int time_delay = 0;
         #endregion thuộc tính thời gian
 
@@ -77,7 +78,7 @@ namespace SuperTank
             explosionManager = new ExplosionManagement();
             // tạo đối tượng xe tăng player
             playerTank = new PlayerTank();
-            playerTank.LoadImage(Common.path + @"\Images\tank.png");
+            playerTank.LoadImage(Common.path + @"\Images\tank0.png");
             // khởi tạo danh sách địch
             enemyTankManager = new EnemyTankManagement();
             // khởi tạo quà
@@ -135,6 +136,10 @@ namespace SuperTank
             // hủy hình ảnh item
             item.BmpObject = null;
             item.IsOn = false;
+            // bật biến hoạt động của item về false
+            isTimeItemActive = false;
+            // bật các nút chức năng trên game 
+            this.LabelEnableOn();
             // set thời gian item và chạy item
             timeItem = 50;
             timeItemActive = 15;
@@ -164,7 +169,6 @@ namespace SuperTank
             //hiển thị toàn bộ xe tăng địch
             enemyTankManager.ShowAllEnemyTank(this.background);
 
-            //int tam = 0;
             #region đạn player và đạn địch trúng tường
             for (int i = wallManager.Walls.Count - 1; i >= 0; i--)
             {
@@ -181,13 +185,9 @@ namespace SuperTank
                             // thêm vụ nổ vào danh sách
                             explosionManager.CreateExplosion(ExplosionSize.eSmallExplosion, playerTank.Bullets[j].Rect);
                             // viên đạn xe tăng player này bị hủy
-                            //tam++;
-                            //if (tam == 2)
-                            //{
-                                playerTank.RemoveOneBullet(j);
-                            //    tam = 0;
-                            //}
+                            playerTank.RemoveOneBullet(j);
                         }
+
                         // hủy viên gạch đi khi nó là gạch có thể phá hủy
                         if (wallManager.Walls[i].WallNumber == 1)
                         {
@@ -327,7 +327,7 @@ namespace SuperTank
                     if (Common.IsCollision(enemyTankManager.EnemyTanks[i].Rect, playerTank.Bullets[k].Rect) &&
                         enemyTankManager.EnemyTanks[i].IsActivate)
                     {
-                        Console.WriteLine("Địch bị trúng đạn");
+                        //Console.WriteLine("Địch bị trúng đạn");
 
                         // thêm vụ nổ vào danh sách
                         explosionManager.CreateExplosion(ExplosionSize.eBigExplosion, playerTank.Bullets[k].Rect);
@@ -483,6 +483,7 @@ namespace SuperTank
                             playerTank.IsShield = true;
                             // item active kích hoạt trong 15s
                             tmrItemActive.Start();
+                            isTimeItemActive = true;
                             // tắt timer hiển thị vật phẩm
                             tmrShowItem.Stop();
                             // hiển thị vật vật đã được ăn trên bảng thông báo
@@ -492,6 +493,7 @@ namespace SuperTank
                             playerTank.BulletType = BulletType.eRocketBullet;
                             // item active kích hoạt trong 15s
                             tmrItemActive.Start();
+                            isTimeItemActive = true;
                             // tắt timer hiển thị vật phẩm
                             tmrShowItem.Stop();
                             // hiển thị vật vật đã được ăn trên bảng thông báo
@@ -510,6 +512,7 @@ namespace SuperTank
         // hàm delay vòng lặp game sau khi game kết thúc
         private void tmrDelay_Tick(object sender, EventArgs e)
         {
+            this.LabelEnableOff();
             time_delay += 1;
             if (time_delay > 1)
             {
@@ -634,6 +637,7 @@ namespace SuperTank
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
             tmrItemActive.Stop();
+            isTimeItemActive = false;
             // hiển thị điểm và số lượng địch đã tiêu diệt
             lblGameOverScores.Text = scores.ToString();
             lblGameOverTotal.Text = killed.ToString();
@@ -654,6 +658,7 @@ namespace SuperTank
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
             tmrItemActive.Stop();
+            isTimeItemActive = false;
             // hiển thị level hiện tại lên panel thông tin
             lblNextLevelLevel.Text = "LEVEL " + level;
             // tăng level
@@ -684,6 +689,7 @@ namespace SuperTank
             tmrGameLoop.Stop();
             tmrShowItem.Stop();
             tmrItemActive.Stop();
+            isTimeItemActive = false;
             // hiển thị panel GameWin
             pnGameWin.Top = 3;
             pnGameWin.Left = 3;
@@ -746,6 +752,7 @@ namespace SuperTank
             if (timeItemActive == 0)
             {
                 tmrItemActive.Stop();
+                isTimeItemActive = false;
                 timeItemActive = 15;
                 // hình ảnh thông tin vật phẩm về null
                 picItem.Image = null;
@@ -772,6 +779,74 @@ namespace SuperTank
         #endregion xử lí hiển thị lại vật phẩm
 
         #region các hàm sự kiện click_button trong game
+        private void lblInfor_MouseEnter(object sender, EventArgs e)
+        {
+            ((Label)sender).BackColor = Color.FromArgb(180, 180, 180);
+        }
+
+        private void lblInfor_MouseLeave(object sender, EventArgs e)
+        {
+            ((Label)sender).BackColor = Color.Transparent;
+        }
+
+        // bật thuộc tính enable = true các nút level
+        private void LabelEnableOn()
+        {
+            this.lblInforPandP.Enabled = true;
+            this.lblInforMenu.Enabled = true;
+            this.lblInforExit.Enabled = true;
+        }
+
+        // tắt thuộc tính enable = false các nút level
+        private void LabelEnableOff()
+        {
+            this.lblInforPandP.Enabled = false;
+            this.lblInforMenu.Enabled = false;
+            this.lblInforExit.Enabled = false;
+        }
+
+        // nhấn các nút label trên giao diện
+        bool isOnOff = false;
+        private void lblInfor_Click(object sender, EventArgs e)
+        {
+            Label label = ((Label)sender);
+            switch (label.Tag.ToString())
+            {
+                case "pandp":
+                    if (isOnOff == false)
+                    {
+                        tmrGameLoop.Stop();
+                        tmrShowItem.Stop();
+                        label.Text = "Continue...";
+                        label.ForeColor = Color.Orange;
+                        isOnOff = true;
+                        if (isTimeItemActive)
+                            tmrItemActive.Stop();
+                    }
+                    else
+                    {
+                        tmrGameLoop.Start();
+                        tmrShowItem.Start();
+                        label.Text = "Pause";
+                        label.ForeColor = Color.White;
+                        isOnOff = false;
+                        if (isTimeItemActive)
+                            tmrItemActive.Start();
+                    }
+                    break;
+                case "menu":
+                    // bật các button level của form menu
+                    this.formMenu.ShowOpenedLevels(PlayerInfor.level);
+                    // hiển thị form menu
+                    this.formMenu.Show();
+                    this.Close();
+                    break;
+                case "exit":
+                    Application.Exit();
+                    break;
+            }
+        }
+
         // sự kiện click button trên giao thông tin game
         private void btn_Click(object sender, EventArgs e)
         {
@@ -892,8 +967,6 @@ namespace SuperTank
         {
             Application.Exit();
         }
-
-
         #endregion các hàm sự kiện thanh tiêu đề
     }
 }
