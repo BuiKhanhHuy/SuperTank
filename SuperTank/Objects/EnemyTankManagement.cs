@@ -206,7 +206,11 @@ namespace SuperTank.Objects
                 enemyTankParameters = value;
             }
         }
-        public int NumberEnemyTankDestroy { get => numberEnemyTankDestroy; set => numberEnemyTankDestroy = value; }
+        public int NumberEnemyTankDestroy
+        {
+            set { numberEnemyTankDestroy = value; }
+            get { return numberEnemyTankDestroy; }
+        }
         #endregion properties
     }
 }

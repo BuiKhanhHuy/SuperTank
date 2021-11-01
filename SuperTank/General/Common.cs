@@ -22,6 +22,7 @@ namespace SuperTank.General
         public const int tankSize = 40;
         #endregion
         public static string path;
+
         // load hình ảnh
         public static Bitmap LoadImage(string fileName)
         {

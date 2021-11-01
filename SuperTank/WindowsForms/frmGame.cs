@@ -69,7 +69,7 @@ namespace SuperTank
             // khỏi tạo background
             background = new Bitmap(Common.SCREEN_WIDTH, Common.SCREEN_HEIGHT);
             // khởi tạo bitmap castle
-            bmpCastle = new Bitmap(Common.STEP * 4, Common.STEP * 4);
+            bmpCastle = new Bitmap(Common.STEP * 3, Common.STEP * 3);
             // khởi tạo map
             map = new int[Common.NUMBER_OBJECT_HEIGHT, Common.NUMBER_OBJECT_WIDTH];
             // tạo đối tượng quản lí tường
@@ -81,7 +81,7 @@ namespace SuperTank
             playerTank.LoadImage(Common.path + @"\Images\tank0.png");
             // khởi tạo danh sách địch
             enemyTankManager = new EnemyTankManagement();
-            // khởi tạo quà
+            // khởi tạo vật phẩm
             item = new Item();
 
             // khởi tạo game
@@ -290,7 +290,7 @@ namespace SuperTank
                             // xe tăng player hết năng lượng sẽ thua
                             if (playerTank.Energy == 0)
                             {
-                                // Gamenext
+                                // Gameover
                                 inforStyle = InforStyle.eGameOver;
                                 // dừng timer show vật phẩm
                                 tmrShowItem.Stop();
