@@ -179,6 +179,11 @@ namespace SuperTank.WindowsForms
             PlayerInfor.WritePlayerLevel(@"\PlayerLevel.txt");
         }
 
+        private void pnTitle_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         // thoát game
         private void picMultiply_Click(object sender, EventArgs e)
         {

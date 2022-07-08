@@ -42,3 +42,4 @@ C:\Users\khuy2\Desktop\SuperTank\SuperTank\obj\Debug\SuperTank.csproj.CoreCompil
 C:\Users\khuy2\Desktop\SuperTank\SuperTank\obj\Debug\SuperTank.exe
 C:\Users\khuy2\Desktop\SuperTank\SuperTank\obj\Debug\SuperTank.pdb
 E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.WindowsForms.frmMenu.resources
+E:\LAPTRINHGIAODIEN\SuperTank\SuperTank\obj\Debug\SuperTank.csproj.SuggestedBindingRedirects.cache

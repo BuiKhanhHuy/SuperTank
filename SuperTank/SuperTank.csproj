@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SuperTank</RootNamespace>
     <AssemblyName>SuperTank</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -127,31 +128,7 @@
     <None Include="Resources\icon_title_minus.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\image_giangMy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image_huuphat.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\image_khanhhuy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image_kimngan.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\image_minhhung.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_giangmy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_kimngan.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_minhhung.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img_huuphat.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\img_khanhhuy.png" />
